@@ -1,134 +1,27 @@
-
- <!DOCTYPE HTML>
-<html lang="Chinese">
-<head>
-  <meta charset="UTF-8">
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
   
-    <title>数据结构重点 | wuyuhuan&#39;s blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="Yuhuan Wu">
-    
-
-    
-    <meta name="description" content="第零章 绪论什么是计算机算法？算法的五大特征？算法设计的要求？
-
-计算机算法指解决问题的步骤序列。
-
-算法的五大特征分别为
-可行性、有穷性、确定性、输入、输出
-
-算法设计要求
-正确性、可读性、健壮性、效率与低存储量需求">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据结构重点">
-<meta property="og:url" content="http://1013rain.me/2015/08/04/learn Data Structure/index.html">
-<meta property="og:site_name" content="wuyuhuan's blog">
-<meta property="og:description" content="第零章 绪论什么是计算机算法？算法的五大特征？算法设计的要求？
-
-计算机算法指解决问题的步骤序列。
-
-算法的五大特征分别为
-可行性、有穷性、确定性、输入、输出
-
-算法设计要求
-正确性、可读性、健壮性、效率与低存储量需求">
-<meta property="og:image" content="https://upload.wikimedia.org/math/e/b/c/ebc3ab5369e2fc1a1d2bb0dd68396027.png">
-<meta property="og:image" content="https://upload.wikimedia.org/math/f/a/8/fa8a518330d0e8da1a0890bb2e587043.png">
-<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/457289/2012110918051618.jpg">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/1b/Sorting_heapsort_anim.gif">
-<meta property="og:updated_time" content="2015-08-04T16:38:50.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构重点">
-<meta name="twitter:description" content="第零章 绪论什么是计算机算法？算法的五大特征？算法设计的要求？
-
-计算机算法指解决问题的步骤序列。
-
-算法的五大特征分别为
-可行性、有穷性、确定性、输入、输出
-
-算法设计要求
-正确性、可读性、健壮性、效率与低存储量需求">
-
-    
-    <link rel="alternative" href="/atom.xml" title="wuyuhuan&#39;s blog" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-</head>
-
-  <body>
-    <header>
-      
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="wuyuhuan&#39;s blog" title="wuyuhuan&#39;s blog"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="wuyuhuan&#39;s blog">wuyuhuan&#39;s blog</a></h1>
-				<h2 class="blog-motto">打的不错，我很抱歉。</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:1013rain.me">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
+  <title><![CDATA[wuyuhuan's blog]]></title>
+  <subtitle><![CDATA[打的不错，我很抱歉。]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://1013rain.me//"/>
+  <updated>2015-08-04T16:38:50.000Z</updated>
+  <id>http://1013rain.me//</id>
   
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
+  <author>
+    <name><![CDATA[Yuhuan Wu]]></name>
     
-      <a href="/2015/08/04/learn Data Structure/" title="数据结构重点" itemprop="url">数据结构重点</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Yuhuan Wu" target="_blank" itemprop="author">Yuhuan Wu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-08-04T15:40:48.000Z" itemprop="datePublished"> 發表於 2015-08-04</time>
-    
-  </p>
-</header>
-	<div class="article-content">
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
-		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第零章_绪论"><span class="toc-number">1.</span> <span class="toc-text">第零章 绪论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章_线性表"><span class="toc-number">2.</span> <span class="toc-text">第一章 线性表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章_栈和队列"><span class="toc-number">3.</span> <span class="toc-text">第二章 栈和队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#插播一条概念"><span class="toc-number">3.1.</span> <span class="toc-text">插播一条概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三章_串"><span class="toc-number">4.</span> <span class="toc-text">第三章 串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四章_数组和广义表"><span class="toc-number">5.</span> <span class="toc-text">第四章 数组和广义表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五章_树"><span class="toc-number">6.</span> <span class="toc-text">第五章 树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六章_哈希表"><span class="toc-number">7.</span> <span class="toc-text">第六章 哈希表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第七章_图论"><span class="toc-number">8.</span> <span class="toc-text">第七章 图论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最小生成树"><span class="toc-number">8.1.</span> <span class="toc-text">最小生成树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第八章_二分查找"><span class="toc-number">9.</span> <span class="toc-text">第八章 二分查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉排序树"><span class="toc-number">9.1.</span> <span class="toc-text">二叉排序树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如何构建二叉排序树？"><span class="toc-number">9.1.1.</span> <span class="toc-text">如何构建二叉排序树？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第九章_排序"><span class="toc-number">10.</span> <span class="toc-text">第九章 排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆排序"><span class="toc-number">11.</span> <span class="toc-text">堆排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#学渣止步…这个排序可能有点难。"><span class="toc-number">11.0.1.</span> <span class="toc-text">学渣止步…这个排序可能有点难。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#堆"><span class="toc-number">11.1.</span> <span class="toc-text">堆</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#堆排序-1"><span class="toc-number">11.1.1.</span> <span class="toc-text">堆排序</span></a></li></ol></li></ol></li></ol>
-		
-		</div>
-		
-		<h2 id="第零章_绪论">第零章 绪论</h2><p>什么是计算机算法？算法的<strong>五大特征</strong>？算法设计的要求？</p>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[数据结构重点]]></title>
+    <link href="http://1013rain.me/2015/08/04/learn%20Data%20Structure/"/>
+    <id>http://1013rain.me/2015/08/04/learn Data Structure/</id>
+    <published>2015-08-04T15:40:48.000Z</published>
+    <updated>2015-08-04T16:38:50.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="第零章_绪论">第零章 绪论</h2><p>什么是计算机算法？算法的<strong>五大特征</strong>？算法设计的要求？</p>
 <ul>
 <li><p>计算机算法指<code>解决问题的步骤序列</code>。</p>
 </li>
@@ -418,369 +311,40 @@
 <li>快排平均最快，归并其次，堆排是O(nlogn)里最慢的</li>
 </ul>
 <p>[^1]:《算法－－C语言实现》第1～4部分 9.2节</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="第零章_绪论">第零章 绪论</h2><p>什么是计算机算法？算法的<strong>五大特征</strong>？算法设计的要求？</p>
+<ul>
+<li><p>计算机算法指<code>解决问题的步骤序列</code>。</p>
+</li>
+<li><p>算法的五大特征分别为</p>
+<pre><code>可行性、有穷性、确定性、输入、输出
+</code></pre></li>
+<li><p>算法设计要求</p>
+<pre><code>正确性、可读性、健壮性、效率与低存储量需求
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="大学课程" scheme="http://1013rain.me/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/"/>
+    
+  </entry>
   
-	</div>
-		<footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
+  <entry>
+    <title><![CDATA[我的第一篇文章]]></title>
+    <link href="http://1013rain.me/2015/08/04/helloworld/"/>
+    <id>http://1013rain.me/2015/08/04/helloworld/</id>
+    <published>2015-08-04T15:40:48.000Z</published>
+    <updated>2015-08-04T16:17:18.000Z</updated>
+    <content type="html"><![CDATA[<p>hi，现在我终于创建了一个blog，这个blog将被用于记录我的生活、C/C++学习记录还有数模生涯。<br>暂时就是这样了～～～～<br><a id="more"></a><br>由于还是刚刚创建，我需要逐步添加一些功能，这需要一些时间，在这期间，这个blog可能会不太完善，我会加把劲努力的！</p>
+<p>一起分享学习经验吧～</p>
+<p>吴宇寰</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>hi，现在我终于创建了一个blog，这个blog将被用于记录我的生活、C/C++学习记录还有数模生涯。<br>暂时就是这样了～～～～<br>]]>
+    
+    </summary>
+    
+  </entry>
   
-  <span></span> <a href="/tags/大学课程/">大学课程</a>
-  </div>
-
-</div>
-
-
-
-	<div class="article-share" id="share">
-	
-	  <div data-url="http://1013rain.me/2015/08/04/learn Data Structure/" data-title="数据结构重点 | wuyuhuan&#39;s blog" data-tsina="null" class="share clearfix">
-	  </div>
-	
-	</div>
-
-
-</footer>
-
-   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
-
-<div class="next">
-<a href="/2015/08/04/helloworld/"  title="我的第一篇文章">
- <strong>下一篇：</strong><br/> 
- <span>我的第一篇文章
-</span>
-</a>
-</div>
-
-</nav>
-
-	
-
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
- 
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第零章_绪论"><span class="toc-number">1.</span> <span class="toc-text">第零章 绪论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章_线性表"><span class="toc-number">2.</span> <span class="toc-text">第一章 线性表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章_栈和队列"><span class="toc-number">3.</span> <span class="toc-text">第二章 栈和队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#插播一条概念"><span class="toc-number">3.1.</span> <span class="toc-text">插播一条概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三章_串"><span class="toc-number">4.</span> <span class="toc-text">第三章 串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四章_数组和广义表"><span class="toc-number">5.</span> <span class="toc-text">第四章 数组和广义表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五章_树"><span class="toc-number">6.</span> <span class="toc-text">第五章 树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六章_哈希表"><span class="toc-number">7.</span> <span class="toc-text">第六章 哈希表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第七章_图论"><span class="toc-number">8.</span> <span class="toc-text">第七章 图论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最小生成树"><span class="toc-number">8.1.</span> <span class="toc-text">最小生成树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第八章_二分查找"><span class="toc-number">9.</span> <span class="toc-text">第八章 二分查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉排序树"><span class="toc-number">9.1.</span> <span class="toc-text">二叉排序树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如何构建二叉排序树？"><span class="toc-number">9.1.1.</span> <span class="toc-text">如何构建二叉排序树？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第九章_排序"><span class="toc-number">10.</span> <span class="toc-text">第九章 排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆排序"><span class="toc-number">11.</span> <span class="toc-text">堆排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#学渣止步…这个排序可能有点难。"><span class="toc-number">11.0.1.</span> <span class="toc-text">学渣止步…这个排序可能有点难。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#堆"><span class="toc-number">11.1.</span> <span class="toc-text">堆</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#堆排序-1"><span class="toc-number">11.1.1.</span> <span class="toc-text">堆排序</span></a></li></ol></li></ol></li></ol>
- 
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
-<aside class="clearfix">
-
-  
-
-  
-<div class="tagslist">
-	<p class="asidetitle">標簽</p>
-		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/大学课程/" title="大学课程">大学课程<sup>1</sup></a></li>
-			
-		
-		</ul>
-</div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
-    <ul>
-        
-          <li>
-            
-            	<a href="http://user.qzone.qq.com/568946895/main" target="_blank" title="我的QQ空间">我的QQ空间</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="https://hexo.io" target="_blank" title="使用hexo创建一个博客">使用hexo创建一个博客</a>
-            
-          </li>
-        
-    </ul>
-</div>
-
-  
-
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
-</div>
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> 吴宇寰，一名即将大二的大一学生 <br/>
-			现就读于西安电子科技大学，电子信息工程专业</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		
-		<a href="https://github.com/AsRain" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wu-yu-huan-30" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		
-		<a href="mailto:1013rain@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
-			
-		
-
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
-		
-		<a href="/about" target="_blank" title="Yuhuan Wu">Yuhuan Wu</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-  
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
-        
-    }
-  });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
-  });
-});
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina'),
-      description = $this.attr('description');
-  var html = [
-  '<div class="hoverqrcode clearfix"></div>',
-  '<a class="overlay" id="qrcode"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
-  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-
-  $('.hoverqrcode').hide();
-
-  var myWidth = 0;
-  function updatehoverqrcode(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-    var qrsize = myWidth > 1024 ? 200:100;
-    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
-    var p = $('.article-share-qrcode').position();
-    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
-                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
-                          .qrcode(options);
-  };
-  $(window).resize(function(){
-    $('.hoverqrcode').hide();
-  });
-  $('.article-share-qrcode').click(function(){
-    updatehoverqrcode();
-    $('.hoverqrcode').toggle();
-  });
-  $('.article-share-qrcode').hover(function(){}, function(){
-      $('.hoverqrcode').hide();
-  });
-});   
-</script>
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
-
-
-
-<!-- Analytics Begin -->
-
-
-
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F74140b8a17930cfa7e31c0317d56ec78' type='text/javascript'%3E%3C/script%3E"));
-</script>
-
-
-
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-<!-- MathJax End -->
-
-<!-- Tiny_search Begin -->
-
-<!-- Tiny_search End -->
-
-  </body>
-</html>
+</feed>
