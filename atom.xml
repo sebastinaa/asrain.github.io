@@ -5,7 +5,7 @@
   <subtitle><![CDATA[打的不错，我很抱歉。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://1013rain.me//"/>
-  <updated>2015-08-16T10:16:04.000Z</updated>
+  <updated>2015-08-16T10:46:07.000Z</updated>
   <id>http://1013rain.me//</id>
   
   <author>
@@ -14,6 +14,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[评论客户端、浏览器版本显示]]></title>
+    <link href="http://1013rain.me/2015/08/16/UAtest/"/>
+    <id>http://1013rain.me/2015/08/16/UAtest/</id>
+    <published>2015-08-16T10:44:35.000Z</published>
+    <updated>2015-08-16T10:46:07.000Z</updated>
+    <content type="html"><![CDATA[<p>这篇文章是专门用来测试UA(User Agent)的。</p>
+<p>关于多说评论UA的显示，具体可以百度，或者私我。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这篇文章是专门用来测试UA(User Agent)的。</p>
+<p>关于多说评论UA的显示，具体可以百度，或者私我。</p>
+]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[(2.1.1)Castle 解题报告]]></title>
@@ -56,7 +73,7 @@
     <link href="http://1013rain.me/2015/08/05/startingmarkdown/"/>
     <id>http://1013rain.me/2015/08/05/startingmarkdown/</id>
     <published>2015-08-05T13:43:30.000Z</published>
-    <updated>2015-08-16T10:19:53.000Z</updated>
+    <updated>2015-08-16T10:38:11.000Z</updated>
     <content type="html"><![CDATA[<h1 id="开始学习Markdown">开始学习Markdown</h1><p>本文的目标主要是为了介绍Mardown的简洁实用和大多数的语法，Markdown现在存在很多的衍生版本，大家可以百度查看。</p>
 <h2 id="什么是Markdown">什么是Markdown</h2><p><a href="http://baike.baidu.com/link?url=JvfzthLej3cAtwGlY1jgBJgnnJAkCZZGmGR-PMK5CbOafPLwaX5WQrEdtrRZak4yWkdEJky7H6BehjqAo7bJK_" target="_blank" rel="external">Markdown</a>，它是一种<strong>极其轻量</strong>的<strong>标记</strong>语言，是一种用来书写的语言。它轻量到什么程度呢？下面是我写的Markdown样例代码。<br><a id="more"></a></p>
 <pre><code><span class="header"># Hello Markdown!</span>
