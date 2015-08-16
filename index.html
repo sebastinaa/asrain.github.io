@@ -20,13 +20,11 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
 
 
-    <meta name="description" content="一个分享学习、生活经验的一个博客" />
+    <meta name="description" content="打的不错，我很抱歉。" />
 
 
 
@@ -41,15 +39,15 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="一个分享学习、生活经验的一个博客">
+<meta name="description" content="打的不错，我很抱歉。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="wuyuhuan's blog">
 <meta property="og:url" content="http://1013rain.me/index.html">
 <meta property="og:site_name" content="wuyuhuan's blog">
-<meta property="og:description" content="一个分享学习、生活经验的一个博客">
+<meta property="og:description" content="打的不错，我很抱歉。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wuyuhuan's blog">
-<meta name="twitter:description" content="一个分享学习、生活经验的一个博客">
+<meta name="twitter:description" content="打的不错，我很抱歉。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +60,7 @@
   <title> wuyuhuan's blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -112,7 +110,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            首页
           </a>
         </li>
       
@@ -120,7 +118,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            归档
           </a>
         </li>
       
@@ -128,7 +126,15 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             <i class="menu-item-icon icon-next-about"></i> <br />
-            關於
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tag" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
           </a>
         </li>
       
@@ -170,7 +176,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-08-15T23:10:49+08:00" content="2015-08-15">
             2015-08-15
           </time>
@@ -198,17 +204,18 @@
 
       
         
-          <span itemprop="articleBody"><h1 id="题目重述">题目重述</h1><p>大概就是说有一个包含N*M<code>(1&lt;=N,M&lt;=50)</code>房间的城堡，他们可能想通或者不想通，输入<code>N、M</code>和<code>相邻房间是否相通的信息</code>，认为相通的房间总的算一个大房间，求</p>
+          <h1 id="题目重述">题目重述</h1><p>大概就是说有一个包含N*M<code>(1&lt;=N,M&lt;=50)</code>房间的城堡，他们可能想通或者不想通，输入<code>N、M</code>和<code>相邻房间是否相通的信息</code>，认为相通的房间总的算一个大房间，求</p>
 <ul>
 <li>大房间的输目</li>
 <li>最大的大房间包含的房间数</li>
 <li>仅能打破一堵墙，可以创造出一个新的大房间，输出使得新的大房间最大的<code>被打破墙的位置</code>，这个位置指如果有多个最优解，输出最靠西，然后最靠南的房间的位置。</li>
 </ul>
-<h1 id="题目分析">题目分析</h1><p>经典种子染色<code>Flood Fill</code>问题，可以使用bfs或者dfs进行染色，相通的房间染成一色，顺便记录相同颜色房间的个数。我使用dfs搜索，具体代码如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> g[<span class="number">52</span>][<span class="number">52</span>],color[<span class="number">52</span>][<span class="number">52</span>],col,row,nowcolor=<span class="number">0</span>,roomsize[<span class="number">2505</span>];</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> xx[<span class="number">4</span>]=&#123;<span class="number">0</span>,-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;,yy[<span class="number">4</span>]=&#123;-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*g数组存储房间周围的墙的情况、color存房间的染色、roomsize[i]指</span><br><span class="line">  颜色为i的房间的个数，xx、yy是指方向(依次为西、北、东、南）</span><br><span class="line">  深搜所有相通的房间，相通房间染相同的颜色,*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(check[x][y]) <span class="keyword">return</span>;<span class="comment">/*搜过了，直接return*/</span></span><br><span class="line">    check[x][y]=<span class="literal">true</span>;<span class="comment">/*已经搜到了这个房间*/</span></span><br><span class="line">    color[x][y]=nowcolor;<span class="comment">/*标记房间颜色*/</span></span><br><span class="line">    roomsize[nowcolor]++;<span class="comment">/*统计相同颜色房间对应的个数*/</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        <span class="keyword">if</span>(!(g[x][y]&amp;(<span class="number">1</span>&lt;&lt;i))) dfs(x+xx[i],y+yy[i]);</span><br><span class="line">        <span class="comment">/*判断i方向是否有墙,i依次为 西、北、东、南，没墙就继续搜*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*主函数中*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;col,&amp;row);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=row;i++)</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=col;j++)</span><br><span class="line">        	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;g[i][j]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=row;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=col;j++)</span><br><span class="line">            <span class="keyword">if</span>(!check[i][j])<span class="comment">//如果没搜过这个房间</span></span><br><span class="line">            &#123;</span><br><span class="line">                nowcolor++;</span><br><span class="line">                dfs(i,j);</span><br><span class="line">            &#125;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">    ...<span class="comment">/*解决下一个问题的代码*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后就是要找打破墙最优解在哪，根据题目要求，我们需要从房间图的最左下角开搜，优先搜北边的墙，然后再搜东边的墙。不用搜南边和西边的，因为这些墙要么是边界，要么已经被搜过。于是开始暴力搜索</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> mwall_x,mwall_y,break_max=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> v_wall;</span><br><span class="line"><span class="comment">/* mwall_x,mwall_y 墙对应房间的坐标 break_max新大房间包含房间的最大数目</span><br><span class="line">   v_wall='E',代表该墙在(mwall_x,mwall_y)号房间的东边，'N'则是北边*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find_wall</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">1</span>;y&lt;=col;y++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=row;x&gt;=<span class="number">1</span>;x--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(g[x][y]&amp;<span class="number">2</span> &amp;&amp; color[x][y]!=color[x+xx[<span class="number">1</span>]][y+yy[<span class="number">1</span>]] &amp;&amp; roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">1</span>]][y+yy[<span class="number">1</span>]]]&gt;break_max)</span><br><span class="line">    <span class="comment">/*该房间北边有墙&amp;&amp;墙两边房间的染色不同&amp;&amp;打破后比现在的最优解还好 */</span></span><br><span class="line">    		mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">1</span>]][y+yy[<span class="number">1</span>]]],v_wall=<span class="string">'N'</span>;</span><br><span class="line">    <span class="comment">/*记录这个最优解*/</span></span><br><span class="line">            <span class="keyword">if</span>(g[x][y]&amp;<span class="number">4</span> &amp;&amp; color[x][y]!=color[x+xx[<span class="number">2</span>]][y+yy[<span class="number">2</span>]] &amp;&amp; roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">2</span>]][y+yy[<span class="number">2</span>]]]&gt;break_max)</span><br><span class="line">                mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">2</span>]][y+yy[<span class="number">2</span>]]],v_wall=<span class="string">'E'</span>;</span><br><span class="line">        &#125; <span class="comment">/* 先搜这个房间北边的墙，再搜东边的 */</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="程序代码">程序代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">ID:1013rai1</span><br><span class="line">PROG:castle</span><br><span class="line">LANG:C++</span><br><span class="line">*/</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g[<span class="number">52</span>][<span class="number">52</span>],color[<span class="number">52</span>][<span class="number">52</span>],col,row,nowcolor=<span class="number">0</span>,roomsize[<span class="number">2505</span>];</span><br><span class="line"><span class="keyword">bool</span> check[<span class="number">52</span>][<span class="number">52</span>];</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> xx[<span class="number">4</span>]=&#123;<span class="number">0</span>,-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;,yy[<span class="number">4</span>]=&#123;-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> mwall_x,mwall_y,break_max=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> v_wall;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*深搜所有相通的房间，相通房间染相同的颜色*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(check[x][y]) <span class="keyword">return</span>;</span><br><span class="line">    check[x][y]=<span class="literal">true</span>;</span><br><span class="line">    color[x][y]=nowcolor;</span><br><span class="line">    roomsize[nowcolor]++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        <span class="keyword">if</span>(!(g[x][y]&amp;(<span class="number">1</span>&lt;&lt;i))) dfs(x+xx[i],y+yy[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*打印每个房间 对应其所属大房间的编号，即染的颜色*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_color</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=row;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;col;j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,color[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,color[i][col]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*打印每种大房间包含小房间的个数，即各类相通房间的数目*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_roomsize</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=nowcolor;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"color:%d size:%d\n"</span>,i,roomsize[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find_wall</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">1</span>;y&lt;=col;y++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=row;x&gt;=<span class="number">1</span>;x--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(g[x][y]&amp;<span class="number">2</span> &amp;&amp; color[x][y]!=color[x+xx[<span class="number">1</span>]][y+yy[<span class="number">1</span>]] &amp;&amp; roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">1</span>]][y+yy[<span class="number">1</span>]]]&gt;break_max)</span><br><span class="line">                mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">1</span>]][y+yy[<span class="number">1</span>]]],v_wall=<span class="string">'N'</span>;</span><br><span class="line">            <span class="keyword">if</span>(g[x][y]&amp;<span class="number">4</span> &amp;&amp; color[x][y]!=color[x+xx[<span class="number">2</span>]][y+yy[<span class="number">2</span>]] &amp;&amp; roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">2</span>]][y+yy[<span class="number">2</span>]]]&gt;break_max)</span><br><span class="line">                mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">2</span>]][y+yy[<span class="number">2</span>]]],v_wall=<span class="string">'E'</span>;</span><br><span class="line">        &#125; <span class="comment">/* 先搜一个房间北边的墙，最后搜东边 */</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    freopen(<span class="string">"castle.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"castle.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;col,&amp;row);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=row;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=col;j++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;g[i][j]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=row;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=col;j++)</span><br><span class="line">            <span class="keyword">if</span>(!check[i][j])</span><br><span class="line">            &#123;</span><br><span class="line">                nowcolor++;</span><br><span class="line">                dfs(i,j);</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,nowcolor);</span><br><span class="line">    <span class="keyword">int</span> maxsize=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=nowcolor;i++)</span><br><span class="line">        maxsize=max(roomsize[i],maxsize);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,maxsize);</span><br><span class="line">    find_wall();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n%d %d %c\n"</span>,break_max,mwall_x,mwall_y,v_wall);</span><br><span class="line">    <span class="comment">//print_color();</span></span><br><span class="line">    <span class="comment">//print_roomsize();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
+<h1 id="题目分析">题目分析</h1><p>经典种子染色<code>Flood Fill</code>问题，可以使用bfs或者dfs进行染色，相通的房间染成一色，顺便记录相同颜色房间的个数。我使用dfs搜索，具体代码如下<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/08/15/castle/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -248,7 +255,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-08-05T21:43:30+08:00" content="2015-08-05">
             2015-08-05
           </time>
@@ -276,117 +283,13 @@
 
       
         
-          <span itemprop="articleBody"><h1 id="开始学习Markdown">开始学习Markdown</h1><p>本文的目标主要是为了介绍Mardown的简洁实用和大多数的语法，Markdown现在存在很多的衍生版本，大家可以百度查看。</p>
-<h2 id="什么是Markdown">什么是Markdown</h2><p><a href="http://baike.baidu.com/link?url=JvfzthLej3cAtwGlY1jgBJgnnJAkCZZGmGR-PMK5CbOafPLwaX5WQrEdtrRZak4yWkdEJky7H6BehjqAo7bJK_" target="_blank" rel="external">Markdown</a>，它是一种<strong>极其轻量</strong>的<strong>标记</strong>语言，是一种用来书写的语言。它轻量到什么程度呢？下面是我写的Markdown样例代码。</p>
-<pre><code><span class="header">#Hello Markdown!</span>
-今天第一次用<span class="strong">**Markdown**</span>写文章，感觉<span class="emphasis">*好轻松啊*</span>~
-那Markdown有啥子好处呢？
-
-<span class="bullet">* </span>它语法太简单了。。。
-<span class="bullet">* </span><span class="code">`Markdown`</span>不需要排版啊！！
-如果想了解更多的话就去看[<span class="link_label">Markdown维基百科</span>](<span class="link_url">https://en.wikipedia.org/wiki/Markdown</span>)
-</code></pre><p>我们发现，这段文本和普通文本并没有多少区别，那将它放入Markdown编辑器中会有什么效果呢？请看下面。</p>
-<blockquote>
-<p>#Hello Markdown!</p>
-<p>今天第一次用<strong>Markdown</strong>写文章，感觉<em>好轻松啊</em>~<br>那Markdown有啥子好处呢？比如</p>
-<ul>
-<li>它语法太简单了。。。</li>
-<li><code>Markdown</code>不需要排版啊！！</li>
-</ul>
-<p>如果想了解更多的话就去看<a href="https://en.ikipedia.org/wiki/Markdown" target="_blank" rel="external">Markdown维基百科</a>吧</p>
-</blockquote>
-<p>看到了吧，Markdown也就这么多语法。总之，Markdown的语法就是由一些<br>符号构成，比如<em>*“</em>“、“`”、“#”，看起来十分得鲜明。</p>
-<h2 id="为什么要学习Markdown">为什么要学习Markdown</h2><p>我们平时都为了修改格式而烦恼（尤其是我这种强迫症），现在我们不再需要考虑修改格式了，Markdown控制格式的符号也就几种（就在下面会谈到），相对于Word来说，使用Markdown更方便了，让排版见鬼去吧！</p>
-<p>使用Markdown可以显著提高你的码字、写作体验。另外，大多数的Markdown支持输出html文本和pdf文档，而且Markdown编辑器生成的文档还特！别！漂！亮！</p>
-<p>另外，Markdown源文本特别易读，很容易修改，不像latex，word。</p>
-<p>Markdown的功能还很全，比如可以使用<code>mathjax</code>实现插入数学公式。</p>
-<h1 id="让我们开始学习Markdown">让我们开始学习Markdown</h1><h2 id="简要的语法">简要的语法</h2><ul>
-<li><p>每一行最开头的<code>#</code>号前缀，作为文章的标题格式，学过html的应该知道，<code>&lt;hx&gt;</code>代表x级标题,markdown也类似，每行开头有几个*就是几级标题。就像这样</p>
-<pre><code><span class="preprocessor">##我是一个二级标题    </span>
-<span class="preprocessor">###我是一个三级标题</span>
-</code></pre></li>
-<li><p>特殊的，1级标题和2级标题有一个更随意的用法。</p>
-<pre><code><span class="header">我是一个一级标题
-=========</span>
-<span class="header">我是一个二级标题
------------</span>
-=、-号的数量随便
-</code></pre></li>
-</ul>
-<ul>
-<li><p>每一行最开头的<code>&gt;</code>号前缀，用来标记一段文本是引用，而且它还能嵌套。</p>
-<pre><code>&gt;我是引用
-<span class="prompt">&gt;&gt;</span>这是一个嵌套引用
-</code></pre></li>
-<li><p>行前用*号加一个空格表示无序列表，用1.表示有序列表，当然我更喜欢那个前者生成的小点，好看啊：</p>
-<pre><code>* 数学建模竞赛
-* 程序设计竞赛
-
-<span class="number">1.</span>培养团队合作水平
-<span class="number">2.</span>培养自身能力
-<span class="number">3.</span>提高查找资料的能力
-</code></pre></li>
-</ul>
-<ul>
-<li><p>我们用回车产生空行，来分隔段落（很好理解吧，每个段落都空几行以区分开来~）</p>
-</li>
-<li><p>段落中使用<code>*</code>或<code>**</code>来标记强调（斜体）或粗体。</p>
-<pre><code><span class="keyword">*</span>我要被强调<span class="keyword">*</span>
-<span class="keyword">*</span><span class="keyword">*</span>我要被画粗<span class="keyword">*</span><span class="keyword">*</span>
-</code></pre></li>
-<li><p>使用表格，表格可能比较麻烦，因为它需要这样：</p>
-</li>
-</ul>
-<pre><code>|<span class="string"> Tables        </span>|<span class="string"> Are           </span>|<span class="string"> Cool  </span>|
-|<span class="string"> ------------- </span>|<span class="string">:-------------:</span>|<span class="string"> -----:</span>|
-|<span class="string"> col 3 is      </span>|<span class="string"> right-aligned </span>|<span class="string"> $1600 </span>|
-|<span class="string"> col 2 is      </span>|<span class="string"> centered      </span>|<span class="string">   $12 </span>|
-|<span class="string"> zebra stripes </span>|<span class="string"> are neat      </span>|<span class="string">    $1 </span>|
-</code></pre><ul>
-<li><p>使用超链接，如果要创建一个名字为“百度”，地址为www.baidu.com的超链接，可以这样：</p>
-<pre><code>[<span class="link_label">百度</span>](<span class="link_url">www.baidu.com</span>)
-还可以直接用显示连接：(www.baidu.com)
-</code></pre></li>
-<li><p>使用图片，如果加载一个图片，和上者类似,只要再加：</p>
-<pre><code>![<span class="link_label">图片的名称</span>](<span class="link_url">www.example.com/example.jpg</span>)
-</code></pre></li>
-<li><p>使用行内代码，只要对代码``圈住就行了，比如：</p>
-<pre><code>对于fibonacci数列的第<span class="keyword">n</span>+1项来说，有状态转移方程`dp[<span class="keyword">n</span>+1]=dp[<span class="keyword">n</span>]+dp[<span class="keyword">n</span>-1]`。
-</code></pre></li>
-<li><p>要对一段画删除线，只要在这个文本前后加上<code>~~</code>:</p>
-<pre><code>~~被划了一道~~
-</code></pre></li>
-<li><p>我们在每一行最前面加上4个空格或一个以上的tab制表符来表示这个一个code block。</p>
-</li>
-<li><p>如果要输出”*“这类表示本来在Markdown中表示格式的字符怎么办？与C语言类似地，使用转义字符\来解决问题，想输出*号，你需要在它前面加上反斜杠。</p>
-<pre><code>就像这样：<span class="command">\*</span>、<span class="command">\`</span>、<span class="command">\_</span>
-</code></pre></li>
-</ul>
-<h2 id="Markdown支持html标签">Markdown支持html标签</h2><p>Markdown其实就是html的子语言，所以它也支持html标签。比如下标<code>&lt;sub&gt;2&lt;/sub&gt;</code>。你如果需要使用html标签直接把它加进去就行了。</p>
-<h2 id="马上在各大平台上尝试Markdown！">马上在各大平台上尝试Markdown！</h2><ul>
-<li>Mac</li>
-</ul>
-<p><code>Mou</code>、<code>Macdown</code>、<code>Markdown plus</code></p>
-<ul>
-<li>Linux</li>
-</ul>
-<p><code>ReText</code></p>
-<ul>
-<li>Windows</li>
-</ul>
-<p><code>Markdown pad2</code></p>
-<ul>
-<li><p>网页<br><a href="http://mahua.jser.me" target="_blank" rel="external">mahua</a>、<a href="https://stackedit.io" target="_blank" rel="external">StackEdit</a></p>
-</li>
-<li><p>sublime text也可以作为Markdown的编辑器，不过不支持实时转化，需要有插件的支持才能实时转化，具体请看<a href="http://www.jianshu.com/p/378338f10263" target="_blank" rel="external">简书，sublime text2下的markdown写作</a></p>
-</li>
-</ul>
-<p>##更详细的Markdown教程</p>
-<ul>
-<li><a href="http://www.appinn.com/markdown/" target="_blank" rel="external">Markdown语法说明，简体中文版</a></li>
-<li><a href="http://www.markdown.cn" target="_blank" rel="external">Markdown教程</a></li>
-</ul>
-</span>
+          <h1 id="开始学习Markdown">开始学习Markdown</h1><p>本文的目标主要是为了介绍Mardown的简洁实用和大多数的语法，Markdown现在存在很多的衍生版本，大家可以百度查看。</p>
+<h2 id="什么是Markdown">什么是Markdown</h2><p><a href="http://baike.baidu.com/link?url=JvfzthLej3cAtwGlY1jgBJgnnJAkCZZGmGR-PMK5CbOafPLwaX5WQrEdtrRZak4yWkdEJky7H6BehjqAo7bJK_">Markdown</a>，它是一种<strong>极其轻量</strong>的<strong>标记</strong>语言，是一种用来书写的语言。它轻量到什么程度呢？下面是我写的Markdown样例代码。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/08/05/startingmarkdown/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -426,7 +329,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-08-04T23:40:48+08:00" content="2015-08-04">
             2015-08-04
           </time>
@@ -466,7 +369,7 @@
 </code></pre>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/08/04/learn Data Structure/#more" rel="contents">
-              閱讀全文 &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -508,7 +411,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-08-04T23:40:48+08:00" content="2015-08-04">
             2015-08-04
           </time>
@@ -539,7 +442,7 @@
           <p>hi，现在我终于创建了一个blog，这个blog将被用于记录我的生活、C/C++学习记录还有可恶的数模＝ ＝<br>暂时就是这样了～～～～<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/08/04/helloworld/#more" rel="contents">
-              閱讀全文 &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -587,30 +490,30 @@
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Yuhuan Wu" itemprop="image"/>
+          <img class="site-author-image" src="/author.jpg" alt="Yuhuan Wu" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Yuhuan Wu</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">一个分享学习、生活经验的一个博客</p>
+        <p class="site-description motion-element" itemprop="description">打的不错，我很抱歉。</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
-            
+            <a href="/tag">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">標籤</span>
-              
+              <span class="site-state-item-name">标签</span>
+              </a>
           </div>
 
         </nav>
@@ -625,6 +528,16 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/asrain" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/wu-yu-huan-30" target="_blank">zhihu</a>
+              </span>
+            
           
         </div>
 
@@ -657,11 +570,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>
@@ -690,7 +603,7 @@
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
-      ds.src = http://1013rain.me/embed.js';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementsByTagName('head')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
@@ -698,12 +611,12 @@
   </script>
     
      
-  	  <script type="text/javascript">
-  		var duoshuo_user_ID = 13072492
-  	  </script>
+      <script type="text/javascript">
+      var duoshuo_user_ID = 13072492
+      </script>
      
-  	<script src="/js/ua-parser.min.js"></script>
-  	<script src="/js/hook-duoshuo.js"></script>
+    <script src="/js/ua-parser.min.js"></script>
+    <script src="/js/hook-duoshuo.js"></script>
   
 
     

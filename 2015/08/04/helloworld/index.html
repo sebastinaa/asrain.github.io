@@ -20,13 +20,11 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
 
 
-    <meta name="description" content="一个分享学习、生活经验的一个博客" />
+    <meta name="description" content="打的不错，我很抱歉。" />
 
 
 
@@ -63,7 +61,7 @@
   <title> 我的第一篇文章 | wuyuhuan's blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -111,7 +109,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            首页
           </a>
         </li>
       
@@ -119,7 +117,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            归档
           </a>
         </li>
       
@@ -127,7 +125,15 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             <i class="menu-item-icon icon-next-about"></i> <br />
-            關於
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tag" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
           </a>
         </li>
       
@@ -167,7 +173,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-08-04T23:40:48+08:00" content="2015-08-04">
             2015-08-04
           </time>
@@ -261,40 +267,40 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            站点概览
           </li>
         </ul>
       
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Yuhuan Wu" itemprop="image"/>
+          <img class="site-author-image" src="/author.jpg" alt="Yuhuan Wu" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Yuhuan Wu</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">一个分享学习、生活经验的一个博客</p>
+        <p class="site-description motion-element" itemprop="description">打的不错，我很抱歉。</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
-            
+            <a href="/tag">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">標籤</span>
-              
+              <span class="site-state-item-name">标签</span>
+              </a>
           </div>
 
         </nav>
@@ -309,6 +315,16 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/asrain" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/wu-yu-huan-30" target="_blank">zhihu</a>
+              </span>
+            
           
         </div>
 
@@ -327,7 +343,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -352,11 +368,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>
@@ -385,7 +401,7 @@
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
-      ds.src = http://1013rain.me/embed.js';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementsByTagName('head')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
@@ -393,12 +409,12 @@
   </script>
     
      
-  	  <script type="text/javascript">
-  		var duoshuo_user_ID = 13072492
-  	  </script>
+      <script type="text/javascript">
+      var duoshuo_user_ID = 13072492
+      </script>
      
-  	<script src="/js/ua-parser.min.js"></script>
-  	<script src="/js/hook-duoshuo.js"></script>
+    <script src="/js/ua-parser.min.js"></script>
+    <script src="/js/hook-duoshuo.js"></script>
   
 
     

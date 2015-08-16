@@ -20,13 +20,11 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
 
 
-    <meta name="description" content="一个分享学习、生活经验的一个博客" />
+    <meta name="description" content="打的不错，我很抱歉。" />
 
 
 
@@ -59,7 +57,7 @@
 仅能打破一堵墙，可以创造出一个新的大房间，输出使得新的大房间最大的被打破墙的位置，这个位置指如果有多个最优解，输出最靠西，然后最靠南的房间的位置。
 
 题目分析经典种子染色Flood">
-<meta property="og:updated_time" content="2015-08-15T15:21:56.000Z">
+<meta property="og:updated_time" content="2015-08-16T10:16:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(2.1.1)Castle 解题报告">
 <meta name="twitter:description" content="题目重述大概就是说有一个包含N*M(1&amp;lt;=N,M&amp;lt;=50)房间的城堡，他们可能想通或者不想通，输入N、M和相邻房间是否相通的信息，认为相通的房间总的算一个大房间，求
@@ -81,7 +79,7 @@
   <title> (2.1.1)Castle 解题报告 | wuyuhuan's blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -129,7 +127,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            首页
           </a>
         </li>
       
@@ -137,7 +135,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            归档
           </a>
         </li>
       
@@ -145,7 +143,15 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             <i class="menu-item-icon icon-next-about"></i> <br />
-            關於
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tag" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
           </a>
         </li>
       
@@ -185,7 +191,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-08-15T23:10:49+08:00" content="2015-08-15">
             2015-08-15
           </time>
@@ -218,7 +224,7 @@
 <li>最大的大房间包含的房间数</li>
 <li>仅能打破一堵墙，可以创造出一个新的大房间，输出使得新的大房间最大的<code>被打破墙的位置</code>，这个位置指如果有多个最优解，输出最靠西，然后最靠南的房间的位置。</li>
 </ul>
-<h1 id="题目分析">题目分析</h1><p>经典种子染色<code>Flood Fill</code>问题，可以使用bfs或者dfs进行染色，相通的房间染成一色，顺便记录相同颜色房间的个数。我使用dfs搜索，具体代码如下</p>
+<h1 id="题目分析">题目分析</h1><p>经典种子染色<code>Flood Fill</code>问题，可以使用bfs或者dfs进行染色，相通的房间染成一色，顺便记录相同颜色房间的个数。我使用dfs搜索，具体代码如下<br><a id="more"></a></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> g[<span class="number">52</span>][<span class="number">52</span>],color[<span class="number">52</span>][<span class="number">52</span>],col,row,nowcolor=<span class="number">0</span>,roomsize[<span class="number">2505</span>];</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> xx[<span class="number">4</span>]=&#123;<span class="number">0</span>,-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;,yy[<span class="number">4</span>]=&#123;-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*g数组存储房间周围的墙的情况、color存房间的染色、roomsize[i]指</span><br><span class="line">  颜色为i的房间的个数，xx、yy是指方向(依次为西、北、东、南）</span><br><span class="line">  深搜所有相通的房间，相通房间染相同的颜色,*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(check[x][y]) <span class="keyword">return</span>;<span class="comment">/*搜过了，直接return*/</span></span><br><span class="line">    check[x][y]=<span class="literal">true</span>;<span class="comment">/*已经搜到了这个房间*/</span></span><br><span class="line">    color[x][y]=nowcolor;<span class="comment">/*标记房间颜色*/</span></span><br><span class="line">    roomsize[nowcolor]++;<span class="comment">/*统计相同颜色房间对应的个数*/</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        <span class="keyword">if</span>(!(g[x][y]&amp;(<span class="number">1</span>&lt;&lt;i))) dfs(x+xx[i],y+yy[i]);</span><br><span class="line">        <span class="comment">/*判断i方向是否有墙,i依次为 西、北、东、南，没墙就继续搜*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*主函数中*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;col,&amp;row);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=row;i++)</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=col;j++)</span><br><span class="line">        	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;g[i][j]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=row;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=col;j++)</span><br><span class="line">            <span class="keyword">if</span>(!check[i][j])<span class="comment">//如果没搜过这个房间</span></span><br><span class="line">            &#123;</span><br><span class="line">                nowcolor++;</span><br><span class="line">                dfs(i,j);</span><br><span class="line">            &#125;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">    ...<span class="comment">/*解决下一个问题的代码*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后就是要找打破墙最优解在哪，根据题目要求，我们需要从房间图的最左下角开搜，优先搜北边的墙，然后再搜东边的墙。不用搜南边和西边的，因为这些墙要么是边界，要么已经被搜过。于是开始暴力搜索</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> mwall_x,mwall_y,break_max=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> v_wall;</span><br><span class="line"><span class="comment">/* mwall_x,mwall_y 墙对应房间的坐标 break_max新大房间包含房间的最大数目</span><br><span class="line">   v_wall='E',代表该墙在(mwall_x,mwall_y)号房间的东边，'N'则是北边*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find_wall</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">1</span>;y&lt;=col;y++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=row;x&gt;=<span class="number">1</span>;x--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(g[x][y]&amp;<span class="number">2</span> &amp;&amp; color[x][y]!=color[x+xx[<span class="number">1</span>]][y+yy[<span class="number">1</span>]] &amp;&amp; roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">1</span>]][y+yy[<span class="number">1</span>]]]&gt;break_max)</span><br><span class="line">    <span class="comment">/*该房间北边有墙&amp;&amp;墙两边房间的染色不同&amp;&amp;打破后比现在的最优解还好 */</span></span><br><span class="line">    		mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">1</span>]][y+yy[<span class="number">1</span>]]],v_wall=<span class="string">'N'</span>;</span><br><span class="line">    <span class="comment">/*记录这个最优解*/</span></span><br><span class="line">            <span class="keyword">if</span>(g[x][y]&amp;<span class="number">4</span> &amp;&amp; color[x][y]!=color[x+xx[<span class="number">2</span>]][y+yy[<span class="number">2</span>]] &amp;&amp; roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">2</span>]][y+yy[<span class="number">2</span>]]]&gt;break_max)</span><br><span class="line">                mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[<span class="number">2</span>]][y+yy[<span class="number">2</span>]]],v_wall=<span class="string">'E'</span>;</span><br><span class="line">        &#125; <span class="comment">/* 先搜这个房间北边的墙，再搜东边的 */</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -296,40 +302,40 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            站点概览
           </li>
         </ul>
       
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Yuhuan Wu" itemprop="image"/>
+          <img class="site-author-image" src="/author.jpg" alt="Yuhuan Wu" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Yuhuan Wu</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">一个分享学习、生活经验的一个博客</p>
+        <p class="site-description motion-element" itemprop="description">打的不错，我很抱歉。</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
-            
+            <a href="/tag">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">標籤</span>
-              
+              <span class="site-state-item-name">标签</span>
+              </a>
           </div>
 
         </nav>
@@ -344,6 +350,16 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/asrain" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/wu-yu-huan-30" target="_blank">zhihu</a>
+              </span>
+            
           
         </div>
 
@@ -387,11 +403,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>
@@ -420,7 +436,7 @@
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
-      ds.src = http://1013rain.me/embed.js';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementsByTagName('head')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
@@ -428,12 +444,12 @@
   </script>
     
      
-  	  <script type="text/javascript">
-  		var duoshuo_user_ID = 13072492
-  	  </script>
+      <script type="text/javascript">
+      var duoshuo_user_ID = 13072492
+      </script>
      
-  	<script src="/js/ua-parser.min.js"></script>
-  	<script src="/js/hook-duoshuo.js"></script>
+    <script src="/js/ua-parser.min.js"></script>
+    <script src="/js/hook-duoshuo.js"></script>
   
 
     
