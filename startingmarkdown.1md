@@ -1,0 +1,149 @@
+title: 使用Markdown写文章！
+date: 2015-08-05 21:43:30
+tags: 技术
+---
+开始学习Markdown
+====
+本文的目标主要是为了介绍Mardown的简洁实用和大多数的语法，Markdown现在存在很多的衍生版本，大家可以百度查看。
+
+## 什么是Markdown 
+
+[Markdown](http://baike.baidu.com/link?url=JvfzthLej3cAtwGlY1jgBJgnnJAkCZZGmGR-PMK5CbOafPLwaX5WQrEdtrRZak4yWkdEJky7H6BehjqAo7bJK_)，它是一种**极其轻量**的**标记**语言，是一种用来书写的语言。它轻量到什么程度呢？下面是我写的Markdown样例代码。
+<!--more-->
+	
+	# Hello Markdown!
+	今天第一次用**Markdown**写文章，感觉*好轻松啊*~
+	那Markdown有啥子好处呢？
+
+	* 它语法太简单了。。。
+	* `Markdown`不需要排版啊！！
+	如果想了解更多的话就去看[Markdown维基百科](https://en.wikipedia.org/wiki/Markdown)
+
+我们发现，这段文本和普通文本并没有多少区别，那将它放入Markdown编辑器中会有什么效果呢？请看下面。
+
+>Hello Markdown!
+>========
+
+>今天第一次用**Markdown**写文章，感觉*好轻松啊*~
+>那Markdown有啥子好处呢？比如
+
+>* 它语法太简单了。。。
+>* `Markdown`不需要排版啊！！
+>
+>如果想了解更多的话就去看[Markdown维基百科](https://en.ikipedia.org/wiki/Markdown)吧
+
+看到了吧，Markdown也就这么多语法。总之，Markdown的语法就是由一些
+符号构成，比如**“*"、“`"、“#”，看起来十分得鲜明。
+
+为什么要学习Markdown
+---
+
+我们平时都为了修改格式而烦恼（尤其是我这种强迫症），现在我们不再需要考虑修改格式了，Markdown控制格式的符号也就几种（就在下面会谈到），相对于Word来说，使用Markdown更方便了，让排版见鬼去吧！
+
+使用Markdown可以显著提高你的码字、写作体验。另外，大多数的Markdown支持输出html文本和pdf文档，而且Markdown编辑器生成的文档还特！别！漂！亮！
+
+另外，Markdown源文本特别易读，很容易修改，不像latex，word。
+
+Markdown的功能还很全，比如可以使用`mathjax`实现插入数学公式。
+
+
+让我们开始学习Markdown
+====
+
+简要的语法
+---
+
+* 每一行最开头的`#`号前缀，作为文章的标题格式，学过html的应该知道，`<hx>`代表x级标题,markdown也类似，每行开头有几个*就是几级标题。就像这样
+
+		##我是一个二级标题	
+		###我是一个三级标题
+
+* 特殊的，1级标题和2级标题有一个更随意的用法。
+
+		我是一个一级标题
+		=========
+		我是一个二级标题
+		-----------
+		=、-号的数量随便
+
+
+* 每一行最开头的`>`号前缀，用来标记一段文本是引用，而且它还能嵌套。
+
+		>我是引用
+		>>这是一个嵌套引用
+* 行前用\*号加一个空格表示无序列表，用1.表示有序列表，当然我更喜欢那个前者生成的小点，好看啊：
+
+		* 数学建模竞赛
+		* 程序设计竞赛
+
+		1.培养团队合作水平
+		2.培养自身能力
+		3.提高查找资料的能力
+
+
+* 我们用回车产生空行，来分隔段落（很好理解吧，每个段落都空几行以区分开来~）
+
+* 段落中使用`*`或`**`来标记强调（斜体）或粗体。
+
+		*我要被强调*
+		**我要被画粗**
+
+* 使用表格，表格可能比较麻烦，因为它需要这样：
+
+
+		| Tables        | Are           | Cool  |
+		| ------------- |:-------------:| -----:|
+		| col 3 is      | right-aligned | $1600 |
+		| col 2 is      | centered      |   $12 |
+		| zebra stripes | are neat      |    $1 |
+
+* 使用超链接，如果要创建一个名字为“百度”，地址为www.baidu.com的超链接，可以这样：
+
+		[百度](www.baidu.com)
+		还可以直接用显示连接：(www.baidu.com)
+		
+* 使用图片，如果加载一个图片，和上者类似,只要再加：
+
+		![图片的名称](www.example.com/example.jpg)
+
+* 使用行内代码，只要对代码\`\`圈住就行了，比如：
+
+		对于fibonacci数列的第n+1项来说，有状态转移方程`dp[n+1]=dp[n]+dp[n-1]`。
+
+* 要对一段画删除线，只要在这个文本前后加上`~~`:
+	
+		~~被划了一道~~
+
+* 我们在每一行最前面加上4个空格或一个以上的tab制表符来表示这个一个code block。
+
+* 如果要输出"\*“这类表示本来在Markdown中表示格式的字符怎么办？与C语言类似地，使用转义字符\\来解决问题，想输出\*号，你需要在它前面加上反斜杠。
+
+		就像这样：\*、\`、\_
+
+## Markdown支持html标签
+
+Markdown其实就是html的子语言，所以它也支持html标签。比如下标`<sub>2</sub>`。你如果需要使用html标签直接把它加进去就行了。
+## 马上在各大平台上尝试Markdown！
+
+* Mac
+
+`Mou`、`Macdown`、`Markdown plus`
+
+* Linux
+
+`ReText`
+
+* Windows
+
+`Markdown pad2`
+
+* 网页
+[mahua](http://mahua.jser.me)、[StackEdit](https://stackedit.io)
+
+* sublime text也可以作为Markdown的编辑器，不过不支持实时转化，需要有插件的支持才能实时转化，具体请看[简书，sublime text2下的markdown写作](http://www.jianshu.com/p/378338f10263)
+
+
+## 更详细的Markdown教程
+
+* [Markdown语法说明，简体中文版](http://www.appinn.com/markdown/)
+* [Markdown教程](http://www.markdown.cn)

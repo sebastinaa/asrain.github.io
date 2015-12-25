@@ -1,0 +1,146 @@
+title: USACO(2.1.1) Castle 解题报告(C++)
+date: 2015-08-15 23:10:49
+tags: [图论,USACO,C++]
+---
+题目重述
+====
+
+大概就是说有一个包含N*M`(1<=N,M<=50)`房间的城堡，他们可能想通或者不想通，输入`N、M`和`相邻房间是否相通的信息`，认为相通的房间总的算一个大房间，求
+
+* 大房间的输目
+* 最大的大房间包含的房间数
+* 仅能打破一堵墙，可以创造出一个新的大房间，输出使得新的大房间最大的`被打破墙的位置`，这个位置指如果有多个最优解，输出最靠西，然后最靠南的房间的位置。
+
+题目分析
+=====
+经典种子染色`Flood Fill`问题，可以使用bfs或者dfs进行染色，相通的房间染成一色，顺便记录相同颜色房间的个数。我使用dfs搜索，具体代码如下
+<!--more-->
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+int g[52][52],color[52][52],col,row,nowcolor=0,roomsize[2505];
+const int xx[4]={0,-1,0,1},yy[4]={-1,0,1,0};
+
+/*g数组存储房间周围的墙的情况、color存房间的染色、roomsize[i]指
+  颜色为i的房间的个数，xx、yy是指方向(依次为西、北、东、南）
+  深搜所有相通的房间，相通房间染相同的颜色,*/
+void dfs(int x,int y)
+{
+    if(check[x][y]) return;/*搜过了，直接return*/
+    check[x][y]=true;/*已经搜到了这个房间*/
+    color[x][y]=nowcolor;/*标记房间颜色*/
+    roomsize[nowcolor]++;/*统计相同颜色房间对应的个数*/
+    for(int i=0;i<4;i++)
+        if(!(g[x][y]&(1<<i))) dfs(x+xx[i],y+yy[i]);
+        /*判断i方向是否有墙,i依次为 西、北、东、南，没墙就继续搜*/
+}
+/*主函数中*/
+int main()
+{
+	scanf("%d%d",&col,&row);
+	for(int i=1;i<=row;i++)
+    	for(int j=1;j<=col;j++)
+        	scanf("%d",&g[i][j]);
+	for(int i=1;i<=row;i++)
+        for(int j=1;j<=col;j++)
+            if(!check[i][j])//如果没搜过这个房间
+            {
+                nowcolor++;
+                dfs(i,j);
+            }
+    ...
+    ...
+    .../*解决下一个问题的代码*/
+}
+```
+然后就是要找打破墙最优解在哪，根据题目要求，我们需要从房间图的最左下角开搜，优先搜北边的墙，然后再搜东边的墙。不用搜南边和西边的，因为这些墙要么是边界，要么已经被搜过。于是开始暴力搜索
+
+```c++
+int mwall_x,mwall_y,break_max=0;
+char v_wall;
+/* mwall_x,mwall_y 墙对应房间的坐标 break_max新大房间包含房间的最大数目
+   v_wall='E',代表该墙在(mwall_x,mwall_y)号房间的东边，'N'则是北边*/
+void find_wall()
+{
+    
+    for(int y=1;y<=col;y++)
+        for(int x=row;x>=1;x--)
+        {
+            if(g[x][y]&2 && color[x][y]!=color[x+xx[1]][y+yy[1]] && roomsize[color[x][y]]+roomsize[color[x+xx[1]][y+yy[1]]]>break_max)
+    /*该房间北边有墙&&墙两边房间的染色不同&&打破后比现在的最优解还好 */
+    		mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[1]][y+yy[1]]],v_wall='N';
+    /*记录这个最优解*/
+            if(g[x][y]&4 && color[x][y]!=color[x+xx[2]][y+yy[2]] && roomsize[color[x][y]]+roomsize[color[x+xx[2]][y+yy[2]]]>break_max)
+                mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[2]][y+yy[2]]],v_wall='E';
+        } /* 先搜这个房间北边的墙，再搜东边的 */
+    return;
+}	
+```
+程序代码
+======
+```c++
+/*
+ID:1013rai1
+PROG:castle
+LANG:C++
+*/
+#include <bits/stdc++.h>
+using namespace std;
+
+int g[52][52],color[52][52],col,row,nowcolor=0,roomsize[2505];
+bool check[52][52];
+const int xx[4]={0,-1,0,1},yy[4]={-1,0,1,0};
+int mwall_x,mwall_y,break_max=0;
+char v_wall;
+
+/*深搜所有相通的房间，相通房间染相同的颜色*/
+void dfs(int x,int y)
+{
+    if(check[x][y]) return;
+    check[x][y]=true;
+    color[x][y]=nowcolor;
+    roomsize[nowcolor]++;
+    for(int i=0;i<4;i++)
+        if(!(g[x][y]&(1<<i))) dfs(x+xx[i],y+yy[i]);
+}
+
+void find_wall()
+{
+    
+    for(int y=1;y<=col;y++)
+        for(int x=row;x>=1;x--)
+        {
+            if(g[x][y]&2 && color[x][y]!=color[x+xx[1]][y+yy[1]] && roomsize[color[x][y]]+roomsize[color[x+xx[1]][y+yy[1]]]>break_max)
+                mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[1]][y+yy[1]]],v_wall='N';
+            if(g[x][y]&4 && color[x][y]!=color[x+xx[2]][y+yy[2]] && roomsize[color[x][y]]+roomsize[color[x+xx[2]][y+yy[2]]]>break_max)
+                mwall_x=x,mwall_y=y,break_max=roomsize[color[x][y]]+roomsize[color[x+xx[2]][y+yy[2]]],v_wall='E';
+        } /* 先搜一个房间北边的墙，最后搜东边 */
+    return;
+}
+
+int main()
+{
+    freopen("castle.in","r",stdin);
+    freopen("castle.out","w",stdout);
+    scanf("%d%d",&col,&row);
+    for(int i=1;i<=row;i++)
+        for(int j=1;j<=col;j++)
+            scanf("%d",&g[i][j]);
+    for(int i=1;i<=row;i++)
+        for(int j=1;j<=col;j++)
+            if(!check[i][j])
+            {
+                nowcolor++;
+                dfs(i,j);
+            }
+    printf("%d\n",nowcolor);
+    int maxsize=0;
+    for(int i=1;i<=nowcolor;i++)
+        maxsize=max(roomsize[i],maxsize);
+    printf("%d\n",maxsize);
+    find_wall();
+    printf("%d\n%d %d %c\n",break_max,mwall_x,mwall_y,v_wall);
+    return 0;
+}
+```
