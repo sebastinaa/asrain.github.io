@@ -1,0 +1,666 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="打的不错，我很抱歉。" />
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="wuyuhuan's blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="没事来写个数模美赛LaTex教程参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex（仅限美赛）来解救猿/媛们。
+此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。
+
+我还没写完">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTex基础教程（新人向）">
+<meta property="og:url" content="http://1013rain.me/2016/02/10/page/index.html">
+<meta property="og:site_name" content="wuyuhuan's blog">
+<meta property="og:description" content="没事来写个数模美赛LaTex教程参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex（仅限美赛）来解救猿/媛们。
+此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。
+
+我还没写完">
+<meta property="og:updated_time" content="2016-03-13T15:43:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LaTex基础教程（新人向）">
+<meta name="twitter:description" content="没事来写个数模美赛LaTex教程参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex（仅限美赛）来解救猿/媛们。
+此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。
+
+我还没写完">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> LaTex基础教程（新人向） | wuyuhuan's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">wuyuhuan's blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              LaTex基础教程（新人向）
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-02-10T23:27:27+08:00" content="2016-02-10">
+            2016-02-10
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/02/10/page/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/10/page/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="没事来写个数模美赛LaTex教程">没事来写个数模美赛LaTex教程</h1><p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex（仅限美赛）来解救猿/媛们。</p>
+<p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>
+<ul>
+<li><strong>我还没写完</strong></li>
+</ul>
+<a id="more"></a>
+<h1 id="你首先需要准备的">你首先需要准备的</h1><h2 id="软件">软件</h2><p>如果<del>你是Windows系统</del>你不是水果本，那么你需要<strong>下载</strong>下面的这个软件：</p>
+<ul>
+<li>CTex 2.9.2.164版本，<a href="http://kuai.xunlei.com/d/EGJNLIGKXSGQ" target="_blank" rel="external">迅雷快传下载</a> 或者 <a href="http://pan.baidu.com/s/11DhKi" target="_blank" rel="external">百度网盘下载</a></li>
+</ul>
+<p>下载完后，双击<code>CTeX_2.9.2.164_Full.exe</code>来安装（就是那个最大的文件），安装时请<strong>安装所有的组件</strong>。</p>
+<p>如果你是水果本（Mac OS X)，那么你需要</p>
+<ul>
+<li>MacTex-2015，<a href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg" target="_blank" rel="external">官方下载</a></li>
+</ul>
+<p>注意，如果你的本子是最新系统(EI Capitan)，请在安装完后打开<code>TexShop</code>检查更新再更新它，否则有概率出错，原因的话英文屌的可以看这个<a href="http://www.tug.org/mactex/elcapitan.html" target="_blank" rel="external">传送门</a>。</p>
+<p>所有的软件都可以在<a href="rs.xidian.edu.cn">睿思</a>中下载，前提是你得在学校。</p>
+<h2 id="你需要一个模板">你需要一个模板</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="command">\documentclass</span><span class="special">[</span>a4paper, 11pt<span class="special">]</span><span class="special">&#123;</span>article<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- Loading the Package MCMthesis -----</span></span><br><span class="line"><span class="comment">% -----           v 5.01-L            -----</span></span><br><span class="line"><span class="comment">% `tcn' is short for `Team Control Number'.</span></span><br><span class="line"><span class="comment">% You should fill your tcn after the equal sign following tcn.</span></span><br><span class="line"><span class="comment">% The option `sheet' contorls weather the summary sheet</span></span><br><span class="line"><span class="comment">% will appear.</span></span><br><span class="line"><span class="comment">% The option `abstract' controls weather the abstract</span></span><br><span class="line"><span class="comment">% will appear in the title-page.</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">[</span>tcn = 12345, sheet = true, abstract = true<span class="special">]</span><span class="special">&#123;</span>main<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- Question Mark -----</span></span><br><span class="line"><span class="command">\problem</span><span class="special">&#123;</span>D<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- Fonts settings -----</span></span><br><span class="line"><span class="comment">% You may need to install the font files, if it's needed.</span></span><br><span class="line"><span class="comment">% Disable it, if you don't want this font.</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>palatino<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>makecell<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>indentfirst<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>shorttoc<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>amsmath<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>subfigure<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- Set the skip betweent the paragraphics -----</span></span><br><span class="line"><span class="command">\setlength</span><span class="command">\parskip</span><span class="special">&#123;</span>.5<span class="command">\baselineskip</span><span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- The name of Abstract ------</span></span><br><span class="line"><span class="command">\providecommand</span><span class="special">&#123;</span><span class="command">\abstractname</span><span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\relax</span><span class="special">&#125;</span> <span class="comment">% &lt;-- Do not modify here.</span></span><br><span class="line"><span class="command">\renewcommand</span><span class="special">&#123;</span><span class="command">\abstractname</span><span class="special">&#125;</span><span class="special">&#123;</span>Summary<span class="special">&#125;</span> <span class="comment">% &lt;-- Modify here, if needed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% -----------------------------------</span></span><br><span class="line"><span class="comment">% ===== The Title of Your Paper =====</span></span><br><span class="line"><span class="comment">% -----------------------------------</span></span><br><span class="line"><span class="command">\title</span><span class="special">&#123;</span>Your Title<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ---------------------------------------</span></span><br><span class="line"><span class="comment">% ===== The Author(s) of Your Paper =====</span></span><br><span class="line"><span class="comment">% ---------------------------------------</span></span><br><span class="line"><span class="comment">%\author&#123;\small \href&#123;http://www.latexstudio.net/&#125;&#123;\includegraphics[width=7cm]&#123;logo&#125;&#125;&#125;</span></span><br><span class="line"><span class="comment">% ----------------</span></span><br><span class="line"><span class="comment">% ===== Time =====</span></span><br><span class="line"><span class="comment">% ----------------</span></span><br><span class="line"><span class="command">\date</span><span class="special">&#123;</span><span class="command">\today</span><span class="special">&#125;</span></span><br><span class="line"><span class="command">\begin</span><span class="special">&#123;</span>document<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% Abstract should be put before `\maketitle'</span></span><br><span class="line"><span class="command">\begin</span><span class="special">&#123;</span>abstract<span class="special">&#125;</span></span><br><span class="line"></span><br><span class="line">Begin your abstract.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">.<span class="command">\\</span></span><br><span class="line"><span class="command">\textbf</span><span class="special">&#123;</span>Key Words:<span class="special">&#125;</span> First; Second; Third</span><br><span class="line"></span><br><span class="line"><span class="command">\end</span><span class="special">&#123;</span>abstract<span class="special">&#125;</span></span><br><span class="line"><span class="command">\maketitle</span></span><br><span class="line"><span class="command">\thispagestyle</span><span class="special">&#123;</span>empty<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% Generate the Table of Contents, if it's needed.</span></span><br><span class="line"><span class="comment">%\tableofcontents</span></span><br><span class="line"><span class="comment">%\shorttableofcontents&#123;Contents&#125;&#123;2&#125;</span></span><br><span class="line"><span class="command">\newpage</span></span><br><span class="line"><span class="command">\pagestyle</span><span class="special">&#123;</span>fancy<span class="special">&#125;</span></span><br><span class="line"><span class="command">\pagenumbering</span><span class="special">&#123;</span>arabic<span class="special">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="command">\tableofcontents</span> <span class="comment">%make contents</span></span><br><span class="line"><span class="command">\newpage</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% The body of your paper</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% Start References</span></span><br><span class="line"><span class="command">\addcontentsline</span><span class="special">&#123;</span>toc<span class="special">&#125;</span><span class="special">&#123;</span>section<span class="special">&#125;</span><span class="special">&#123;</span>References<span class="special">&#125;</span></span><br><span class="line"><span class="command">\bibliography</span><span class="special">&#123;</span>References<span class="special">&#125;</span><span class="command">\begin</span><span class="special">&#123;</span>thebibliography<span class="special">&#125;</span><span class="special">&#123;</span>99<span class="special">&#125;</span></span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>chuanranbing<span class="special">&#125;</span>Epidemic model.  https://en.wikipedia.org/wiki/Epidemic<span class="command">\_</span>modelequations </span><br><span class="line">dissemination<span class="special">[</span>D<span class="special">]</span>, University of Science and Technology of China. </span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>weiji<span class="special">&#125;</span>Le Zhang, Research on social network structure and dynamics of crisis information </span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>Index<span class="special">&#125;</span>Baidu Index. http://index.baidu.com </span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>PageRank<span class="special">&#125;</span>PageRank, Wikipedia. https://en.wikipedia.org/wiki/PageRank</span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>Mon<span class="special">&#125;</span>Quint Randle, A Historical Overview of the Effects of New Mass Media Introductions on Magazine Publishing During the 20th Century. http://firstmonday.org/article/view/885/794 </span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>Logit<span class="special">&#125;</span>The Logit function. https://en.wikipedia.org/wiki/Logit</span><br><span class="line"><span class="comment">%E2%80%93diffusion_system26/01/2016</span></span><br><span class="line"><span class="command">\end</span><span class="special">&#123;</span>thebibliography<span class="special">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="command">\end</span><span class="special">&#123;</span>document<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- End of Document Body -----</span></span><br></pre></td></tr></table></figure>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/17/gsts-mission/" rel="prev">EVE古斯塔斯海盗四级任务</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/30/CUMCMexp/" rel="next">我的数模国赛经历</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2016/02/10/page/"
+                   data-title="LaTex基础教程（新人向）" data-url="http://1013rain.me/2016/02/10/page/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/author.jpg" alt="Yuhuan Wu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Yuhuan Wu</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">打的不错，我很抱歉。</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/asrain" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/wu-yu-huan-30" target="_blank">zhihu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">links</p>
+            
+              <span class="links-of-author-item">
+              <a href="http://yooooh.net/" target="_blank">Mr.Thunder</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://nanf.me" target="_blank">nanf</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#没事来写个数模美赛LaTex教程"><span class="nav-number">1.</span> <span class="nav-text">没事来写个数模美赛LaTex教程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#你首先需要准备的"><span class="nav-number">2.</span> <span class="nav-text">你首先需要准备的</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件"><span class="nav-number">2.1.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你需要一个模板"><span class="nav-number">2.2.</span> <span class="nav-text">你需要一个模板</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuhuan Wu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"1013rain"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+      <script type="text/javascript">
+      var duoshuo_user_ID = 13072492
+      </script>
+     
+    <script src="/js/ua-parser.min.js"></script>
+    <script src="/js/hook-duoshuo.js"></script>
+  
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
