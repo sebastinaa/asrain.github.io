@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   
-  <title><![CDATA[wuyuhuan's blog]]></title>
+  <title><![CDATA[367days's blog]]></title>
   <subtitle><![CDATA[打的不错，我很抱歉。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://1013rain.me//"/>
-  <updated>2016-03-25T17:09:29.000Z</updated>
+  <updated>2016-03-25T17:09:37.000Z</updated>
   <id>http://1013rain.me//</id>
   
   <author>
-    <name><![CDATA[Yuhuan Wu]]></name>
+    <name><![CDATA[367days]]></name>
     
   </author>
   
@@ -20,7 +20,7 @@
     <link href="http://1013rain.me/2016/03/26/gstsmission/"/>
     <id>http://1013rain.me/2016/03/26/gstsmission/</id>
     <published>2016-03-25T17:00:11.000Z</published>
-    <updated>2016-03-25T17:09:29.000Z</updated>
+    <updated>2016-03-25T17:09:37.000Z</updated>
     <content type="html"><![CDATA[<p>2016年3月25日更新，新加燃烧任务。<br>BTA版古斯塔斯四级任务<br>有部分任务已不能速刷，我已修正攻略。</p>
 <blockquote>
 <p>另外，你最好使用<code>ctrl+f</code>寻找任务<br><a id="more"></a></p>
