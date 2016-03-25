@@ -5,7 +5,7 @@
   <subtitle><![CDATA[打的不错，我很抱歉。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://1013rain.me//"/>
-  <updated>2016-03-13T15:40:31.000Z</updated>
+  <updated>2016-03-25T16:46:35.000Z</updated>
   <id>http://1013rain.me//</id>
   
   <author>
@@ -16,18 +16,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[EVE古斯塔斯海盗四级任务]]></title>
-    <link href="http://1013rain.me/2016/02/17/gsts-mission/"/>
-    <id>http://1013rain.me/2016/02/17/gsts-mission/</id>
-    <published>2016-02-17T15:36:04.000Z</published>
-    <updated>2016-03-13T15:40:31.000Z</updated>
-    <content type="html"><![CDATA[<p>2016年2月17日更新<br>BTA版古斯塔斯四级任务<br>有部分任务已不能速刷，我已修正攻略。</p>
+    <title></title>
+    <link href="http://1013rain.me/2016/03/26/gsts-mission/"/>
+    <id>http://1013rain.me/2016/03/26/gsts-mission/</id>
+    <published>2016-03-25T16:46:35.000Z</published>
+    <updated>2016-03-25T16:46:35.000Z</updated>
+    <content type="html"><![CDATA[<p>title: EVE古斯塔斯海盗四级任务<br>date: 2016-02-17 23:36:04</p>
+<h2 id="tags:_EVE">tags: EVE</h2><p>2016年2月17日更新<br>BTA版古斯塔斯四级任务<br>有部分任务已不能速刷，我已修正攻略。</p>
 <blockquote>
 <p>另外，你最好使用<code>ctrl+f</code>寻找任务<br><a id="more"></a></p>
 </blockquote>
 <h2 id="无人机的袭击">无人机的袭击</h2><p>抗性：全抗<br>进去之后等一小会，会刷出来4个中型无人机，打掉其中一个距离最近的，会刷出来3巡洋级别3战列级别的无人机，清掉，完成任务。<br>注：应该打掉的是最近的那个怪，不固定是哪个名字<br>需要注意的是，一开始另外3个胜利者无人机不能打，打死了会刷另外3波怪，会让你很HIGH的</p>
 <ul>
-<li><strong>已改版，注意全清！！！！</strong></li>
+<li><strong>已改版，注意必须全清！！！！</strong></li>
 </ul>
 <h2 id="复仇之火">复仇之火</h2><p>莫德团，动动热<br>第一层按照距离顺序清<br>第二层暴动，留一个15KM的怪最后打方便拿任务物品，然后随便杀，BOSS比较硬，一般50KM环绕你<br>大约1个小时搞定.</p>
 <h2 id="侦察">侦察</h2><p>1/3 开高速小船即可，直接过加速轨道(57KM)然后走人<br>2/3 开高速小船即可，接近左边的被加锁的加速轨道(77KM)，然后刷一堆怪，不管他们，跳走<br>3/3 开巡洋上个微曲即可，记得堆<strong>全抗</strong>，堆有效到2W以上。</p>
@@ -50,11 +51,10 @@
 <h2 id="阻止小偷">阻止小偷</h2><p>全抗<br>假跳70KM，先打巡洋舰，再打护卫舰，最后打战列舰<br>熟悉任务后，直接打掉战列怪，然后打掉“影”，闪人，买个报告回去交任务。</p>
 <h2 id="疤痕">疤痕</h2><p>全抗<br>进去之后怪不会主动攻击，怪的智商都不拙计，不过速度很快。而且战列会帖你8KM，很方便<br>第一层：2个战列怪11个巡洋怪，14个护卫怪，轨道58KM，全清<br>第二层：4个战列怪11个巡洋怪，轨道42KM，全清<br>第三层：4个战列怪8个巡洋怪4个护卫怪（两个精英巡洋不用打），清完战列。<br>怪的伤害很复杂，建议堆全抗。</p>
 <ul>
-<li>主要战利品为 <code>共和舰队指挥官勋章I</code> 2000W一个。</li>
+<li>主要战利品为 <code>共和舰队指挥官勋章I</code> 大约2000W一个，共得10个。</li>
 </ul>
 <h2 id="抢救矿冶设施">抢救矿冶设施</h2><p>无人机<br>磁爆热抗<br>第一层：两批怪，其实可以直接拉暴动，1战列6巡洋6护卫，有一个加强型的可能会反跳或者网。先清掉战列和巡洋，然后放出轻无去爬轨道。<br>第二层：三堆怪，按距离顺序清掉2堆怪，然后打掉“无人机堡垒”即可，最远的80KM的那一波怪不用打。</p>
-<h2 id="阻止军备">阻止军备</h2><p>加达里<br>动动热</p>
-<p>先启动跃迁到任务空间前，然后取消跃迁，<strong>最少</strong>5分钟之后再进入这个任务干掉5条运输舰。<code>5分钟之后</code>是因为刷出运输舰要5分钟。<br>3个战列也可以打，掉加达里中将牌子，一个1500W。</p>
+<h2 id="阻止军备">阻止军备</h2><p>加达里<br>动动热<br>先启动跃迁到任务空间前，然后取消跃迁，<strong>最少</strong>5分钟之后再进入这个任务干掉5条运输舰。<code>5分钟之后</code>是因为刷出运输舰要5分钟。<br>3个战列也可以打，掉加达里中将牌子，一个1500W。</p>
 <ul>
 <li>掉加达里声望2.4%</li>
 </ul>
@@ -66,7 +66,7 @@
 <li>掉加达里声望2.4%</li>
 </ul>
 <h2 id="惊奇">惊奇</h2><p>艾玛+加达里<br>动热磁<br>先干掉运输舰，然后打掉最远的那个皇家塔那柯，105KM的位置的。然后再干掉100KM位置的合众国天宫，也就是最近的那个，任务完成。<br>好嘛其实合众国的牌子很值钱，任务完成之后我把剩下的2个合众国的战列怪也打掉了。那牌子400W一个<br>注意，运输舰经常以1400M/S的速度逃跑，要赶快锁定它。<br>大约20分钟</p>
-<h2 id="海军舰队">海军舰队</h2><p>加达里<br>动动热<br>加达里海军，牌子很值钱<br>主要伤害是鞭挞导弹，动动热<br>第一层轨道77KM<br>6战列9巡洋2护卫<br>二层轨道64KM<br>9战列9巡洋2护卫，后来又刷新1战列2护卫<br>三层<br>全清<br>总共是20个中将牌子5个上将牌子，约3E ISK。</p>
+<h2 id="海军舰队_-0-06%">海军舰队 -0.06%</h2><p>加达里<br>动动热<br>加达里海军，牌子很值钱<br>主要伤害是鞭挞导弹，动动热<br>第一层轨道77KM<br>6战列9巡洋2护卫<br>二层轨道64KM<br>9战列9巡洋2护卫，后来又刷新1战列2护卫<br>三层<br>全清<br>总共是20个中将牌子5个上将牌子，约3E ISK。</p>
 <ul>
 <li>有人说他双开15分钟完成（魔像+响尾蛇），我恶狼+响尾蛇是25分钟完成。</li>
 </ul>
@@ -76,7 +76,24 @@
 <h2 id="截击破坏者">截击破坏者</h2><p>艾玛<br>磁磁热<br>第一层：5个护卫<br>第二层：21个护卫3运输舰15巡洋3战列，分3堆，均为被动<br>最左边一堆不用管，把3个艾玛运输舰所在的一堆打掉就好<br>20分钟 7660LP</p>
 <h2 id="羊入虎口">羊入虎口</h2><p>故事线<br>古斯塔斯怪 动动热<br>有一条渡神，2条乌鸦3条茶隼<br>好吧那渡神是结构抗，非常难啃<br>渡神打掉之后又刷出2乌鸦3茶隼，一共是4乌鸦6茶隼<br>按照从大到小打掉之后，又刷新了6只乌鸦5只巨鸟。<br>按照从大到小打掉之后，又刷新了4乌鸦2猛鲑，其中有一个怪叫：古斯塔斯官员……好囧<br>我很奇怪，怪都是古斯塔斯的，明明是自己人啊。</p>
 <h2 id="清除记录">清除记录</h2><p>故事线<br>雇佣兵怪，全抗，我带的是动热爆<br>进去之后2条轨道<br>通向酸性云团的轨道：和侦察3/3差不多，别走这边<br>通向巡逻区的轨道：<br>7小马，雇佣兵怪，动热全抗，暴动<br>第二层：<br>6小马，其中3主动3被动，另外6巡洋舰怪，3主动3被动，2护卫主动</p>
-<h1 id="故事线">故事线</h1><p>做四级战斗故事线的好处是可以快速提升到势力5的声望。势力声望到5就可以基本无限拒任务（只要代理人声望和军团声望高于-2就可以拒）。坏处是你GSTS势力声望到5，C族A族你也估计永远去不了了。<br>故事线我没做过，仅供参考。（因为我以后肯定要走高安）</p>
+<h2 id="燃烧团队系列">燃烧团队系列</h2><p>全部使用<strong>潜龙级</strong>，装配如下图</p>
+<p><img src="http://1013rain.me/qianlong.png" alt="qianlong"></p>
+<p>方法：进去给BOSS上ECM，ECM好后用无人机打他，持续E，连续2轮E中BOSS基本死。</p>
+<p>注：战鹰和复仇很难被ECM中，其中战鹰最难E。复仇级最硬，若需要效率可放弃。</p>
+<h2 id="混乱代理人">混乱代理人</h2><p>装配如下图<img src="http://1013rain.me/dailiren.png" alt="dailiren"><br><img src="http://1013rain.me/fuhao.png" alt="fuhao"></p>
+<h3 id="天使代理人">天使代理人</h3><p>只写黄金富豪版，用复仇太慢，复仇请参考FS的攻略。进场直接开抗和修，网子全上上，船朝向一个点走即可，弹药用爆燃S或者多频S。</p>
+<h3 id="血袭代理人">血袭代理人</h3><p>血袭建议用黄金富豪打，方法和前者略不相同，进场搞好朝向，一段时间后改变为保持BOSS 30KM（大于10KM皆可）来把握住较低的角速度。用猎狼级的和天使的打法相同。弹药爆燃S，角速度把握不好请用多频S或者伽马S。</p>
+<h3 id="GSTS代理人">GSTS代理人</h3><p>加姆打法和黄金富豪相同，都是进场开推子，到距离给BOSS扰频关推子即可。弹药用爆燃S。</p>
+<h3 id="萨沙代理人">萨沙代理人</h3><p>用夜魔侠打，打法是：进去开加力开抗接近BOSS，同时给上网子，适当超载，然后就没然后了。</p>
+<p>因为我还没用黄金富豪打过萨沙代理人，所以就不给黄金富豪的攻略了。</p>
+<h3 id="天蛇代理人">天蛇代理人</h3><p>用战鹰打，动热针对抗，势力电伤火箭，导弹辅助不够的可以不用打这个了，辅助够得一轮秒。方法：进去后给上网子，站撸。</p>
+<h2 id="混乱基地">混乱基地</h2><p>装配如下图 <img src="http://1013rain.me/jidi.png" alt="jidi"></p>
+<h3 id="天使基地（4个小德和运输舰）">天使基地（4个小德和运输舰）</h3><p>挂机打法：进去开修，开加力接近运输舰，，顺便开全部的炸弹，炸完4个小怪后放出你的中型无人机打运输舰，打完收工，耗时估计是10分钟。</p>
+<p>另外的打法：用警惕打，有Youtube视频，自己看，耗时约4分钟。 (<a href="https://www.youtube.com/watch?v=eUvJTZUgQ6Y" target="_blank" rel="external">https://www.youtube.com/watch?v=eUvJTZUgQ6Y</a>)</p>
+<h3 id="天蛇基地（3个塔洛斯）">天蛇基地（3个塔洛斯）</h3><p>进去开修，开微曲接近左边的BOSS，5000米开火，然后接近最近的BOSS，重复，打完再重复。期间注意与炮台的距离，不要10KM以内（我个人的方法是万一要到10KM内的话立刻保持那个炮台30KM来拉回船头。）注意微曲不要断，你0速的时候BOSS打你非常非常疼。</p>
+<h3 id="血袭基地（1个BOSS_2个有炮扰的小怪）">血袭基地（1个BOSS 2个有炮扰的小怪）</h3><p>进去后，先不要打，小怪接近你10来公里再打，先用导弹打小怪，再放出无人机集火，无人机被打的时候立即收回那个被打的无人机再换一架新的无人机打，重复以上过程，直到BOSS死亡。记得打的顺序是先小怪再BOSS。</p>
+<h3 id="古斯塔斯基地（大量舰载机）">古斯塔斯基地（大量舰载机）</h3><p>用警惕级打，YOUTUBE上有视频，全T2装（除网子）耗时11分钟，网址是 (<a href="https://www.youtube.com/watch?v=zz7PDwTgGH8" target="_blank" rel="external">https://www.youtube.com/watch?v=zz7PDwTgGH8</a>)</p>
+<h1 id="故事线">故事线</h1><p>做四级战斗故事线的好处是可以快速提升到势力5的声望。势力声望到5就可以基本无限拒任务（只要代理人声望和军团声望高于-2就可以拒）。坏处是你GSTS势力声望到5，C族A族你也估计永远去不了了。<br>故事线我没做过，仅供参考。（因为我以后肯定要走A、C族的高安）</p>
 <h2 id="暗杀企图">暗杀企图</h2><p>故事线<br>加达里<br>动动热<br>BOSS是爆炸伤害的星爆鱼雷<br>4炮台先打掉，然后打掉3毒蝎1BOSS，4护卫最后留一个可以养任务，不过BOSS似乎不掉势力装备</p>
 <h2 id="收服打捞能手(+11-5%_GSTS声望)">收服打捞能手(+11.5% GSTS声望)</h2><p>故事线</p>
 <p>无人机怪，代理人还说是血袭者，这个骗子<br>记得带全抗<br>进去之后5战列3巡洋3护卫（战列是2皇后2女祭司1主教），灭之<br>3个任务箱子名字叫：科考船残骸，相互距离40KM，最好带个加力或者微曲<br>接近箱子12KM时会刷3战列3巡洋</p>
@@ -98,26 +115,25 @@
 <p>你开始会在H-PA29附近做任务，接着会去PF-QHK附近，然后去6NJ8和K3JR（BTA控制）附近，最后在PF-QHK附近完成该史诗任务。去的最危险的地方在PVVL一跳位，高几率会有敌对抓你，不建议晚上做。建议挑一个早上1小时就能完成。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>2016年2月17日更新<br>BTA版古斯塔斯四级任务<br>有部分任务已不能速刷，我已修正攻略。</p>
+    <![CDATA[<p>title: EVE古斯塔斯海盗四级任务<br>date: 2016-02-17 23:36:04</p>
+<h2 id="tags:_EVE">tags: EVE</h2><p>2016年2月17日更新<br>BTA版古斯塔斯四级任务<br>有部分任务已不能速刷，我已修正攻略。</p>
 <blockquote>
 <p>另外，你最好使用<code>ctrl+f</code>寻找任务<br>]]>
     
     </summary>
     
-      <category term="EVE" scheme="http://1013rain.me/tags/EVE/"/>
-    
   </entry>
   
   <entry>
     <title><![CDATA[LaTex基础教程（新人向）]]></title>
-    <link href="http://1013rain.me/2016/02/10/page/"/>
-    <id>http://1013rain.me/2016/02/10/page/</id>
+    <link href="http://1013rain.me/2016/02/10/Latex/"/>
+    <id>http://1013rain.me/2016/02/10/Latex/</id>
     <published>2016-02-10T15:27:27.000Z</published>
-    <updated>2016-03-13T15:43:36.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="没事来写个数模美赛LaTex教程">没事来写个数模美赛LaTex教程</h1><p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex（仅限美赛）来解救猿/媛们。</p>
+    <updated>2016-03-13T15:45:14.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="没事来写个数模美赛LaTex教程">没事来写个数模美赛LaTex教程</h1><p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。</p>
 <p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>
 <ul>
-<li><strong>我还没写完</strong></li>
+<li><em>我还只写到模板一块</em></li>
 </ul>
 <a id="more"></a>
 <h1 id="你首先需要准备的">你首先需要准备的</h1><h2 id="软件">软件</h2><p>如果<del>你是Windows系统</del>你不是水果本，那么你需要<strong>下载</strong>下面的这个软件：</p>
@@ -134,10 +150,10 @@
 <h2 id="你需要一个模板">你需要一个模板</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="command">\documentclass</span><span class="special">[</span>a4paper, 11pt<span class="special">]</span><span class="special">&#123;</span>article<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- Loading the Package MCMthesis -----</span></span><br><span class="line"><span class="comment">% -----           v 5.01-L            -----</span></span><br><span class="line"><span class="comment">% `tcn' is short for `Team Control Number'.</span></span><br><span class="line"><span class="comment">% You should fill your tcn after the equal sign following tcn.</span></span><br><span class="line"><span class="comment">% The option `sheet' contorls weather the summary sheet</span></span><br><span class="line"><span class="comment">% will appear.</span></span><br><span class="line"><span class="comment">% The option `abstract' controls weather the abstract</span></span><br><span class="line"><span class="comment">% will appear in the title-page.</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">[</span>tcn = 12345, sheet = true, abstract = true<span class="special">]</span><span class="special">&#123;</span>main<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- Question Mark -----</span></span><br><span class="line"><span class="command">\problem</span><span class="special">&#123;</span>D<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- Fonts settings -----</span></span><br><span class="line"><span class="comment">% You may need to install the font files, if it's needed.</span></span><br><span class="line"><span class="comment">% Disable it, if you don't want this font.</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>palatino<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>makecell<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>indentfirst<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>shorttoc<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>amsmath<span class="special">&#125;</span></span><br><span class="line"><span class="command">\usepackage</span><span class="special">&#123;</span>subfigure<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- Set the skip betweent the paragraphics -----</span></span><br><span class="line"><span class="command">\setlength</span><span class="command">\parskip</span><span class="special">&#123;</span>.5<span class="command">\baselineskip</span><span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- The name of Abstract ------</span></span><br><span class="line"><span class="command">\providecommand</span><span class="special">&#123;</span><span class="command">\abstractname</span><span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\relax</span><span class="special">&#125;</span> <span class="comment">% &lt;-- Do not modify here.</span></span><br><span class="line"><span class="command">\renewcommand</span><span class="special">&#123;</span><span class="command">\abstractname</span><span class="special">&#125;</span><span class="special">&#123;</span>Summary<span class="special">&#125;</span> <span class="comment">% &lt;-- Modify here, if needed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% -----------------------------------</span></span><br><span class="line"><span class="comment">% ===== The Title of Your Paper =====</span></span><br><span class="line"><span class="comment">% -----------------------------------</span></span><br><span class="line"><span class="command">\title</span><span class="special">&#123;</span>Your Title<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ---------------------------------------</span></span><br><span class="line"><span class="comment">% ===== The Author(s) of Your Paper =====</span></span><br><span class="line"><span class="comment">% ---------------------------------------</span></span><br><span class="line"><span class="comment">%\author&#123;\small \href&#123;http://www.latexstudio.net/&#125;&#123;\includegraphics[width=7cm]&#123;logo&#125;&#125;&#125;</span></span><br><span class="line"><span class="comment">% ----------------</span></span><br><span class="line"><span class="comment">% ===== Time =====</span></span><br><span class="line"><span class="comment">% ----------------</span></span><br><span class="line"><span class="command">\date</span><span class="special">&#123;</span><span class="command">\today</span><span class="special">&#125;</span></span><br><span class="line"><span class="command">\begin</span><span class="special">&#123;</span>document<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% Abstract should be put before `\maketitle'</span></span><br><span class="line"><span class="command">\begin</span><span class="special">&#123;</span>abstract<span class="special">&#125;</span></span><br><span class="line"></span><br><span class="line">Begin your abstract.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">.<span class="command">\\</span></span><br><span class="line"><span class="command">\textbf</span><span class="special">&#123;</span>Key Words:<span class="special">&#125;</span> First; Second; Third</span><br><span class="line"></span><br><span class="line"><span class="command">\end</span><span class="special">&#123;</span>abstract<span class="special">&#125;</span></span><br><span class="line"><span class="command">\maketitle</span></span><br><span class="line"><span class="command">\thispagestyle</span><span class="special">&#123;</span>empty<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% Generate the Table of Contents, if it's needed.</span></span><br><span class="line"><span class="comment">%\tableofcontents</span></span><br><span class="line"><span class="comment">%\shorttableofcontents&#123;Contents&#125;&#123;2&#125;</span></span><br><span class="line"><span class="command">\newpage</span></span><br><span class="line"><span class="command">\pagestyle</span><span class="special">&#123;</span>fancy<span class="special">&#125;</span></span><br><span class="line"><span class="command">\pagenumbering</span><span class="special">&#123;</span>arabic<span class="special">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="command">\tableofcontents</span> <span class="comment">%make contents</span></span><br><span class="line"><span class="command">\newpage</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% The body of your paper</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% Start References</span></span><br><span class="line"><span class="command">\addcontentsline</span><span class="special">&#123;</span>toc<span class="special">&#125;</span><span class="special">&#123;</span>section<span class="special">&#125;</span><span class="special">&#123;</span>References<span class="special">&#125;</span></span><br><span class="line"><span class="command">\bibliography</span><span class="special">&#123;</span>References<span class="special">&#125;</span><span class="command">\begin</span><span class="special">&#123;</span>thebibliography<span class="special">&#125;</span><span class="special">&#123;</span>99<span class="special">&#125;</span></span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>chuanranbing<span class="special">&#125;</span>Epidemic model.  https://en.wikipedia.org/wiki/Epidemic<span class="command">\_</span>modelequations </span><br><span class="line">dissemination<span class="special">[</span>D<span class="special">]</span>, University of Science and Technology of China. </span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>weiji<span class="special">&#125;</span>Le Zhang, Research on social network structure and dynamics of crisis information </span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>Index<span class="special">&#125;</span>Baidu Index. http://index.baidu.com </span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>PageRank<span class="special">&#125;</span>PageRank, Wikipedia. https://en.wikipedia.org/wiki/PageRank</span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>Mon<span class="special">&#125;</span>Quint Randle, A Historical Overview of the Effects of New Mass Media Introductions on Magazine Publishing During the 20th Century. http://firstmonday.org/article/view/885/794 </span><br><span class="line"><span class="command">\bibitem</span><span class="special">&#123;</span>Logit<span class="special">&#125;</span>The Logit function. https://en.wikipedia.org/wiki/Logit</span><br><span class="line"><span class="comment">%E2%80%93diffusion_system26/01/2016</span></span><br><span class="line"><span class="command">\end</span><span class="special">&#123;</span>thebibliography<span class="special">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="command">\end</span><span class="special">&#123;</span>document<span class="special">&#125;</span></span><br><span class="line"><span class="comment">% ----- End of Document Body -----</span></span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="没事来写个数模美赛LaTex教程">没事来写个数模美赛LaTex教程</h1><p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex（仅限美赛）来解救猿/媛们。</p>
+    <![CDATA[<h1 id="没事来写个数模美赛LaTex教程">没事来写个数模美赛LaTex教程</h1><p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。</p>
 <p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>
 <ul>
-<li><strong>我还没写完</strong></li>
+<li><em>我还只写到模板一块</em></li>
 </ul>]]>
     
     </summary>
