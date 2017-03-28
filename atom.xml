@@ -5,7 +5,7 @@
   <subtitle><![CDATA[打的不错，我很抱歉。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://1013rain.me//"/>
-  <updated>2016-04-11T07:02:34.000Z</updated>
+  <updated>2017-03-28T15:17:12.000Z</updated>
   <id>http://1013rain.me//</id>
   
   <author>
@@ -17,16 +17,17 @@
   
   <entry>
     <title><![CDATA[LaTex基础教程（新人向）]]></title>
-    <link href="http://1013rain.me/2016/03/26/Latex/"/>
-    <id>http://1013rain.me/2016/03/26/Latex/</id>
-    <published>2016-03-26T15:00:27.000Z</published>
-    <updated>2016-04-11T07:02:34.000Z</updated>
+    <link href="http://1013rain.me/2017/03/28/Latex/"/>
+    <id>http://1013rain.me/2017/03/28/Latex/</id>
+    <published>2017-03-28T15:00:27.000Z</published>
+    <updated>2017-03-28T15:17:12.000Z</updated>
     <content type="html"><![CDATA[<p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。</p>
 <p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>
 <ul>
 <li><em>我已经写到参考文献一块了，快写完了</em></li>
+<li>2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧<a id="more"></a>
+</li>
 </ul>
-<a id="more"></a>
 <h1 id="你首先需要准备的">你首先需要准备的</h1><h2 id="软件">软件</h2><p>如果<del>你是Windows系统</del>你不是水果本，那么你需要<strong>下载</strong>下面的这个软件：</p>
 <ul>
 <li>CTex 2.9.2.164版本，<a href="http://kuai.xunlei.com/d/EGJNLIGKXSGQ" target="_blank" rel="external">迅雷快传下载</a> 或者 <a href="http://pan.baidu.com/s/11DhKi" target="_blank" rel="external">百度网盘下载</a></li>
@@ -80,7 +81,7 @@
 <p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>
 <ul>
 <li><em>我已经写到参考文献一块了，快写完了</em></li>
-</ul>]]>
+<li>2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧]]>
     
     </summary>
     

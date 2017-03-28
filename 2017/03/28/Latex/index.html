@@ -1,0 +1,709 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="打的不错，我很抱歉。" />
+
+
+
+  <meta name="keywords" content="技术," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="367days' blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。
+此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。
+
+我已经写到参考文献一块了，快写完了
+2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTex基础教程（新人向）">
+<meta property="og:url" content="http://1013rain.me/2017/03/28/Latex/index.html">
+<meta property="og:site_name" content="367days' blog">
+<meta property="og:description" content="参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。
+此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。
+
+我已经写到参考文献一块了，快写完了
+2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧">
+<meta property="og:updated_time" content="2017-03-28T15:17:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LaTex基础教程（新人向）">
+<meta name="twitter:description" content="参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。
+此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。
+
+我已经写到参考文献一块了，快写完了
+2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> LaTex基础教程（新人向） | 367days' blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">367days' blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              LaTex基础教程（新人向）
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-03-28T23:00:27+08:00" content="2017-03-28">
+            2017-03-28
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2017/03/28/Latex/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/28/Latex/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。</p>
+<p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>
+<ul>
+<li><em>我已经写到参考文献一块了，快写完了</em></li>
+<li>2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧<a id="more"></a>
+</li>
+</ul>
+<h1 id="你首先需要准备的">你首先需要准备的</h1><h2 id="软件">软件</h2><p>如果<del>你是Windows系统</del>你不是水果本，那么你需要<strong>下载</strong>下面的这个软件：</p>
+<ul>
+<li>CTex 2.9.2.164版本，<a href="http://kuai.xunlei.com/d/EGJNLIGKXSGQ" target="_blank" rel="external">迅雷快传下载</a> 或者 <a href="http://pan.baidu.com/s/11DhKi" target="_blank" rel="external">百度网盘下载</a></li>
+</ul>
+<p>下载完后，双击<code>CTeX_2.9.2.164_Full.exe</code>来安装（就是那个最大的文件），安装时请<strong>安装所有的组件</strong>。</p>
+<p>如果你是水果本（Mac OS X)，那么你需要</p>
+<ul>
+<li>MacTex-2015，<a href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg" target="_blank" rel="external">官方下载</a></li>
+</ul>
+<p>注意，如果你的本子是最新系统(EI Capitan)，请在安装完后打开<code>TexShop</code>检查更新再更新它，否则有概率出错，原因的话英文屌的可以看这个<a href="http://www.tug.org/mactex/elcapitan.html" target="_blank" rel="external">传送门</a>。</p>
+<p>所有的软件都可以在<a href="rs.xidian.edu.cn">睿思</a>中下载，前提是你得在学校。</p>
+<h2 id="你需要一个模板">你需要一个模板</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[a4paper, 11pt]</span><span class="string">&#123;article&#125;</span></span></span><br><span class="line"><span class="comment">% ----- Loading the Package MCMthesis -----</span></span><br><span class="line"><span class="comment">% -----           v 5.01-L            -----</span></span><br><span class="line"><span class="comment">% `tcn' is short for `Team Control Number'.</span></span><br><span class="line"><span class="comment">% You should fill your tcn after the equal sign following tcn.</span></span><br><span class="line"><span class="comment">% The option `sheet' contorls weather the summary sheet</span></span><br><span class="line"><span class="comment">% will appear.</span></span><br><span class="line"><span class="comment">% The option `abstract' controls weather the abstract</span></span><br><span class="line"><span class="comment">% will appear in the title-page.</span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[tcn = 12345, sheet = true, abstract = true]</span><span class="string">&#123;main&#125;</span></span></span><br><span class="line"><span class="comment">% ----- Question Mark -----</span></span><br><span class="line"><span class="tag">\<span class="name">problem</span><span class="string">&#123;D&#125;</span></span></span><br><span class="line"><span class="comment">% ----- Fonts settings -----</span></span><br><span class="line"><span class="comment">% You may need to install the </span></span><br><span class="line">font files, if it's needed.</span><br><span class="line"><span class="comment">% Disable it, if you don't want this font.</span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;palatino&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;makecell&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;indentfirst&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;shorttoc&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;amsmath&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;subfigure&#125;</span></span></span><br><span class="line"><span class="comment">% ----- Set the skip betweent the paragraphics -----</span></span><br><span class="line"><span class="tag">\<span class="name">setlength</span></span><span class="tag">\<span class="name">parskip</span><span class="string">&#123;.5\baselineskip&#125;</span></span></span><br><span class="line"><span class="comment">% ----- The name of Abstract ------</span></span><br><span class="line"><span class="tag">\<span class="name">providecommand</span><span class="string">&#123;\abstractname&#125;</span><span class="string">&#123;\relax&#125;</span></span> <span class="comment">% &lt;-- Do not modify here.</span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\abstractname&#125;</span><span class="string">&#123;Summary&#125;</span></span> <span class="comment">% &lt;-- Modify here, if needed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% -----------------------------------</span></span><br><span class="line"><span class="comment">% ===== The Title of Your Paper =====</span></span><br><span class="line"><span class="comment">% -----------------------------------</span></span><br><span class="line"><span class="tag">\<span class="name">title</span><span class="string">&#123;Your Title&#125;</span></span></span><br><span class="line"><span class="comment">% ---------------------------------------</span></span><br><span class="line"><span class="comment">% ===== The Author(s) of Your Paper =====</span></span><br><span class="line"><span class="comment">% ---------------------------------------</span></span><br><span class="line"><span class="comment">%\author&#123;\small \href&#123;http://www.latexstudio.net/&#125;&#123;\includegraphics[width=7cm]&#123;logo&#125;&#125;&#125;</span></span><br><span class="line"><span class="comment">% ----------------</span></span><br><span class="line"><span class="comment">% ===== Time =====</span></span><br><span class="line"><span class="comment">% ----------------</span></span><br><span class="line"><span class="tag">\<span class="name">date</span><span class="string">&#123;\today&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"><span class="comment">% Abstract should be put before `\maketitle'</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;abstract&#125;</span></span></span><br><span class="line"></span><br><span class="line">Begin your abstract.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">.<span class="tag">\<span class="name">\</span></span></span><br><span class="line"><span class="tag">\<span class="name">textbf</span><span class="string">&#123;Key Words:&#125;</span></span> First; Second; Third</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;abstract&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">maketitle</span></span></span><br><span class="line"><span class="tag">\<span class="name">thispagestyle</span><span class="string">&#123;empty&#125;</span></span></span><br><span class="line"><span class="comment">% Generate the Table of Contents, if it's needed.</span></span><br><span class="line"><span class="comment">%\tableofcontents</span></span><br><span class="line"><span class="comment">%\shorttableofcontents&#123;Contents&#125;&#123;2&#125;</span></span><br><span class="line"><span class="tag">\<span class="name">newpage</span></span></span><br><span class="line"><span class="tag">\<span class="name">pagestyle</span><span class="string">&#123;fancy&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">pagenumbering</span><span class="string">&#123;arabic&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">tableofcontents</span></span> <span class="comment">% make contents</span></span><br><span class="line"><span class="tag">\<span class="name">newpage</span></span> <span class="comment">% Do NOT delete it!</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% Here Start The body of your paper</span></span><br><span class="line">The paper's body.</span><br><span class="line"></span><br><span class="line"><span class="comment">% Start References</span></span><br><span class="line"><span class="tag">\<span class="name">addcontentsline</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;section&#125;</span><span class="string">&#123;References&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">bibliography</span><span class="string">&#123;References&#125;</span></span><span class="tag">\<span class="name">begin</span><span class="string">&#123;thebibliography&#125;</span><span class="string">&#123;99&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">bibitem</span><span class="string">&#123;chuanranbing&#125;</span></span>Epidemic model.  https://en.wikipedia.org/wiki/Epidemic<span class="tag">\<span class="name">_</span></span>modelequations </span><br><span class="line">dissemination[D], University of Science and Technology of China. </span><br><span class="line"><span class="tag">\<span class="name">bibitem</span><span class="string">&#123;weiji&#125;</span></span>Le Zhang, Research on social network structure and dynamics of crisis information </span><br><span class="line"><span class="tag">\<span class="name">bibitem</span><span class="string">&#123;Index&#125;</span></span>Baidu Index. http://index.baidu.com </span><br><span class="line"><span class="tag">\<span class="name">bibitem</span><span class="string">&#123;PageRank&#125;</span></span>PageRank, Wikipedia. https://en.wikipedia.org/wiki/PageRank</span><br><span class="line"><span class="tag">\<span class="name">bibitem</span><span class="string">&#123;Mon&#125;</span></span>Quint Randle, A Historical Overview of the Effects of New Mass Media Introductions on Magazine Publishing During the 20th Century. http://firstmonday.org/article/view/885/794 </span><br><span class="line"><span class="tag">\<span class="name">bibitem</span><span class="string">&#123;Logit&#125;</span></span>The Logit function. https://en.wikipedia.org/wiki/Logit</span><br><span class="line"><span class="comment">%E2%80%93diffusion_system26/01/2016</span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;thebibliography&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"><span class="comment">% ----- End of Document Body -----</span></span><br></pre></td></tr></table></figure>
+<p>后面的所有内容都是以这个模板为基础的，实质上就是填补这个模板所缺少的实质内容。</p>
+<p><strong>下面就一篇论文是如何以Latex完成的这个顺序来写这一篇教程。</strong></p>
+<h1 id="正文部分">正文部分</h1><p>先抛开摘要，摘要是最后才完成的，之后再说。<br>正文首先要写<strong>章节</strong>，标题的格式为<code>\section{Your section}</code>,section就是章节，如果要写一个子章节，那么就是<code>\subsection{Your subsection}</code>，如果要是子章节的子章节，就是<code>\subsubsection{...}</code>，以此类推。于是，你首先在你的文章正文处写上第一句话。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;Your section&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>紧接下一行，你需要写上你的段落内容，写完这一段后，如果你还想再写一段，你必须在下一行空一行，Latex才知道你真正的起了新的一段，就像这样！</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;Sample section&#125;</span></span></span><br><span class="line">The first paragraph.</span><br><span class="line"></span><br><span class="line">The second paragraph. <span class="comment">% 空了一行</span></span><br></pre></td></tr></table></figure>
+<p>实际上，空行的作用就是让Latex知道你要换行。但无论你空多少行，实际中的PDF里也只是空了一行（防止手滑）。而且还有一点，就是文章内的多个连续空格会被认定为一个空格，如果你<code>硬</code>要多个空格的话，请用多个<code>\quad</code>来代替，一个<code>\quad</code>会被认定为是一个空格，多个则被认为是多个空格，</p>
+<p>好了，你写上了两段话，可是你发现你需要<strong>加粗</strong><code>first</code>和<strong>强调</strong>(加斜)<code>second</code>，怎么办？没关系！有\textbf和\textit命令。只要在要加粗或加斜的字前加上你需要的命令即可，具体来说是这样！</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;Sample section&#125;</span></span></span><br><span class="line">The <span class="tag">\<span class="name">textbf</span><span class="string">&#123;first&#125;</span></span> paragraph. <span class="comment">% 加粗first，必须要把要加粗的词用大括号圈住</span></span><br><span class="line"></span><br><span class="line">The <span class="tag">\<span class="name">textit</span><span class="string">&#123;second&#125;</span></span> paragraph. <span class="comment">% 加斜second，同上</span></span><br></pre></td></tr></table></figure>
+<p>你可能还需要控制字体大小，Latex提供了数种设置字体大小的命令，从小到大分别为：<br>\tiny<br>\scriptsize<br>\footnotesize<br>\small<br>\normalsize<br>\large<br>\Large<br>\LARGE<br>\huge<br>\Huge<br>默认使用normalsize,脚注时会使用footnotesize，有时候还会用到Large。使用的方法如下。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;Sample section&#125;</span></span></span><br><span class="line">The <span class="tag">\<span class="name">footnotesize</span><span class="string">&#123;first&#125;</span></span> paragraph. <span class="comment">% 让first变成脚注级别的字。</span></span><br><span class="line"></span><br><span class="line">The <span class="tag">\<span class="name">Large</span><span class="string">&#123;second&#125;</span></span> paragraph. <span class="comment">% 让second变成Large大小的字。</span></span><br></pre></td></tr></table></figure>
+<p>也许你注意到了，<code>%</code>号和在matlab里一样，是一个特殊符号，在一行里跟在%号后面的不会被Latex发现，这等于说你在文档里做了一个comment（注释），你可以利用他做笔记，提醒自己要干什么，或者你想要的任何事。要<strong>注意</strong>，如果你要让正文中出现<code>%</code>，直接在Latex文档里打<code>%</code>是没有用的，而且%后面的东西会被认为是comment而不会出现在文中，所以Latex给出了一个折中的方法，如果你要让正文出现<code>%</code>，那就得在文档里打<code>\%</code>，<code>\</code>表示转义字符，和C语言十分地类似。来个例句让你更加清楚这个东西。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Written in TexShop/WinEdt</span></span><br><span class="line">only 1<span class="tag">\<span class="name">%</span></span> students come to the class. <span class="comment">% 注意\号</span></span><br></pre></td></tr></table></figure>
+<p>还有很多命令，比如控制着重号，划线，删除线，等等等等，这些命令的使用都与<code>\textbf</code>等命令的使用方法是一样的，只是命令不同而已，这些就让你们去百度上查吧，应该十分容易获得这些命令。</p>
+<h2 id="数学公式">数学公式</h2><p>我们知道，论文里肯定是要有数学公式的，所以，Latex给出了数学公式的表达方式。可能会有些复杂，不过别怕，有<code>Mathtype</code>好助手。你只需直接在Mathtype里打出你想要的公式，然后再复制它进入Latex文档即可。复制前需要调整Mathtype选项，在复制与粘贴选项中选择要粘贴的是<code>Latex 2.09 and later</code>（第二个选项里一大堆里选这个）就能粘贴进LATEX文档了，再顺便把这个选项的勾都去掉（不然会粘贴的时候会出现几行mathtype转义的注释）。例如电磁场点电荷公式，你先在Mathtype里打出这个公式，然后再复制进文档里（注意<strong>一定</strong>要删掉复制东西最前面的<code>\[</code>和最后面的<code>\]</code>。公式有两种，一种是行内公式，另一种则是行间公式，行内公式紧跟文字，行间公式独占一行，格式是这样的。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">An equation is as below:</span><br><span class="line"><span class="formula">$$ E = <span class="tag">\<span class="name">frac</span><span class="string">&#123;q&#125;</span><span class="string">&#123;&#123;4\pi \varepsilon &#123;r^2&#125;</span></span>&#125;&#125; $$</span> <span class="comment">% 行间</span></span><br><span class="line"></span><br><span class="line">An equation is <span class="formula">$ E = <span class="tag">\<span class="name">frac</span><span class="string">&#123;q&#125;</span><span class="string">&#123;&#123;4\pi \varepsilon &#123;r^2&#125;</span></span>&#125;&#125; $</span>.</span><br></pre></td></tr></table></figure>
+<p>两个<code>$$</code>间就是行间公式，两个<code>$</code>间就是行内公式。</p>
+<p>对于上面这个行间公式来说，是没有标号的，如果需要标号，该怎么办呢？我们需要一个命令来帮助完成这个，如下所示。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">An equation is as below:</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">E = <span class="tag">\<span class="name">frac</span><span class="string">&#123;q&#125;</span><span class="string">&#123;&#123;4\pi \varepsilon &#123;r^2&#125;</span></span>&#125;&#125;</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>在公式上一行加上<code>\begin{equation}</code>下一行则是<code>\end{equation}</code>。这样就会自动标号，就是不需要你去算这是第几个需要标号的公式，程序会自己计算的。</p>
+<p>如果你需要自己在Latex手打公式的话，看这个教程，它会帮助你。<br><a href="http://hubl82.blog.163.com/blog/static/12676948520134510173383" target="_blank" rel="external">Latex 数学公式</a></p>
+<h2 id="插图">插图</h2><p>一般来说，要插一张图，一般这么写</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;figure&#125;</span><span class="string">[htbp]</span></span></span><br><span class="line">	<span class="tag">\<span class="name">centering</span></span><span class="tag">\<span class="name">includegraphics</span><span class="string">[width=3in]</span><span class="string">&#123;figureName.png&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">caption</span><span class="string">&#123;Your caption.&#125;</span></span><span class="tag">\<span class="name">label</span><span class="string">&#123;fig:label&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;figure&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>figureName.png就是你想插入的图的文件名，Your caption是你对该图的说明，label是图的标签名字。<strong>图必须放在和Latex文档同一个目录里</strong>。label是用来引用图的，后面在引用的部分会说。</p>
+<p>重点来了，控制图的位置是由<code>[htbp]</code>里面的字母控制的，我先说说htbp各个的含义。<br>『h』当前位置。将图形放置在正文文本中给出该图形环境的地方。如果本页所剩的页面不够，这一参数将不起作用。<br>『t』顶部。将图形放置在页面的顶部。<br>『b』底部。将图形放置在页面的底部。<br>『p』浮动页。将图形放置在一只允许有浮动对象的页面上。<br>htbp表示先后优先度，比如h、t都能放的情况下选择h的位置。</p>
+<p>如果你想一下插2个图，一个在左边，一个在右边，这个也是可以的，不过是要用另外一个命令，我会在之后的Latex提高部分来说这个如何做。</p>
+<h2 id="插表">插表</h2><p>插表就别怕了，有一种宏叫excel to latex，你可以在excel画好表，然后利用exceltolatex将这个表转换成latex格式就好了。</p>
+<p>这个宏的地址是<a href="http://www.ctan.org/pkg/excel2latex" target="_blank" rel="external">Excel2Latex</a></p>
+<p>比如经过转义后的这个表的Latex文本</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;table&#125;</span><span class="string">[htbp]</span></span></span><br><span class="line">  <span class="tag">\<span class="name">centering</span></span></span><br><span class="line">  <span class="tag">\<span class="name">caption</span><span class="string">&#123;The idea level differences&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">&#123;ccc&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">toprule</span></span></span><br><span class="line">      kind    &amp; previous &amp; now    <span class="tag">\<span class="name">\</span></span></span><br><span class="line">    <span class="tag">\<span class="name">midrule</span></span></span><br><span class="line">    number of people(idea &gt; 0.6) &amp; 138   &amp; 215    <span class="tag">\<span class="name">\</span></span></span><br><span class="line">    number of people(idea &lt; 0.1) &amp; 114   &amp; 65     <span class="tag">\<span class="name">\</span></span></span><br><span class="line">    the last average idea level &amp; 0.407 &amp; 0.512  <span class="tag">\<span class="name">\</span></span></span><br><span class="line">    <span class="tag">\<span class="name">bottomrule</span></span></span><br><span class="line">    <span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span><span class="comment">%</span></span><br><span class="line">  <span class="tag">\<span class="name">label</span><span class="string">&#123;tab:addlabel&#125;</span></span><span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;table&#125;</span></span><span class="comment">%</span></span><br></pre></td></tr></table></figure>
+<p>和插图类似的，<code>\label</code>后面跟着的<code>{tab:addlabel}</code>也是用来引用的。这里的[htbp]命令也是用来确定表的位置的，确定的方式与规则和插图相同。</p>
+<h2 id="引用">引用</h2><p>还记得刚刚说的插图和插表的可填写的标签Label吗？对，Label就是用来引用的。这么说吧，假如我插入了一张图，某处我还得引用它，那么我会这么写。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;figure&#125;</span><span class="string">[htbp]</span></span></span><br><span class="line"><span class="tag">\<span class="name">centering</span></span><span class="tag">\<span class="name">includegraphics</span><span class="string">[width=5in]</span><span class="string">&#123;Q5_1.png&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">caption</span><span class="string">&#123;The change of the number of 4 kinds of nodes.&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">label</span><span class="string">&#123;fig:Q5_1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;figure&#125;</span></span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">From Figure <span class="tag">\<span class="name">ref</span><span class="string">&#123;fig:Q5_1&#125;</span></span>, We can see...</span><br></pre></td></tr></table></figure>
+<p>看见了吗？我这里重命名了Label为<code>Q5_1</code>（Label可以随便起，比如我比较喜欢第五问第一个图就写Q5_1），于是我在某处要引用这个Figure的时候，我使用<code>\ref{fig:label}</code>,也就是<code>\ref{fig:Q5_1}</code>，在PDF里则会这个地方则会变成这个图的编号，且这个编号是个超链接，指向被引用的那个图。</p>
+<p>引用表的时候也一样，使用<code>\ref{tab:Label}</code>来完成。</p>
+<h2 id="参考文献">参考文献</h2></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术/" rel="tag">#技术</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/30/CUMCMexp/" rel="next">数模国赛(CUMCM)经验分享</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2017/03/28/Latex/"
+                   data-title="LaTex基础教程（新人向）" data-url="http://1013rain.me/2017/03/28/Latex/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/author.jpg" alt="367days" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">367days</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">打的不错，我很抱歉。</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/asrain" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/wu-yu-huan-30" target="_blank">zhihu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">links</p>
+            
+              <span class="links-of-author-item">
+              <a href="http://yooooh.net/" target="_blank">Mr.Thunder</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://nanf.me" target="_blank">nanf</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#你首先需要准备的"><span class="nav-number">1.</span> <span class="nav-text">你首先需要准备的</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件"><span class="nav-number">1.1.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你需要一个模板"><span class="nav-number">1.2.</span> <span class="nav-text">你需要一个模板</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文部分"><span class="nav-number">2.</span> <span class="nav-text">正文部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数学公式"><span class="nav-number">2.1.</span> <span class="nav-text">数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插图"><span class="nav-number">2.2.</span> <span class="nav-text">插图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插表"><span class="nav-number">2.3.</span> <span class="nav-text">插表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">2.4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">2.5.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">367days</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"1013rain"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+      <script type="text/javascript">
+      var duoshuo_user_ID = 13072492
+      </script>
+     
+    <script src="/js/ua-parser.min.js"></script>
+    <script src="/js/hook-duoshuo.js"></script>
+  
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
