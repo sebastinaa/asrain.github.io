@@ -5,7 +5,7 @@
   <subtitle><![CDATA[打的不错，我很抱歉。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://1013rain.me//"/>
-  <updated>2017-05-16T01:00:21.000Z</updated>
+  <updated>2017-07-19T03:24:20.000Z</updated>
   <id>http://1013rain.me//</id>
   
   <author>
@@ -16,13 +16,328 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[数据结构重点]]></title>
+    <link href="http://1013rain.me/2017/06/04/learn%20Data%20Structure/"/>
+    <id>http://1013rain.me/2017/06/04/learn Data Structure/</id>
+    <published>2017-06-04T15:40:48.000Z</published>
+    <updated>2017-07-19T03:24:20.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="第零章_绪论">第零章 绪论</h2><p>什么是计算机算法？算法的<strong>五大特征</strong>？算法设计的要求？</p>
+<ul>
+<li><p>计算机算法指<code>解决问题的步骤序列</code>。</p>
+</li>
+<li><p>算法的五大特征分别为</p>
+<pre><code>可行性、有穷性、确定性、输入、输出
+</code></pre></li>
+<li><p>算法设计要求</p>
+<pre><code>正确性、可读性、健壮性、效率与低存储量需求
+</code></pre><a id="more"></a>
+<p>你得学会分析一个算法的时间复杂度，至于空间复杂度，后者好分析，你只要保证你会前者就行了。</p>
+</li>
+</ul>
+<p>如何分析一个算法的时间复杂度？</p>
+<p>从我们现在接触的算法来看，<em>log N</em>的产生是因为<strong>二分</strong>，N的产生是因为for/while循环，大概地，一层循环乘一个N，二分的循环乘 <em>log N</em>。（但这只是一种<code>感觉</code>，请不要当真，因为KMP算法中<code>匹配函数</code>的时间复杂度是O(N)<a href="《算法导论》">^3</a>，虽然有2层循环…）</p>
+<p>比如快速排序，就有二分的思想，又循环一次，你懂的， <strong>O(NlogN)</strong>，冒泡，选择排序，插入排序，二次循环，<strong>O(N<sup>2</sup>)</strong>。</p>
+<p>如果一个算法要算3*n^2+n+1次，它时间复杂度并非O(3*n^2+n+1),而是O(n^2)，时间复杂度只取决于指数最高的那一项，且忽略常数项。<br>然后有一些<strong>概念你要知道</strong>,在<strong>书1.2节</strong>。</p>
+<ul>
+<li>从逻辑上把数据结构分成<strong><em>线性结构和非线性结构</em></strong></li>
+<li>物理结构是<strong>数据结构在计算机中的表示</strong></li>
+<li><strong>数据</strong>是对客观事物的符号表示。</li>
+<li><strong>数据元素</strong>是数据的基本单位。</li>
+<li><strong>数据对象</strong>是性质相同的数据元素。</li>
+<li><strong>数据结构</strong>是相互之间存在一种或多种特定关系的数据元素的集合。</li>
+<li>数据元素之间的关系在计算机中的<strong>两种不同的表示方法</strong>：<strong>顺序映像</strong>和<strong>非顺序映像</strong>。</li>
+<li>两种不同的存储结构：顺序存储结构和链式存储结构。</li>
+<li>数据的逻辑结构指<strong><em>数据元素之间的逻辑关系</em></strong></li>
+<li><strong>抽象数据类型</strong>是指一个数学模型以及定义在该模型上的一组操作。</li>
+<li>以上概念考<strong><em>填空题</em></strong>的概率较大。</li>
+</ul>
+<h2 id="第一章_线性表">第一章 线性表</h2><p>必考：该章没什么好说的，简单，但有可能写代码，请注意要会所有<strong>概念，也就是原理</strong>。<br>还有<strong>线性表（顺序存储结构）和链表（链式存储结构）的优劣性，比如链表插入时间复杂度是O(1)，而线性表是O(N)；线性表有存储上限，但链表没有</strong>。刚刚说的优劣性，是可以拿性命担保必考的。</p>
+<p>代码的话，很可能是写往线性表（或链表）插入一个元素之类的，只求过的话代码你就可以不用会写了。</p>
+<p>线性表插入一个元素的e.g:</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span>
+<span class="keyword">typedef</span> <span class="keyword">struct</span>{
+    <span class="keyword">int</span> a[MAXLEN];<span class="comment">//数组实现</span>
+    <span class="keyword">int</span> end;
+}<span class="built_in">list</span>; <span class="comment">// typedef一个list类型</span>
+
+<span class="function"><span class="keyword">void</span> <span class="title">MoveTheElemsToright</span><span class="params">(<span class="built_in">list</span> *l,<span class="keyword">int</span> n)</span></span>{
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = l-&gt;end; i&gt;=n; i--)
+        l-&gt;a[i+<span class="number">1</span>]=l-&gt;a[i];
+}<span class="comment">//腾出第n+1个空间（将第n+1数开始往右移一格）</span>
+
+<span class="function"><span class="keyword">bool</span> <span class="title">InstertAnElemNormal</span><span class="params">(<span class="built_in">list</span> *l,<span class="keyword">int</span> n,<span class="keyword">int</span> number)</span></span>{
+    <span class="keyword">if</span>(n&gt;l-&gt;end+<span class="number">1</span>||n&lt;<span class="number">0</span>||l-&gt;end==MAXLEN-<span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//加强鲁棒性，然而并没有什么软用！</span>
+    <span class="keyword">else</span> MoveTheElemsToright(l,n);
+    l-&gt;a[n] = number;
+    l-&gt;end++;
+    <span class="keyword">return</span> <span class="literal">true</span>;
+}<span class="comment">// insert an elem at the (n+1)th place</span>
+</code></pre><h2 id="第二章_栈和队列">第二章 栈和队列</h2><p>这都是基础的数据结构，同样有可能写(伪)代码实现，同样要会所有<strong>概念</strong>。</p>
+<p>连概念都不懂的可以去看 </p>
+<ul>
+<li>严奶奶的书</li>
+<li><a href="http://blueve.me/archives/417" target="_blank" rel="external">我叫<strong>队列还有bfs(他们是分开的所以你可以不看后者23333)</strong>概念的传送门</a></li>
+<li><a href="http://www.baidu.com" target="_blank" rel="external">我真找不到谁的博客详细写了栈的概念，栈原理不懂的话，这个是百度的传送门</a></li>
+</ul>
+<p>堆栈实际上就是 <strong>先入后出</strong>(first in last out),队列是<strong>先入先出</strong>(first in first out)。</p>
+<p>这章考代码的概率应远小于 <strong>某表</strong>。</p>
+<h3 id="插播一条概念">插播一条概念</h3><ul>
+<li>前驱和后继</li>
+</ul>
+<p><strong>一个元素的前驱或后继实质上</strong>指这个它的<strong>前一个元素</strong>和<strong>后一个元素</strong>。二叉排序树中要找一个元素的中序遍历前驱，就是要在小于它的元素中找最大的（就是找小于它的且<strong>最靠近它的元素</strong>）。中序遍历后继类似，不说了（关键字：大于，最靠近）。</p>
+<h2 id="第三章_串">第三章 串</h2><p>只有一条好消息，<strong>KMP算法</strong>不考哦～，但防止万一，请记下它的算法<strong>时间复杂度 O(M+N)</strong>。</p>
+<h2 id="第四章_数组和广义表">第四章 数组和广义表</h2><p>广义表如果考的话应该也就考 <strong>一个广义表的(深)度</strong>了。数括号就行了。还可能</p>
+<p>e.g.</p>
+<ul>
+<li><code>(a,(a))</code> 深度是 <strong>2</strong></li>
+<li><code>(a,b,(a,(b,c)))</code> 是 <strong>3</strong></li>
+<li><p><code>(a,b,(a,(a,c,(d,e))),(x))</code> 是 <strong>4</strong></p>
+</li>
+<li><p><a href="http://zuoye
+.baidu.com/question/138683737c1d72161a5d0cda8a916904.html" target="_blank" rel="external">这是关于广义表如何算长度和深度的传送门</a></p>
+</li>
+<li><p><a href="http://zuoye.baidu.com/question/07abdcc3913d3a44e82b57db82fb1da8.html" target="_blank" rel="external">这是关于head和tail的传送门(做试卷的应该都看过这俩名词)</a></p>
+</li>
+</ul>
+<p>另外关于8号楼下数据结构期末题第一套的<code>数组题</code></p>
+<pre><code>将一个A[<span class="link_label">100</span>][<span class="link_reference">100</span>]的三对角矩阵，按行优先存入一维数组B[<span class="link_label">298</span>]中，数组下标从0开始编号，A中的元素A[<span class="link_label">65</span>][<span class="link_reference">64</span>]再B中的位置K为<span class="strong">_____</span>。
+应填194，a[<span class="link_label">65</span>][<span class="link_reference">64</span>]上面有64*3+2=194个元素。a[<span class="link_label">65</span>][<span class="link_reference">64</span>]是第195个，而数组从0开始编号，所有B[<span class="link_label">194</span>]存储了A[<span class="link_label">65</span>][<span class="link_reference">64</span>]。
+</code></pre><p>这里普及一下<code>三对角矩阵</code>，这就是三对角矩阵（4*4的）<br><img src="https://upload.wikimedia.org/math/e/b/c/ebc3ab5369e2fc1a1d2bb0dd68396027.png" alt="三对角矩阵"></p>
+<p>最左边的矩阵就是三对角矩阵<br><img src="https://upload.wikimedia.org/math/f/a/8/fa8a518330d0e8da1a0890bb2e587043.png" alt="big"></p>
+<h2 id="第五章_树">第五章 树</h2><p>树就考很多了，树的<strong>前中后序遍历</strong>你要是还不懂概念就快看书吧！！！！！~~这个遍历至少考5分以上。<br>~~哈夫曼树估计也是要考的，大概是<strong>给定一个序列，然后构建一个哈夫曼树</strong>。</p>
+<p>树的遍历备考知识（说起来可能比较多，看不懂的去百度）</p>
+<pre><code>给出先序遍历和后序遍历。输出这棵二叉树。
+<span class="number">1</span>.先序的第一个是根<span class="literal">a</span>。
+<span class="number">2</span>.先序序列 根的后一个节点b只可能是根的左右节点之一。
+<span class="number">3</span>.如果中序中b出现在<span class="literal">a</span>之前，b是<span class="literal">a</span>的左儿子，反之是儿子。
+<span class="number">4</span>.中序中<span class="literal">a</span> 左边的是<span class="literal">a</span>左子树的中序遍历，右边则是<span class="literal">a</span>右子树的中序遍历。
+<span class="number">5</span>.第四点对所有假定的根都成立，递归得出这棵二叉树。
+</code></pre><p>树、森林和二叉树的转换<br><a href="http://www.cnblogs.com/zhuyf87/archive/2012/11/04/2753950.html" target="_blank" rel="external">link(来源于cnblog)</a></p>
+<p>怎么构建<code>哈夫曼树</code>？</p>
+<pre><code>哈夫曼树的构造算法
+
+假设有n个权值，则构造出得哈夫曼树有n个叶子结点。n个权值分别设为w1,w2,...,wn,则哈夫曼树的构造规则为:
+
+<span class="params">(<span class="number">1</span>)</span>将w1,w2,...,wn看成是有n棵树的森林<span class="params">(每棵树仅有一个结点)</span>;
+<span class="params">(<span class="number">2</span>)</span>在森林中选出两个根结点的权值最小的树合并，作为一棵新树的左、右子树，且新树的根结点权值为其左、右子树根结点权值之和；
+<span class="params">(<span class="number">3</span>)</span>从森林中删除选取的两棵树，并将新树加入森林;
+<span class="params">(<span class="number">4</span>)</span>重复<span class="params">(<span class="number">2</span>)</span>、<span class="params">(<span class="number">3</span>)</span>步，直到森林中只剩一棵树为止，该树即为所求得的哈夫曼树。
+</code></pre><p>结合上面的可以再看看下面的图解</p>
+<ul>
+<li><a href="http://www.th7.cn/Program/c/201410/304813.shtml" target="_blank" rel="external">又见哈夫曼树图解传送门，可是该门广告多</a></li>
+<li>听说<code>可以停用**Javascript**屏蔽广告，懂了人以后都看不到广告了哈哈哈哈</code></li>
+</ul>
+<h2 id="第六章_哈希表">第六章 哈希表</h2><p>这章必考，大概就是类似ppt那样的考法<br>不会的去看书<br> <a href="http://down5.cr173.com/soft1/shujujiegou.rar" target="_blank" rel="external">我叫严蔚敏的数据结构pdf下载传送门</a></p>
+<p>处理冲突的方法百度有介绍<br><a href="http://baike.baidu.com/link?url=Jz0q6Ewkh4qUNI6yBiQpuIbUCU5Rfllul1cxi0-26jil8BN_wUq-gERwI2-n48mPyxM6T46DKXy8uaMDV2MgnK" target="_blank" rel="external">百度百科：哈希表</a>，直接翻到处理<code>冲突</code>的那一块看就好了，当然<code>构造</code>方法也得看看。</p>
+<p>另外还有<a href="http://blog.csdn.net/wangran51/article/details/8826633" target="_blank" rel="external">平均查找长度的计算</a>，也是可能考的。</p>
+<p>(友情提示：用CMCC-EDU的同学很可能打不开该链接，因为移动好像<code>墙</code>了csdn.net，据说github都被墙了)</p>
+<h2 id="第七章_图论">第七章 图论</h2><p>这章你需要会<strong>图的遍历</strong>。还有一些基本概念比如说<code>结点的度</code>。</p>
+<ul>
+<li><a href="http://blueve.me/archives/417" target="_blank" rel="external"><strong>队列实现bfs</strong></a></li>
+<li><a href="http://jingyan.baidu.com/article/00a07f38babf4182d028dca2.html" target="_blank" rel="external"><strong>dfs</strong></a></li>
+<li>实际上树也是一个图，树的先序中序后序遍历都是<strong>深度优先遍历</strong></li>
+<li>一般来说是用栈或者<code>队列</code>实现bfs,用<code>函数递归</code>实现dfs（<strong>回溯法</strong>的基本做法）。</li>
+</ul>
+<p>###生成树</p>
+<pre><code>　如果连通图<span class="keyword">G</span>的一个子图是一棵包含<span class="keyword">G</span>的所有顶点的树，则该子图称为<span class="keyword">G</span>的生成树(SpanningTree)。
+　生成树是连通图的包含图中的所有顶点的极小连通子图。
+　图的生成树不惟一。从不同的顶点出发进行遍历，可以得到不同的生成树。
+</code></pre><h3 id="最小生成树">最小生成树</h3><p>如何画最小生成树？</p>
+<p>摘自 <code>百度知道</code>（原来百度知道里也是有有用的答案的Orz）</p>
+<pre><code><span class="number">1</span>） 树是无回路的连通图。
+<span class="number">2</span>）对于某个图，求它的最小生成树，比较简单的方法，先画出图中所有节点，从权值最小的边开始依次连接顶点，注意不要    形成回路，最后得到的图就是最小生成树。
+</code></pre><h2 id="第八章_二分查找">第八章 二分查找</h2><ul>
+<li><code>谨记</code>二分查找的数据结构必须是<code>有序</code>的</li>
+<li>假如是用<code>链式存储</code>数据，即使元素有序，我看你怎么<code>二分</code>（期末题第一套12.梗）</li>
+</ul>
+<h3 id="二叉排序树">二叉排序树</h3><ul>
+<li>中序遍历二叉排序树的结果必然是一个有序的序列（比如从小到大）</li>
+</ul>
+<h4 id="如何构建二叉排序树？">如何构建二叉排序树？</h4><p>百度百科是这么规定二叉排序树的</p>
+<pre><code>    二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：
+（<span class="number">1</span>）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；
+（<span class="number">2</span>）若右子树不空，则右子树上所有结点的值均大于或等于它的根结点的值；
+（<span class="number">3</span>）左、右子树也分别为二叉排序树；
+（<span class="number">4</span>）没有键值相等的节点。
+</code></pre><p>再给你看个二叉排序树的图<br>这是对序列<code>(8,3,10,1,6,4,14,7,13)</code> 建立二叉排序树的结果<br><img src="http://pic002.cnblogs.com/images/2012/457289/2012110918051618.jpg" alt="img"></p>
+<p>先把8作为根，然后3比8小，成为8的左儿子。10比8大，作为8的右儿子。1比8小，再比3小，作为3的左儿子….</p>
+<p>如果还不懂就去看<code>严奶奶的书(diyu)</code>吧 23333333</p>
+<h2 id="第九章_排序">第九章 排序</h2><p>O(n^2)的排序就不说了，直接说O(n<sup>1.5</sup>)和O(nlogn)的</p>
+<p><code>希尔排序</code>O(n<sup>1.5</sup>)</p>
+<ul>
+<li><p>希尔排序有一个关键的概念叫“步长”(gap)</p>
+</li>
+<li><p>建议到这里看<a href="http://blog.csdn.net/morewindows/article/details/6668714" target="_blank" rel="external">希尔排序</a></p>
+</li>
+</ul>
+<p>迷之希尔排序只有4行代码</p>
+<pre><code><span class="function"><span class="keyword">void</span> <span class="title">shellsort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span>{
+    <span class="keyword">for</span> (<span class="keyword">int</span> gap = n / <span class="number">2</span>; gap &gt; <span class="number">0</span>; gap /= <span class="number">2</span>)
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = gap; i &lt; n; i++)
+            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; a[j] &gt; a[j + gap]; j -= gap)
+                swap(a[j], a[j + gap]);<span class="comment">//swap是交换的意思</span>
+}
+</code></pre><p>后面都是O(nlogn)的</p>
+<p><code>快速排序</code> </p>
+<p>快速排序简单吧，直接看老严的书你也能懂，不过代码优点难写，可是<code>老师肯定不考代码的啦</code>。</p>
+<p>不过还是给的我自己写的？</p>
+<pre><code>void quicksort(int <span class="literal">a</span>[],int l,int r){
+    <span class="keyword">if</span>(l&lt;r){
+    int ll = l , rr = r , cmp = <span class="literal">a</span>[l]<span class="comment">;</span>
+    <span class="keyword">while</span>(ll&lt;rr){
+        <span class="keyword">while</span>(ll&lt;rr&amp;&amp;<span class="literal">a</span>[rr]&gt;cmp)
+            rr--<span class="comment">;</span>
+        <span class="literal">a</span>[ll]=<span class="literal">a</span>[rr]<span class="comment">;</span>
+        <span class="keyword">while</span> (ll&lt;rr&amp;&amp;<span class="literal">a</span>[ll]&lt;=cmp) {
+            ll++<span class="comment">;</span>
+        }
+        <span class="literal">a</span>[rr]=<span class="literal">a</span>[ll]<span class="comment">;</span>
+    }
+    <span class="literal">a</span>[ll]=cmp<span class="comment">;</span>
+    quicksort(<span class="literal">a</span>,l, ll-<span class="number">1</span>)<span class="comment">;</span>
+    quicksort(<span class="literal">a</span>,ll+<span class="number">1</span>, r)<span class="comment">;</span>
+}//咋一看连swap都没有，肯定有问题？不，你仔细看看这个代码，没有问题。
+</code></pre><p><code>归并排序</code></p>
+<p>归并排序是一种体现<code>分治思想</code>的排序算法，它是我们现在所学到的O(nlogn)算法里唯一一个排序<code>稳定</code>的算法。</p>
+<ul>
+<li>这个我建议数据结构较好的去看<code>算法--C语言实现（第1～4部分）</code>这本书，当然你想挑战<code>老严的diyu</code>我也是十分<code>赞(fan)成(dui)</code>的，其他的可以去看，《大话数据结构》，当然你想挑战<code>老严的diyu</code>我就………………</li>
+<li>还建议看<a href="https://zh.wikipedia.org/zh-hk/归并排序" target="_blank" rel="external">维基百科 归并排序</a></li>
+</ul>
+<p>顺便贴代码</p>
+<pre><code><span class="function"><span class="keyword">void</span> <span class="title">mergeArray</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> l,<span class="keyword">int</span> mid,<span class="keyword">int</span> r,<span class="keyword">int</span> aux[])</span></span>{
+    <span class="keyword">int</span> cnt;<span class="comment">//index      e.g. aux[cnt]</span>
+    <span class="keyword">int</span> l1 = l,r1 =mid,l2 = mid + <span class="number">1</span>,r2 = r;
+    <span class="keyword">for</span> (cnt = l; cnt &lt;=r; cnt++) {
+        <span class="keyword">if</span>(l1==r1+<span class="number">1</span>) {aux[cnt]=a[l2++];<span class="keyword">continue</span>;}
+    <span class="keyword">if</span>(l2==r2+<span class="number">1</span>) {aux[cnt]=a[l1++];<span class="keyword">continue</span>;}
+    aux[cnt] = (a[l2] &lt; a[l1]) ? a[l2++] : a[l1++] ;
+    }
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i&lt;=r ;i++)
+        a[i] = aux[i];
+}<span class="comment">//归并两个给定数组 思想来自于《算法－－C语言》的"合并两个数组"</span>
+
+<span class="function"><span class="keyword">void</span> <span class="title">mergesort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> aux[])</span></span>{
+<span class="keyword">if</span> (l&lt;r){
+    <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;
+    mergesort(a,l,mid,aux);
+    mergesort(a,mid+<span class="number">1</span>,r,aux);<span class="comment">//递归分割</span>
+    mergeArray(a,l,mid,r,aux);<span class="comment">//将有序数组归并</span>
+}
+}
+
+<span class="function"><span class="keyword">bool</span> <span class="title">Mergesort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>{
+    <span class="keyword">int</span> *aux = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n);<span class="comment">//aux意思是辅助数组</span>
+    <span class="keyword">if</span>(aux==<span class="literal">NULL</span>) <span class="keyword">return</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"error!"</span>&lt;&lt;endl,<span class="literal">false</span>;
+    mergesort(a,<span class="number">0</span>,n-<span class="number">1</span>,aux);
+    <span class="built_in">free</span>(aux);
+    <span class="keyword">return</span> <span class="literal">true</span>;
+}
+</code></pre><h2 id="堆排序">堆排序</h2><h4 id="学渣止步…这个排序可能有点难。">学渣止步…这个排序可能有点难。</h4><p>说到堆排序，首先要介绍一下<code>堆</code>的概念。</p>
+<h3 id="堆">堆</h3><p>定义一（堆有序的定义）:如果一棵树中每个节点的关键字都不小于所有子节点的<code>值，或者说是关键字</code>(如果子节点存在的话)，那么久称这棵树是<code>堆有序</code>的。同样的，一棵<code>堆有序</code>中节点的关键字小于等于那个父节点的关键字（如果父节点存在）。[^1]</p>
+<p>定义二：<strong><code>堆</code></strong>是一个节点的集合，表示为<code>数组</code>，其中<em>关键字按照<strong>堆有序</strong>的<strong>完全二叉树</strong>的形式排列</em>。</p>
+<p>性质一：若a是一个<code>小顶堆</code>，那么a[0]是堆中最小的元素。</p>
+<p>定义一中的堆实际上是<code>小顶堆</code>，还有一个概念是<code>大顶堆</code>，这个在后面会有提到。</p>
+<p>如何利用堆将一个数组从大到小排序呢？</p>
+<h4 id="堆排序-1">堆排序</h4><ul>
+<li>堆排序的思想类似于选择排序，也是每次找到一个最大(小)的数，然后在其余的数里找到最大(小)的，只不过每次只需要log(n)次计算，而不是n。</li>
+<li>大概就是先让其符合<code>小顶堆</code>的性质，也就是<code>堆化</code>，然后再fixdown n-1次,伪代码是这样的</li>
+<li>fixdown的意思是<code>自顶向下堆化</code>，MinFixdown(a,0,i)中，i是堆元素的数量，0表示从a[0]开始堆化，就是<code>堆化以i为结尾的a数组</code>！</li>
+<li><p>下面给出<code>从大到小排序</code>的堆排 <code>算法</code></p>
+<pre><code>algorithm heapsort(a[],n)<span class="comment">{
+    MakeMinHeap(a) % 堆化数组a a变为最小堆
+    for i n-1-&gt;1  % swap后 a[0]~a[i]就不一定还是堆了！需要继续fixdown
+        MinFixdown (a,0,i) % a[0]~a[i]视为一个(子)堆，fixdown这个(子)堆
+        swap(a[0],a[i]) % fix后由堆的性质一可知a[0]是a[0]~a[i]里最小的，把找到的最小的，也就是a[0],放到最后面
+    end 
+}</span> %堆排序完成，排完序后 小顶堆被完全破坏 ，堆中
+</code></pre></li>
+<li><p>你们加油 <a href="https://zh.wikipedia.org/zh-hk/堆排序" target="_blank" rel="external">維基百科 堆排序</a></p>
+</li>
+<li><p>csdn博客里有一个白话算法系列，那里写的这个<code>堆排序</code>算法可以去看看，。</p>
+</li>
+<li><p>下方有个堆排动态图<a href="维基百科－－堆排序（繁体）">^2</a></p>
+</li>
+</ul>
+<p>下方是我整理的从大到小堆排的代码，代码出自上面那个blog。<br>首先是fixdown函数，从元素a[i]开始，n为数组上界</p>
+<pre><code><span class="function"><span class="keyword">void</span> <span class="title">MinHeapFixDown</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> i,<span class="keyword">int</span> n)</span></span>{
+    <span class="keyword">int</span> j, temp;
+    temp = a[i];
+    j = <span class="number">2</span> * i + <span class="number">1</span>;
+    <span class="keyword">while</span> (j &lt; n)
+    {
+        <span class="keyword">if</span> (j + <span class="number">1</span> &lt; n &amp;&amp; a[j + <span class="number">1</span>] &lt; a[j])
+            j++;
+        <span class="keyword">if</span> (a[j] &gt;= temp)
+            <span class="keyword">break</span>;
+        a[i] = a[j];
+        i = j;
+        j = <span class="number">2</span> * i + <span class="number">1</span>;
+    }
+    a[i] = temp;
+}
+</code></pre><p>构建小顶堆</p>
+<pre><code><span class="function"><span class="keyword">void</span> <span class="title">MakeMinHeap</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>{<span class="comment">//自顶向下地构建小顶堆</span>
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = n/<span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span> ; i--)
+        MinHeapFixDown(a, i, n);
+}
+</code></pre><p>堆排序</p>
+<pre><code><span class="function"><span class="keyword">void</span> <span class="title">heapsort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span>{
+    MakeMinHeap(a,n);
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--){
+        MinHeapFixDown(a, <span class="number">0</span>, i);
+        swap(a[i], a[<span class="number">0</span>]);
+        }
+}
+</code></pre><p>swap函数</p>
+<pre><code><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp;a,<span class="keyword">int</span> &amp;b)</span></span>{<span class="comment">//&amp;是C++的特性，&amp;是引用的意思，&amp;类似于指针，但是作用比指针弱，该函数引用了a变量，这个函数里改变a变量是真的会改变传入的a的值的。（也就是a在函数里是是参）inline是内联函数的关键词，不用管它，只是为了加快速度</span>
+    <span class="keyword">int</span> t=a;
+    a = b;
+    b = t;
+}
+</code></pre><p><code>关于这些排序的比较</code></p>
+<ul>
+<li><p>(数据结构期末题第一套10.)一个序列，如果要找出最大的x个元素，则采用<strong>__</strong>。</p>
+<p>  应该是<code>堆排序</code>。具体看《算法－－C语言实现》<strong>P241图9-10及其下方的注解</strong>。<br>  也可以看这个动态图<br>  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Sorting_heapsort_anim.gif" alt="img"></p>
+<pre><code>这个图也可以帮你理解堆排序的原理。
+</code></pre></li>
+<li><p>(数据结构期末题第一套15.) </p>
+<p>  <code>堆排序</code>，快排递归调用O(logn)的空间，归并固定O(n),堆排O(1)。堆排空间性能最好。</p>
+</li>
+<li><p>(数据结构期末题第一套9.) </p>
+<p>  其实冒泡最省时间，因为冒泡在这个情况下是<strong><em>O(n)</em></strong>，而平均最快的快排却是<strong><em>O(n<sup>2</sup>)</em></strong></p>
+</li>
+</ul>
+<ul>
+<li>快排平均最快，归并其次，堆排是O(nlogn)里最慢的</li>
+</ul>
+<p>[^1]:《算法－－C语言实现》第1～4部分 9.2节</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="第零章_绪论">第零章 绪论</h2><p>什么是计算机算法？算法的<strong>五大特征</strong>？算法设计的要求？</p>
+<ul>
+<li><p>计算机算法指<code>解决问题的步骤序列</code>。</p>
+</li>
+<li><p>算法的五大特征分别为</p>
+<pre><code>可行性、有穷性、确定性、输入、输出
+</code></pre></li>
+<li><p>算法设计要求</p>
+<pre><code>正确性、可读性、健壮性、效率与低存储量需求
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="大学课程" scheme="http://1013rain.me/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[集成电路设计课程思考题]]></title>
     <link href="http://1013rain.me/2017/05/16/ASIC_Learning/"/>
     <id>http://1013rain.me/2017/05/16/ASIC_Learning/</id>
     <published>2017-05-16T00:44:35.000Z</published>
-    <updated>2017-05-16T01:00:21.000Z</updated>
+    <updated>2017-07-19T03:23:47.000Z</updated>
     <content type="html"><![CDATA[<a id="more"></a>
-<h1 id="集成电路设计课程思考题_2016-5-2">集成电路设计课程思考题 2016-5-2</h1><h2 id="第1讲思考题_绿颜色部分暂不考，但应该知道的内容，很重要">第1讲思考题                 绿颜色部分暂不考，但应该知道的内容，很重要</h2><ol>
+<h2 id="第1讲思考题">第1讲思考题</h2><ol>
 <li><p>站在数字电路角度，画出反相器INV延迟1ns、2ns的波形；</p>
 </li>
 <li><p>站在模拟电路角度，画出反相器INV延迟1ns、2ns的波形；</p>
@@ -378,7 +693,11 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<a id="more"></a>
-<h1 id="集成电路设计课程思考题_2016-5-2">集成电路设计课程思考题 2016-5-2</h1><h2 id="第1讲思考题_绿颜色部分暂不考，但应该知道的内容，很重要">第1讲思考题                 绿颜色部分暂]]>
+<h2 id="第1讲思考题">第1讲思考题</h2><ol>
+<li><p>站在数字电路角度，画出反相器INV延迟1ns、2ns的波形；</p>
+</li>
+<li><p>站在模拟电路角度，画出反相器INV延迟1ns、2ns的波形；</p>
+]]>
     </summary>
     
       <category term="学习" scheme="http://1013rain.me/tags/%E5%AD%A6%E4%B9%A0/"/>
@@ -757,321 +1076,6 @@
     <![CDATA[<p>hi，现在我终于创建了一个blog，这个blog将被用于记录我的生活、C/C++学习记录还有可恶的数模＝ ＝<br>暂时就是这样了～～～～<br>]]>
     
     </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[数据结构重点]]></title>
-    <link href="http://1013rain.me/2015/08/04/learn%20Data%20Structure/"/>
-    <id>http://1013rain.me/2015/08/04/learn Data Structure/</id>
-    <published>2015-08-04T15:40:48.000Z</published>
-    <updated>2016-04-11T07:01:35.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="第零章_绪论">第零章 绪论</h2><p>什么是计算机算法？算法的<strong>五大特征</strong>？算法设计的要求？</p>
-<ul>
-<li><p>计算机算法指<code>解决问题的步骤序列</code>。</p>
-</li>
-<li><p>算法的五大特征分别为</p>
-<pre><code>可行性、有穷性、确定性、输入、输出
-</code></pre></li>
-<li><p>算法设计要求</p>
-<pre><code>正确性、可读性、健壮性、效率与低存储量需求
-</code></pre><a id="more"></a>
-<p>你得学会分析一个算法的时间复杂度，至于空间复杂度，后者好分析，你只要保证你会前者就行了。</p>
-</li>
-</ul>
-<p>如何分析一个算法的时间复杂度？</p>
-<p>从我们现在接触的算法来看，<em>log N</em>的产生是因为<strong>二分</strong>，N的产生是因为for/while循环，大概地，一层循环乘一个N，二分的循环乘 <em>log N</em>。（但这只是一种<code>感觉</code>，请不要当真，因为KMP算法中<code>匹配函数</code>的时间复杂度是O(N)<a href="《算法导论》">^3</a>，虽然有2层循环…）</p>
-<p>比如快速排序，就有二分的思想，又循环一次，你懂的， <strong>O(NlogN)</strong>，冒泡，选择排序，插入排序，二次循环，<strong>O(N<sup>2</sup>)</strong>。</p>
-<p>如果一个算法要算3*n^2+n+1次，它时间复杂度并非O(3*n^2+n+1),而是O(n^2)，时间复杂度只取决于指数最高的那一项，且忽略常数项。<br>然后有一些<strong>概念你要知道</strong>,在<strong>书1.2节</strong>。</p>
-<ul>
-<li>从逻辑上把数据结构分成<strong><em>线性结构和非线性结构</em></strong></li>
-<li>物理结构是<strong>数据结构在计算机中的表示</strong></li>
-<li><strong>数据</strong>是对客观事物的符号表示。</li>
-<li><strong>数据元素</strong>是数据的基本单位。</li>
-<li><strong>数据对象</strong>是性质相同的数据元素。</li>
-<li><strong>数据结构</strong>是相互之间存在一种或多种特定关系的数据元素的集合。</li>
-<li>数据元素之间的关系在计算机中的<strong>两种不同的表示方法</strong>：<strong>顺序映像</strong>和<strong>非顺序映像</strong>。</li>
-<li>两种不同的存储结构：顺序存储结构和链式存储结构。</li>
-<li>数据的逻辑结构指<strong><em>数据元素之间的逻辑关系</em></strong></li>
-<li><strong>抽象数据类型</strong>是指一个数学模型以及定义在该模型上的一组操作。</li>
-<li>以上概念考<strong><em>填空题</em></strong>的概率较大。</li>
-</ul>
-<h2 id="第一章_线性表">第一章 线性表</h2><p>必考：该章没什么好说的，简单，但有可能写代码，请注意要会所有<strong>概念，也就是原理</strong>。<br>还有<strong>线性表（顺序存储结构）和链表（链式存储结构）的优劣性，比如链表插入时间复杂度是O(1)，而线性表是O(N)；线性表有存储上限，但链表没有</strong>。刚刚说的优劣性，是可以拿性命担保必考的。</p>
-<p>代码的话，很可能是写往线性表（或链表）插入一个元素之类的，只求过的话代码你就可以不用会写了。</p>
-<p>线性表插入一个元素的e.g:</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span>
-<span class="keyword">typedef</span> <span class="keyword">struct</span>{
-    <span class="keyword">int</span> a[MAXLEN];<span class="comment">//数组实现</span>
-    <span class="keyword">int</span> end;
-}<span class="built_in">list</span>; <span class="comment">// typedef一个list类型</span>
-
-<span class="function"><span class="keyword">void</span> <span class="title">MoveTheElemsToright</span><span class="params">(<span class="built_in">list</span> *l,<span class="keyword">int</span> n)</span></span>{
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = l-&gt;end; i&gt;=n; i--)
-        l-&gt;a[i+<span class="number">1</span>]=l-&gt;a[i];
-}<span class="comment">//腾出第n+1个空间（将第n+1数开始往右移一格）</span>
-
-<span class="function"><span class="keyword">bool</span> <span class="title">InstertAnElemNormal</span><span class="params">(<span class="built_in">list</span> *l,<span class="keyword">int</span> n,<span class="keyword">int</span> number)</span></span>{
-    <span class="keyword">if</span>(n&gt;l-&gt;end+<span class="number">1</span>||n&lt;<span class="number">0</span>||l-&gt;end==MAXLEN-<span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//加强鲁棒性，然而并没有什么软用！</span>
-    <span class="keyword">else</span> MoveTheElemsToright(l,n);
-    l-&gt;a[n] = number;
-    l-&gt;end++;
-    <span class="keyword">return</span> <span class="literal">true</span>;
-}<span class="comment">// insert an elem at the (n+1)th place</span>
-</code></pre><h2 id="第二章_栈和队列">第二章 栈和队列</h2><p>这都是基础的数据结构，同样有可能写(伪)代码实现，同样要会所有<strong>概念</strong>。</p>
-<p>连概念都不懂的可以去看 </p>
-<ul>
-<li>严奶奶的书</li>
-<li><a href="http://blueve.me/archives/417" target="_blank" rel="external">我叫<strong>队列还有bfs(他们是分开的所以你可以不看后者23333)</strong>概念的传送门</a></li>
-<li><a href="http://www.baidu.com" target="_blank" rel="external">我真找不到谁的博客详细写了栈的概念，栈原理不懂的话，这个是百度的传送门</a></li>
-</ul>
-<p>堆栈实际上就是 <strong>先入后出</strong>(first in last out),队列是<strong>先入先出</strong>(first in first out)。</p>
-<p>这章考代码的概率应远小于 <strong>某表</strong>。</p>
-<h3 id="插播一条概念">插播一条概念</h3><ul>
-<li>前驱和后继</li>
-</ul>
-<p><strong>一个元素的前驱或后继实质上</strong>指这个它的<strong>前一个元素</strong>和<strong>后一个元素</strong>。二叉排序树中要找一个元素的中序遍历前驱，就是要在小于它的元素中找最大的（就是找小于它的且<strong>最靠近它的元素</strong>）。中序遍历后继类似，不说了（关键字：大于，最靠近）。</p>
-<h2 id="第三章_串">第三章 串</h2><p>只有一条好消息，<strong>KMP算法</strong>不考哦～，但防止万一，请记下它的算法<strong>时间复杂度 O(M+N)</strong>。</p>
-<h2 id="第四章_数组和广义表">第四章 数组和广义表</h2><p>广义表如果考的话应该也就考 <strong>一个广义表的(深)度</strong>了。数括号就行了。还可能</p>
-<p>e.g.</p>
-<ul>
-<li><code>(a,(a))</code> 深度是 <strong>2</strong></li>
-<li><code>(a,b,(a,(b,c)))</code> 是 <strong>3</strong></li>
-<li><p><code>(a,b,(a,(a,c,(d,e))),(x))</code> 是 <strong>4</strong></p>
-</li>
-<li><p><a href="http://zuoye
-.baidu.com/question/138683737c1d72161a5d0cda8a916904.html" target="_blank" rel="external">这是关于广义表如何算长度和深度的传送门</a></p>
-</li>
-<li><p><a href="http://zuoye.baidu.com/question/07abdcc3913d3a44e82b57db82fb1da8.html" target="_blank" rel="external">这是关于head和tail的传送门(做试卷的应该都看过这俩名词)</a></p>
-</li>
-</ul>
-<p>另外关于8号楼下数据结构期末题第一套的<code>数组题</code></p>
-<pre><code>将一个A[<span class="link_label">100</span>][<span class="link_reference">100</span>]的三对角矩阵，按行优先存入一维数组B[<span class="link_label">298</span>]中，数组下标从0开始编号，A中的元素A[<span class="link_label">65</span>][<span class="link_reference">64</span>]再B中的位置K为<span class="strong">_____</span>。
-应填194，a[<span class="link_label">65</span>][<span class="link_reference">64</span>]上面有64*3+2=194个元素。a[<span class="link_label">65</span>][<span class="link_reference">64</span>]是第195个，而数组从0开始编号，所有B[<span class="link_label">194</span>]存储了A[<span class="link_label">65</span>][<span class="link_reference">64</span>]。
-</code></pre><p>这里普及一下<code>三对角矩阵</code>，这就是三对角矩阵（4*4的）<br><img src="https://upload.wikimedia.org/math/e/b/c/ebc3ab5369e2fc1a1d2bb0dd68396027.png" alt="三对角矩阵"></p>
-<p>最左边的矩阵就是三对角矩阵<br><img src="https://upload.wikimedia.org/math/f/a/8/fa8a518330d0e8da1a0890bb2e587043.png" alt="big"></p>
-<h2 id="第五章_树">第五章 树</h2><p>树就考很多了，树的<strong>前中后序遍历</strong>你要是还不懂概念就快看书吧！！！！！~~这个遍历至少考5分以上。<br>~~哈夫曼树估计也是要考的，大概是<strong>给定一个序列，然后构建一个哈夫曼树</strong>。</p>
-<p>树的遍历备考知识（说起来可能比较多，看不懂的去百度）</p>
-<pre><code>给出先序遍历和后序遍历。输出这棵二叉树。
-<span class="number">1</span>.先序的第一个是根<span class="literal">a</span>。
-<span class="number">2</span>.先序序列 根的后一个节点b只可能是根的左右节点之一。
-<span class="number">3</span>.如果中序中b出现在<span class="literal">a</span>之前，b是<span class="literal">a</span>的左儿子，反之是儿子。
-<span class="number">4</span>.中序中<span class="literal">a</span> 左边的是<span class="literal">a</span>左子树的中序遍历，右边则是<span class="literal">a</span>右子树的中序遍历。
-<span class="number">5</span>.第四点对所有假定的根都成立，递归得出这棵二叉树。
-</code></pre><p>树、森林和二叉树的转换<br><a href="http://www.cnblogs.com/zhuyf87/archive/2012/11/04/2753950.html" target="_blank" rel="external">link(来源于cnblog)</a></p>
-<p>怎么构建<code>哈夫曼树</code>？</p>
-<pre><code>哈夫曼树的构造算法
-
-假设有n个权值，则构造出得哈夫曼树有n个叶子结点。n个权值分别设为w1,w2,...,wn,则哈夫曼树的构造规则为:
-
-<span class="params">(<span class="number">1</span>)</span>将w1,w2,...,wn看成是有n棵树的森林<span class="params">(每棵树仅有一个结点)</span>;
-<span class="params">(<span class="number">2</span>)</span>在森林中选出两个根结点的权值最小的树合并，作为一棵新树的左、右子树，且新树的根结点权值为其左、右子树根结点权值之和；
-<span class="params">(<span class="number">3</span>)</span>从森林中删除选取的两棵树，并将新树加入森林;
-<span class="params">(<span class="number">4</span>)</span>重复<span class="params">(<span class="number">2</span>)</span>、<span class="params">(<span class="number">3</span>)</span>步，直到森林中只剩一棵树为止，该树即为所求得的哈夫曼树。
-</code></pre><p>结合上面的可以再看看下面的图解</p>
-<ul>
-<li><a href="http://www.th7.cn/Program/c/201410/304813.shtml" target="_blank" rel="external">又见哈夫曼树图解传送门，可是该门广告多</a></li>
-<li>听说<code>可以停用**Javascript**屏蔽广告，懂了人以后都看不到广告了哈哈哈哈</code></li>
-</ul>
-<h2 id="第六章_哈希表">第六章 哈希表</h2><p>这章必考，大概就是类似ppt那样的考法<br>不会的去看书<br> <a href="http://down5.cr173.com/soft1/shujujiegou.rar" target="_blank" rel="external">我叫严蔚敏的数据结构pdf下载传送门</a></p>
-<p>处理冲突的方法百度有介绍<br><a href="http://baike.baidu.com/link?url=Jz0q6Ewkh4qUNI6yBiQpuIbUCU5Rfllul1cxi0-26jil8BN_wUq-gERwI2-n48mPyxM6T46DKXy8uaMDV2MgnK" target="_blank" rel="external">百度百科：哈希表</a>，直接翻到处理<code>冲突</code>的那一块看就好了，当然<code>构造</code>方法也得看看。</p>
-<p>另外还有<a href="http://blog.csdn.net/wangran51/article/details/8826633" target="_blank" rel="external">平均查找长度的计算</a>，也是可能考的。</p>
-<p>(友情提示：用CMCC-EDU的同学很可能打不开该链接，因为移动好像<code>墙</code>了csdn.net，据说github都被墙了)</p>
-<h2 id="第七章_图论">第七章 图论</h2><p>这章你需要会<strong>图的遍历</strong>。还有一些基本概念比如说<code>结点的度</code>。</p>
-<ul>
-<li><a href="http://blueve.me/archives/417" target="_blank" rel="external"><strong>队列实现bfs</strong></a></li>
-<li><a href="http://jingyan.baidu.com/article/00a07f38babf4182d028dca2.html" target="_blank" rel="external"><strong>dfs</strong></a></li>
-<li>实际上树也是一个图，树的先序中序后序遍历都是<strong>深度优先遍历</strong></li>
-<li>一般来说是用栈或者<code>队列</code>实现bfs,用<code>函数递归</code>实现dfs（<strong>回溯法</strong>的基本做法）。</li>
-</ul>
-<p>###生成树</p>
-<pre><code>　如果连通图<span class="keyword">G</span>的一个子图是一棵包含<span class="keyword">G</span>的所有顶点的树，则该子图称为<span class="keyword">G</span>的生成树(SpanningTree)。
-　生成树是连通图的包含图中的所有顶点的极小连通子图。
-　图的生成树不惟一。从不同的顶点出发进行遍历，可以得到不同的生成树。
-</code></pre><h3 id="最小生成树">最小生成树</h3><p>如何画最小生成树？</p>
-<p>摘自 <code>百度知道</code>（原来百度知道里也是有有用的答案的Orz）</p>
-<pre><code><span class="number">1</span>） 树是无回路的连通图。
-<span class="number">2</span>）对于某个图，求它的最小生成树，比较简单的方法，先画出图中所有节点，从权值最小的边开始依次连接顶点，注意不要    形成回路，最后得到的图就是最小生成树。
-</code></pre><h2 id="第八章_二分查找">第八章 二分查找</h2><ul>
-<li><code>谨记</code>二分查找的数据结构必须是<code>有序</code>的</li>
-<li>假如是用<code>链式存储</code>数据，即使元素有序，我看你怎么<code>二分</code>（期末题第一套12.梗）</li>
-</ul>
-<h3 id="二叉排序树">二叉排序树</h3><ul>
-<li>中序遍历二叉排序树的结果必然是一个有序的序列（比如从小到大）</li>
-</ul>
-<h4 id="如何构建二叉排序树？">如何构建二叉排序树？</h4><p>百度百科是这么规定二叉排序树的</p>
-<pre><code>    二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：
-（<span class="number">1</span>）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；
-（<span class="number">2</span>）若右子树不空，则右子树上所有结点的值均大于或等于它的根结点的值；
-（<span class="number">3</span>）左、右子树也分别为二叉排序树；
-（<span class="number">4</span>）没有键值相等的节点。
-</code></pre><p>再给你看个二叉排序树的图<br>这是对序列<code>(8,3,10,1,6,4,14,7,13)</code> 建立二叉排序树的结果<br><img src="http://pic002.cnblogs.com/images/2012/457289/2012110918051618.jpg" alt="img"></p>
-<p>先把8作为根，然后3比8小，成为8的左儿子。10比8大，作为8的右儿子。1比8小，再比3小，作为3的左儿子….</p>
-<p>如果还不懂就去看<code>严奶奶的书(diyu)</code>吧 23333333</p>
-<h2 id="第九章_排序">第九章 排序</h2><p>O(n^2)的排序就不说了，直接说O(n<sup>1.5</sup>)和O(nlogn)的</p>
-<p><code>希尔排序</code>O(n<sup>1.5</sup>)</p>
-<ul>
-<li><p>希尔排序有一个关键的概念叫“步长”(gap)</p>
-</li>
-<li><p>建议到这里看<a href="http://blog.csdn.net/morewindows/article/details/6668714" target="_blank" rel="external">希尔排序</a></p>
-</li>
-</ul>
-<p>迷之希尔排序只有4行代码</p>
-<pre><code><span class="function"><span class="keyword">void</span> <span class="title">shellsort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span>{
-    <span class="keyword">for</span> (<span class="keyword">int</span> gap = n / <span class="number">2</span>; gap &gt; <span class="number">0</span>; gap /= <span class="number">2</span>)
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = gap; i &lt; n; i++)
-            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; a[j] &gt; a[j + gap]; j -= gap)
-                swap(a[j], a[j + gap]);<span class="comment">//swap是交换的意思</span>
-}
-</code></pre><p>后面都是O(nlogn)的</p>
-<p><code>快速排序</code> </p>
-<p>快速排序简单吧，直接看老严的书你也能懂，不过代码优点难写，可是<code>老师肯定不考代码的啦</code>。</p>
-<p>不过还是给的我自己写的？</p>
-<pre><code>void quicksort(int <span class="literal">a</span>[],int l,int r){
-    <span class="keyword">if</span>(l&lt;r){
-    int ll = l , rr = r , cmp = <span class="literal">a</span>[l]<span class="comment">;</span>
-    <span class="keyword">while</span>(ll&lt;rr){
-        <span class="keyword">while</span>(ll&lt;rr&amp;&amp;<span class="literal">a</span>[rr]&gt;cmp)
-            rr--<span class="comment">;</span>
-        <span class="literal">a</span>[ll]=<span class="literal">a</span>[rr]<span class="comment">;</span>
-        <span class="keyword">while</span> (ll&lt;rr&amp;&amp;<span class="literal">a</span>[ll]&lt;=cmp) {
-            ll++<span class="comment">;</span>
-        }
-        <span class="literal">a</span>[rr]=<span class="literal">a</span>[ll]<span class="comment">;</span>
-    }
-    <span class="literal">a</span>[ll]=cmp<span class="comment">;</span>
-    quicksort(<span class="literal">a</span>,l, ll-<span class="number">1</span>)<span class="comment">;</span>
-    quicksort(<span class="literal">a</span>,ll+<span class="number">1</span>, r)<span class="comment">;</span>
-}//咋一看连swap都没有，肯定有问题？不，你仔细看看这个代码，没有问题。
-</code></pre><p><code>归并排序</code></p>
-<p>归并排序是一种体现<code>分治思想</code>的排序算法，它是我们现在所学到的O(nlogn)算法里唯一一个排序<code>稳定</code>的算法。</p>
-<ul>
-<li>这个我建议数据结构较好的去看<code>算法--C语言实现（第1～4部分）</code>这本书，当然你想挑战<code>老严的diyu</code>我也是十分<code>赞(fan)成(dui)</code>的，其他的可以去看，《大话数据结构》，当然你想挑战<code>老严的diyu</code>我就………………</li>
-<li>还建议看<a href="https://zh.wikipedia.org/zh-hk/归并排序" target="_blank" rel="external">维基百科 归并排序</a></li>
-</ul>
-<p>顺便贴代码</p>
-<pre><code><span class="function"><span class="keyword">void</span> <span class="title">mergeArray</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> l,<span class="keyword">int</span> mid,<span class="keyword">int</span> r,<span class="keyword">int</span> aux[])</span></span>{
-    <span class="keyword">int</span> cnt;<span class="comment">//index      e.g. aux[cnt]</span>
-    <span class="keyword">int</span> l1 = l,r1 =mid,l2 = mid + <span class="number">1</span>,r2 = r;
-    <span class="keyword">for</span> (cnt = l; cnt &lt;=r; cnt++) {
-        <span class="keyword">if</span>(l1==r1+<span class="number">1</span>) {aux[cnt]=a[l2++];<span class="keyword">continue</span>;}
-    <span class="keyword">if</span>(l2==r2+<span class="number">1</span>) {aux[cnt]=a[l1++];<span class="keyword">continue</span>;}
-    aux[cnt] = (a[l2] &lt; a[l1]) ? a[l2++] : a[l1++] ;
-    }
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i&lt;=r ;i++)
-        a[i] = aux[i];
-}<span class="comment">//归并两个给定数组 思想来自于《算法－－C语言》的"合并两个数组"</span>
-
-<span class="function"><span class="keyword">void</span> <span class="title">mergesort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> aux[])</span></span>{
-<span class="keyword">if</span> (l&lt;r){
-    <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;
-    mergesort(a,l,mid,aux);
-    mergesort(a,mid+<span class="number">1</span>,r,aux);<span class="comment">//递归分割</span>
-    mergeArray(a,l,mid,r,aux);<span class="comment">//将有序数组归并</span>
-}
-}
-
-<span class="function"><span class="keyword">bool</span> <span class="title">Mergesort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>{
-    <span class="keyword">int</span> *aux = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n);<span class="comment">//aux意思是辅助数组</span>
-    <span class="keyword">if</span>(aux==<span class="literal">NULL</span>) <span class="keyword">return</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"error!"</span>&lt;&lt;endl,<span class="literal">false</span>;
-    mergesort(a,<span class="number">0</span>,n-<span class="number">1</span>,aux);
-    <span class="built_in">free</span>(aux);
-    <span class="keyword">return</span> <span class="literal">true</span>;
-}
-</code></pre><h2 id="堆排序">堆排序</h2><h4 id="学渣止步…这个排序可能有点难。">学渣止步…这个排序可能有点难。</h4><p>说到堆排序，首先要介绍一下<code>堆</code>的概念。</p>
-<h3 id="堆">堆</h3><p>定义一（堆有序的定义）:如果一棵树中每个节点的关键字都不小于所有子节点的<code>值，或者说是关键字</code>(如果子节点存在的话)，那么久称这棵树是<code>堆有序</code>的。同样的，一棵<code>堆有序</code>中节点的关键字小于等于那个父节点的关键字（如果父节点存在）。[^1]</p>
-<p>定义二：<strong><code>堆</code></strong>是一个节点的集合，表示为<code>数组</code>，其中<em>关键字按照<strong>堆有序</strong>的<strong>完全二叉树</strong>的形式排列</em>。</p>
-<p>性质一：若a是一个<code>小顶堆</code>，那么a[0]是堆中最小的元素。</p>
-<p>定义一中的堆实际上是<code>小顶堆</code>，还有一个概念是<code>大顶堆</code>，这个在后面会有提到。</p>
-<p>如何利用堆将一个数组从大到小排序呢？</p>
-<h4 id="堆排序-1">堆排序</h4><ul>
-<li>堆排序的思想类似于选择排序，也是每次找到一个最大(小)的数，然后在其余的数里找到最大(小)的，只不过每次只需要log(n)次计算，而不是n。</li>
-<li>大概就是先让其符合<code>小顶堆</code>的性质，也就是<code>堆化</code>，然后再fixdown n-1次,伪代码是这样的</li>
-<li>fixdown的意思是<code>自顶向下堆化</code>，MinFixdown(a,0,i)中，i是堆元素的数量，0表示从a[0]开始堆化，就是<code>堆化以i为结尾的a数组</code>！</li>
-<li><p>下面给出<code>从大到小排序</code>的堆排 <code>算法</code></p>
-<pre><code>algorithm heapsort(a[],n)<span class="comment">{
-    MakeMinHeap(a) % 堆化数组a a变为最小堆
-    for i n-1-&gt;1  % swap后 a[0]~a[i]就不一定还是堆了！需要继续fixdown
-        MinFixdown (a,0,i) % a[0]~a[i]视为一个(子)堆，fixdown这个(子)堆
-        swap(a[0],a[i]) % fix后由堆的性质一可知a[0]是a[0]~a[i]里最小的，把找到的最小的，也就是a[0],放到最后面
-    end 
-}</span> %堆排序完成，排完序后 小顶堆被完全破坏 ，堆中
-</code></pre></li>
-<li><p>你们加油 <a href="https://zh.wikipedia.org/zh-hk/堆排序" target="_blank" rel="external">維基百科 堆排序</a></p>
-</li>
-<li><p>csdn博客里有一个白话算法系列，那里写的这个<code>堆排序</code>算法可以去看看，。</p>
-</li>
-<li><p>下方有个堆排动态图<a href="维基百科－－堆排序（繁体）">^2</a></p>
-</li>
-</ul>
-<p>下方是我整理的从大到小堆排的代码，代码出自上面那个blog。<br>首先是fixdown函数，从元素a[i]开始，n为数组上界</p>
-<pre><code><span class="function"><span class="keyword">void</span> <span class="title">MinHeapFixDown</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> i,<span class="keyword">int</span> n)</span></span>{
-    <span class="keyword">int</span> j, temp;
-    temp = a[i];
-    j = <span class="number">2</span> * i + <span class="number">1</span>;
-    <span class="keyword">while</span> (j &lt; n)
-    {
-        <span class="keyword">if</span> (j + <span class="number">1</span> &lt; n &amp;&amp; a[j + <span class="number">1</span>] &lt; a[j])
-            j++;
-        <span class="keyword">if</span> (a[j] &gt;= temp)
-            <span class="keyword">break</span>;
-        a[i] = a[j];
-        i = j;
-        j = <span class="number">2</span> * i + <span class="number">1</span>;
-    }
-    a[i] = temp;
-}
-</code></pre><p>构建小顶堆</p>
-<pre><code><span class="function"><span class="keyword">void</span> <span class="title">MakeMinHeap</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>{<span class="comment">//自顶向下地构建小顶堆</span>
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = n/<span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span> ; i--)
-        MinHeapFixDown(a, i, n);
-}
-</code></pre><p>堆排序</p>
-<pre><code><span class="function"><span class="keyword">void</span> <span class="title">heapsort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span>{
-    MakeMinHeap(a,n);
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--){
-        MinHeapFixDown(a, <span class="number">0</span>, i);
-        swap(a[i], a[<span class="number">0</span>]);
-        }
-}
-</code></pre><p>swap函数</p>
-<pre><code><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp;a,<span class="keyword">int</span> &amp;b)</span></span>{<span class="comment">//&amp;是C++的特性，&amp;是引用的意思，&amp;类似于指针，但是作用比指针弱，该函数引用了a变量，这个函数里改变a变量是真的会改变传入的a的值的。（也就是a在函数里是是参）inline是内联函数的关键词，不用管它，只是为了加快速度</span>
-    <span class="keyword">int</span> t=a;
-    a = b;
-    b = t;
-}
-</code></pre><p><code>关于这些排序的比较</code></p>
-<ul>
-<li><p>(数据结构期末题第一套10.)一个序列，如果要找出最大的x个元素，则采用<strong>__</strong>。</p>
-<p>  应该是<code>堆排序</code>。具体看《算法－－C语言实现》<strong>P241图9-10及其下方的注解</strong>。<br>  也可以看这个动态图<br>  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Sorting_heapsort_anim.gif" alt="img"></p>
-<pre><code>这个图也可以帮你理解堆排序的原理。
-</code></pre></li>
-<li><p>(数据结构期末题第一套15.) </p>
-<p>  <code>堆排序</code>，快排递归调用O(logn)的空间，归并固定O(n),堆排O(1)。堆排空间性能最好。</p>
-</li>
-<li><p>(数据结构期末题第一套9.) </p>
-<p>  其实冒泡最省时间，因为冒泡在这个情况下是<strong><em>O(n)</em></strong>，而平均最快的快排却是<strong><em>O(n<sup>2</sup>)</em></strong></p>
-</li>
-</ul>
-<ul>
-<li>快排平均最快，归并其次，堆排是O(nlogn)里最慢的</li>
-</ul>
-<p>[^1]:《算法－－C语言实现》第1～4部分 9.2节</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="第零章_绪论">第零章 绪论</h2><p>什么是计算机算法？算法的<strong>五大特征</strong>？算法设计的要求？</p>
-<ul>
-<li><p>计算机算法指<code>解决问题的步骤序列</code>。</p>
-</li>
-<li><p>算法的五大特征分别为</p>
-<pre><code>可行性、有穷性、确定性、输入、输出
-</code></pre></li>
-<li><p>算法设计要求</p>
-<pre><code>正确性、可读性、健壮性、效率与低存储量需求
-</code></pre>]]>
-    
-    </summary>
-    
-      <category term="大学课程" scheme="http://1013rain.me/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/"/>
     
   </entry>
   
