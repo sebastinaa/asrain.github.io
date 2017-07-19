@@ -5,7 +5,7 @@
   <subtitle><![CDATA[打的不错，我很抱歉。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://1013rain.me//"/>
-  <updated>2017-03-28T15:17:12.000Z</updated>
+  <updated>2017-05-16T01:00:21.000Z</updated>
   <id>http://1013rain.me//</id>
   
   <author>
@@ -16,18 +16,384 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[集成电路设计课程思考题]]></title>
+    <link href="http://1013rain.me/2017/05/16/ASIC_Learning/"/>
+    <id>http://1013rain.me/2017/05/16/ASIC_Learning/</id>
+    <published>2017-05-16T00:44:35.000Z</published>
+    <updated>2017-05-16T01:00:21.000Z</updated>
+    <content type="html"><![CDATA[<a id="more"></a>
+<h1 id="集成电路设计课程思考题_2016-5-2">集成电路设计课程思考题 2016-5-2</h1><h2 id="第1讲思考题_绿颜色部分暂不考，但应该知道的内容，很重要">第1讲思考题                 绿颜色部分暂不考，但应该知道的内容，很重要</h2><ol>
+<li><p>站在数字电路角度，画出反相器INV延迟1ns、2ns的波形；</p>
+</li>
+<li><p>站在模拟电路角度，画出反相器INV延迟1ns、2ns的波形；</p>
+</li>
+<li><p>画出INV在CMOS工艺下的内部晶体管电路图；</p>
+</li>
+<li><p><strong>卓越工程师在IC设计或工程项目应具备的基本素质</strong>：</p>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">逻辑抽象、电路技术、器件物理、加工工艺</span><br></pre></td></tr></table></figure>
+<ol>
+<li>目前业界IC最细线宽多少，作为学生实习，一般可做到多细；是头发的几分之几？</li>
+</ol>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">14<span class="built_in">nm</span></span><br><span class="line">150um</span><br></pre></td></tr></table></figure>
+<p>6.目前用的最多的工艺是那个？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CMOS、 BIPOlAR、BCD</span><br></pre></td></tr></table></figure>
+<p>7.常用IC设计工具有哪些？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">太多了</span><br></pre></td></tr></table></figure>
+<p>8.我们日常随身携带有哪几类集成电路？大概有多少门，多少晶体管？</p>
+<p>9.我国目前进口最多的是哪些：石油、钢铁、软件？10年前如何？</p>
+<p>10.便携式产品，最重要的指标是哪个？ </p>
+<h2 id="第14讲思考题">第14讲思考题</h2><ol>
+<li><p>Pre-Simulation；Whole Simulation</p>
+</li>
+<li><p>Post-Simulation；Sub-Block Simulation</p>
+</li>
+<li><p>DRC；LVS；LPE；Cross-Section；Layout；Schematic；Netlist</p>
+</li>
+</ol>
+<blockquote>
+<ol>
+<li>DRC：设计规则检查</li>
+</ol>
+<ul>
+<li>LVS：版图与电路图一致性检查</li>
+<li>LPE：寄生参数提取</li>
+<li>Cross-Section：横截面图</li>
+<li>Layout：布局</li>
+<li>Schematic：电路图</li>
+<li>Netlist：网络表</li>
+</ul>
+</blockquote>
+<ol>
+<li>Tape Out</li>
+</ol>
+<blockquote>
+<p>IC设计的最后一个步骤：送交制造。 流片</p>
+</blockquote>
+<ol>
+<li>Wafer Out</li>
+</ol>
+<blockquote>
+<p>完成所有制程后并可当成产品卖出之芯片</p>
+</blockquote>
+<ol>
+<li><p>Package；Bonding Wire，PAD，Pin</p>
+</li>
+<li><p>Die；Chip；SOC</p>
+</li>
+</ol>
+<blockquote>
+<p>SOC：片上集成系统<br>Die：晶圆<br>Chip：芯片</p>
+</blockquote>
+<ol>
+<li>如何定义集成电路设计(产品)，大概包括哪些指标。</li>
+<li>集成电路或FPGA能修复吗，用什么手段如何修复。</li>
+<li>设计集成电路时，Tape Out 的条件有哪些。<h2 id="一次复习题思考题">一次复习题思考题</h2>21.选择<br>1)以下那种工艺是属于CMOS工艺深亚微米级的（  <strong>B</strong>  ）</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">A</span>、1<span class="selector-class">.0um</span>    <span class="selector-tag">B</span>、0<span class="selector-class">.35</span> <span class="selector-tag">um</span>    <span class="selector-tag">C</span>、0<span class="selector-class">.6</span> <span class="selector-tag">um</span>    <span class="selector-tag">D</span>、0<span class="selector-class">.5</span> <span class="selector-tag">um</span></span><br></pre></td></tr></table></figure>
+<p>2)以下哪项不是版图上的物理验证 （  <strong>B</strong>  ）<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A、DRC验证 B、离子注入  <span class="keyword">C</span>、LVS验证 <span class="keyword">D</span>、寄生参数提取</span><br></pre></td></tr></table></figure></p>
+<p>3)N型半导体是在硅中参杂了（  <strong>D</strong>  ）杂质元素后得到的。<br><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A、二价    B、三价    C、四价    <span class="keyword">D</span>、五价</span><br><span class="line">P.<span class="keyword">S</span>. P型是参杂了三价杂质</span><br></pre></td></tr></table></figure></p>
+<p>4)MOSFET工作在线性区时其I/V特性是（    ）<br>A、    B、<br>C、<br>22填空题</p>
+<ol>
+<li>集成电路按设计风格可分为   <strong>全定制  半定制 可编程逻辑器件(PLD）</strong> 、      、      。</li>
+<li>专用集成电路从技术和工艺的角度可分为：<strong>可编程电路、预扩散阵列电路、标准单元电路、用户全定制电路</strong>。</li>
+<li>IC版图输出格式包括：  <strong>CIF PG GDSII</strong>    、       、      。</li>
+<li>版图设计包括<strong>布局规划、时钟树综合、布线及时序分析及优化</strong>等</li>
+<li>反相器的功耗包括 <strong>静态功耗</strong>       、 <strong>动态功耗</strong>     。<br>23.在本课程范围之内名词解释（中英文均可）<br>1)集成电路（IC）, VLSI, </li>
+</ol>
+<blockquote>
+<ul>
+<li>集成电路：指采用一定的工艺，将所有电器件连在一起，制作在一小块介质上，然后封装在一个管壳内的电路。</li>
+<li>VLSI：超大型集成电路。<br>2)FPGA, λ规则</li>
+<li>FPGA:现场可编程门阵列，一种半定制电路</li>
+<li>λ规则:<br>3)形式验证；特征尺寸<br>特征尺寸：半导体器件的最小尺寸。</li>
+</ul>
+</blockquote>
+<p>4)摩尔定律。</p>
+<p>5)氧化；光刻；扩散；淀积</p>
+<blockquote>
+<ol>
+<li>氧化：在单晶体上生长一层$SiO_2$。</li>
+<li>光刻：在硅片表面的掩膜层上刻制出所要求的图形。</li>
+<li>扩散：在高温下将N型或P型杂质从硅表面扩散到体内的过程。</li>
+<li>淀积：在一特定装置中，通过通入不同的反应气体在一定的工艺条件下在硅片表面沉淀一层介质或薄膜。<br>24.计算题<br>（1）设某一电阻R的长L=50μm，宽W=2μm，其方块电阻值为150Ω/□，计算该电阻的阻值。</li>
+</ol>
+</blockquote>
+<pre><code>水题
+</code></pre><p><del>（2）设CMOS反相器的工作频率为1MHZ，输出负载电容为5pf，电源电压为5V，则反相器的交流开关损耗为多少瓦，速度功耗积为多少？</del><br><strong>25.集成电路的制造工艺主要分为几大类？并简述各工艺主要特点及应用范围？</strong></p>
+<p><del>26.简述开关电源DC-DC主要分类，画出相应的拓扑结构，并描述输入输出之间的关系</del><br>27.图3是电流镜，,推导出输出电流与输入电流关系。</p>
+<p>28.设计两输入与非门(晶体管级)电路，给出其输入——输出的直流传输特性，画出与非门的版图和剖面图<br>29.<del>设计正电荷泵和负电荷泵的电路，</del>简要画出正电荷泵和负电荷泵的输出与输入电源之间的关系。<br>31.简述IC制造工艺的一般步骤。<br>32.设计带隙基准电路，描述带隙基准的实现原理。<br><del>33.概述I2C接口总线，画出I2C协议的开始与结束条件定义。</del><br>34.简述对集成电路的理解。</p>
+<h2 id="二次复习题思考题">二次复习题思考题</h2><p>35.选择：<br>1)中规模集成电路是指每片含有（ <strong>B</strong>  ）个元件或10～100个逻辑门的集成电路；</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">A</span>、<span class="number">100</span>      B、<span class="number">100～1000</span>    C、<span class="number">1000～100000</span>   D、<span class="number">100000</span></span><br></pre></td></tr></table></figure>
+<p>2)Gorden Moore在20世纪70年代预测，在一个芯片上晶体管的数目大约每（ <strong>D</strong>   ）个月就将翻倍；</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A、<span class="number">12</span>       B、<span class="number">14</span>       <span class="keyword">C</span>、<span class="number">16</span>       <span class="keyword">D</span>、<span class="number">18</span></span><br></pre></td></tr></table></figure>
+<p>3)以下那种工艺是属于CMOS工艺深亚微米级的（  <strong>A</strong>  ）；</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">A</span>、0<span class="selector-class">.18um</span>    <span class="selector-tag">B</span>、0<span class="selector-class">.5</span> <span class="selector-tag">um</span>    <span class="selector-tag">C</span>、0<span class="selector-class">.6</span> <span class="selector-tag">um</span>    <span class="selector-tag">D</span>、1<span class="selector-class">.0</span> <span class="selector-tag">um</span></span><br><span class="line">0<span class="selector-class">.35um</span>以下就是</span><br></pre></td></tr></table></figure>
+<p>4)版图检查中的电气规则检查是指（ <strong>D</strong>   ）。<br>    A、LPE    B、LVS    C、DRC    D、ERC<br>5)随着栅源电压的变化，MOS晶体管的工作区间可以分为5个，在（  <strong>C</strong>  ）其漏端电流可认为近似恒定，不随$V_{ds}$变化。<br>    A、截止区     B、线性区     C、饱和区     D、亚阈值区</p>
+<p>36.填空题</p>
+<ol>
+<li>IC版图输出格式包括： <strong>CIF         、  GDSII        和PG格式</strong>。</li>
+<li>集成电路按生产形式（适用性）可分为            和          。</li>
+<li>版图设计规则中的层内规则主要指        和        。</li>
+<li>PN结是由于载流子浓度差扩散形成的。P型区内       载流子浓度高，N型区内       载流子浓度高。</li>
+<li>集成电路中的电容器主要有两种，分别是  <strong>P-N结电容和MOS电容</strong>。</li>
+</ol>
+<p>37在本课程范围之内名词解释：（共20分，每题4分）</p>
+<ol>
+<li>ASIC;</li>
+</ol>
+<blockquote>
+<p>专用集成电路</p>
+</blockquote>
+<ol>
+<li>氧化；光刻;</li>
+</ol>
+<blockquote>
+<p>氧化：在硅片表面生成一层SiO2.<br>光刻：在硅片表面的掩膜层上刻制出所要求的图形。</p>
+</blockquote>
+<p>3.扩散；淀积;  4)版图特征尺寸<br>  5)反相器的噪声容限<br>38.集成电路分类方式很多，按照制作工艺如何分类？并简述专用集成电路设计的流程。<br>39.版图的检查与验证主要包括哪些?</p>
+<p>40.画出CMOS传输门的电路结构，并简述其与单管MOS开关相比较的特点。<br>41.画出CMOS反相器的电路图，给出上升时间、下降时间、延迟时间的表达式并讨论三种时间的影响因素。<br>42.画出两输入CMOS与非门电路结构图，三输入或非门的电路结构图，以及用传输门结构实现的D触发器的电路结构图。</p>
+<p>43.简述带隙基准电压源零温度特性的实现原理，并给出一种简化的CMOS实现结构图。（15分）<br>44.简述电流镜的“复制”原理，并给出一种利用CMOS电流镜结构的跨导运算放大器电路结构图。（10分）<br>上课思考题<br>45.在集成电路MASK掩膜制备中，OPC技术的含义，可以图示。</p>
+<ol>
+<li>Wafer 的不同位置Frequency相同吗？</li>
+</ol>
+<blockquote>
+<p>不同</p>
+</blockquote>
+<ol>
+<li>如何理解高速数字电路设计实际上是模拟电路的设计？</li>
+<li>CMOS集成电路的优点</li>
+<li>画出CMOS工艺下，INV，Nand2，Nand3，Nor2，Nor3，传输门，and2,and3,Or2,Or3的符号，真值表，晶体管级电原理图，版图，横截面物理结构图，版图，封装图。</li>
+<li>什么是集成电路，IC</li>
+<li>什么是集成电路发展趋势</li>
+<li></li>
+<li>集成电路如何分类，例如按规模、工艺、适用性(生产形式)、风格、用途。</li>
+<li>Bipolar、CMOS、BCD工艺含义，优缺点。</li>
+<li>全定、半定制、PLD设计优缺点。</li>
+<li>ASIC/SOC设计发展趋势(从常规设计向高难度设计发展)</li>
+<li>集成电路设计流程</li>
+<li>什么是半导体、什么是本征半导体、N型半导体、P型半导体、PN结</li>
+<li>IC的基本制造工艺如何</li>
+<li>CMOS工艺步骤(CMOS加工工艺流程)</li>
+<li>从几个方面选择合适的工艺，选择工艺依据</li>
+<li>给出Bipolar工艺下NPN，横向PNP，纵向PNP的物理横截面图(物理剖面图)</li>
+<li>无源器件有哪些，集成电阻有哪几类，版图、结构大致示意图。</li>
+<li>为实现集成二极管，给出NPN管E-B短接，E-C短接，C极开路，E极开路的电路符号和物理剖面图</li>
+<li>什么叫集成电路的后端设计，包括哪些</li>
+<li>电路图SCH与网表Netlist本质区别</li>
+<li>数字IC 后端设计流程，图3-1</li>
+<li>什么叫集成电路的逻辑综合</li>
+<li>集成电路的全定制设计，半定制设计</li>
+<li>自动布局布线（APR）的基本数字IC 后端设计流程流程，3-7</li>
+<li><p>时钟抖动、时钟偏差</p>
+</li>
+<li><p>形式验证，以及形式验证的必要性</p>
+</li>
+</ol>
+<blockquote>
+<p>指在数学上完备地证明或验证电路的实现方案是否确实实现了电路设计所描述的功能。</p>
+<p>后仿真对于超大规模设计太费时间了。</p>
+</blockquote>
+<p>72.静态时序分析，动态时序分析<br>73.画出CMOS反相器的五段工作状态示意图，并简要说明<br>74.简述CMOS传输门中两个管子的功能和作用<br>75.画出CMOS工艺下<br>的最简晶体管级逻辑电路图<br>76.给出由CMOS与非门组成的RS触发器之电原理图，晶体管级电路图<br>77.INV反相器物理横截面图；<br>78.CMOS Nand2 版图示意图；<br>79.CMOS Nand3内部晶体管级线路图；<br>80.CD4000 Nand2 DIP14的内部封装示意图。(4个Nand2 门)<br>81.以Tanner EDA Tools为例，简述数字集成电路设计流程<br>82.以Tanner EDA Tools为例，简述模拟集成电路设计流程<br>83.以Tanner EDA Tools为例，简述数模混合集成电路设计流程<br>84.何为带隙基准，大致原理<br>85.给出CMOS工艺中pnp双极晶体管的实现(物理剖面图，在基准设计时用)<br>教材思考题<br>86.从重大技术突破角度看，集成电路的大的发展阶段。P1-2</p>
+<blockquote>
+<ul>
+<li>从真空到固体</li>
+<li>从锗到硅</li>
+<li>从小规模到大规模</li>
+<li>从成群电子到单个电子</li>
+</ul>
+</blockquote>
+<ol>
+<li>集成电路的分类(大类)，P2-3</li>
+</ol>
+<blockquote>
+<ul>
+<li>双极型集成电路</li>
+<li>MOS集成电路</li>
+<li>BiCMOS集成电路</li>
+</ul>
+</blockquote>
+<ol>
+<li>从线条和规模角度看，简述集成电路的技术发展。P3-4</li>
+</ol>
+<blockquote>
+<ul>
+<li>50年代，100个元器件；60年代，1000个，70年代后10^5 级别，80年代10^7 级别</li>
+<li>85年代，1兆位特大集成电路，200万元器件，1微米线宽。1992年16兆位芯片3200万元器件，0.5微米。1995年线宽又降到0.3微米。1998年0.25微米。</li>
+</ul>
+</blockquote>
+<ol>
+<li>ASIC的分类。P9-10</li>
+</ol>
+<blockquote>
+<ul>
+<li>可编程电路</li>
+<li>预扩散阵列电路</li>
+<li>标准单元电路</li>
+<li>用户全定制电路</li>
+</ul>
+</blockquote>
+<ol>
+<li>就本课程，什么是IP，分几类，每个含义。P11</li>
+</ol>
+<blockquote>
+<ul>
+<li>IP是指：可重复使用的 具有自主知识产权功能的 集成电路设计模块。</li>
+<li>分为软核IP、固核IP、硬核IP。</li>
+<li>软核IP是用某种高级语言来描述功能块的行为，不设计具体工艺和电路元件。</li>
+<li>固核IP是在软核IP的设计基础上 完成门电路的综合和时序仿真等环节。</li>
+<li>硬核IP则在固核IP的基础上完成了版图设计，并经过了工艺验证。</li>
+</ul>
+</blockquote>
+<ol>
+<li>数字IC设计分几个层次，系统级、行为及、寄存器传输级、逻辑门级和版图级的大致含义。P15.</li>
+</ol>
+<blockquote>
+<ul>
+<li>系统级：描述集成电路系统的最高层级。往往是通过一些性能指标来描述系统行为。</li>
+<li>行为级：描述抽象的算法模型。</li>
+<li>寄存器传输级（RTL）：比行为级更具体，大量采用宏单元，其结构是基于宏单元的互连，大都利用硬件描述语言，根据行为级模型对系统进行建模。</li>
+<li>门级：其基本单元是各种门电路，以及各种触发器。</li>
+<li>版图级：最低层次，以几何图形来描述晶体管、MOS管、电阻、连线、二极管等。其特性不仅与器件的互连方式有关，而且与器件的加工工艺密切相关。</li>
+</ul>
+</blockquote>
+<ol>
+<li>数字系统集成设计规划。P16,1-1.</li>
+</ol>
+<blockquote>
+<p>1、功能定义 2、算法验证 3、芯片设计验证 4、系统验证平台设计</p>
+</blockquote>
+<p><strong>93. 数字集成电路设计流程。P16，1-2</strong></p>
+<blockquote>
+<ul>
+<li>系统架构-&gt;RTL级设计-&gt;综合优化 (前端设计）</li>
+<li>-&gt;自动布局布线-&gt;版图设计 （后端设计） </li>
+<li>-&gt;tape out</li>
+</ul>
+</blockquote>
+<ol>
+<li>深亚微米工艺的特点。P19</li>
+</ol>
+<blockquote>
+<p>1、面积缩小 2、速度提高 3、功耗降低</p>
+</blockquote>
+<ol>
+<li>根据用户和设计要求，选择合适工艺的依据。P18</li>
+</ol>
+<blockquote>
+<p>1、集成度和功耗：如果对这个要求高，最好用CMOS工艺。</p>
+<p>2、速度。要求较高可以用TTL／ECL工艺，要求特别高的微波应用场合应用GaAs工艺。</p>
+<p>3、驱动能力。TTL／ECL工艺驱动能力最强。</p>
+<p>4、成本造价。CMOS工艺为首选，对于模拟类型的ASIC则需选BiCMOS工艺。</p>
+</blockquote>
+<ol>
+<li>IC制造过程。P20</li>
+</ol>
+<blockquote>
+<p>先将硅锭切成硅片，再经大量20～30工艺步骤，进行硅片测试形成芯片，</p>
+<p>进行封装，再成品测<br>试，最后提供给客户。</p>
+</blockquote>
+<ol>
+<li>IC制造工艺步骤，CMOS或Bipolar,P20</li>
+</ol>
+<blockquote>
+<p>氧化-&gt;光刻-&gt;扩散-&gt;刻蚀-&gt;淀积</p>
+</blockquote>
+<ol>
+<li>给出简化的标准双极工艺流程。P21-22</li>
+</ol>
+<blockquote>
+<p>隐埋层扩散➡️外延层形成➡️隔离扩散➡️基区扩散➡️发射区扩散➡️刻蚀➡️铝线形成过程</p>
+</blockquote>
+<ol>
+<li>N阱硅栅CMOS工艺流程，P29</li>
+</ol>
+<blockquote>
+<p>先确定N阱区，再是低剂量的磷注入，再高温下扩散推进，形成N阱。</p>
+<p>确定器件位置和其他扩散区，生长氧化层，生长栅氧化层，长多晶硅，刻多晶硅栅，淀积，</p>
+<p>光刻，金属化</p>
+</blockquote>
+<ol>
+<li><p>双阱硅栅CMOS反相器芯片剖面示意图，P31,2-16；BiCMOS工艺部分，补考不要求</p>
+</li>
+<li><p>何为BCD工艺，三个特点及含义。P35</p>
+</li>
+</ol>
+<blockquote>
+<p>BCD工艺指 Bipolar + CMOS + DMOS 工艺。</p>
+<p>有三个方向：</p>
+<ul>
+<li><p>高压BCD，电压范围500～700V，击穿电压很高。</p>
+</li>
+<li><p>高功率BCD，电压范围40～90V，大电流驱动能力，中等电压。</p>
+</li>
+<li><p>高密度BCD，电压范围5～50V，缩小了系统的体积和重量，且带来了高可靠性，减小了各种电磁接口，是BCD工艺的主流方向。</p>
+</li>
+</ul>
+</blockquote>
+<p>102.何为集成电路的后端设计，分几个阶段</p>
+<blockquote>
+<p>逻辑综合和版图设计两个设计阶段，形式验证、时序验证和物理验证三个验证阶段)，P37</p>
+</blockquote>
+<ol>
+<li>数字IC后端设计流程，P38。3-1</li>
+</ol>
+<ol>
+<li><p>数字IC逻辑综合时的约束设置，大概有哪些？P41-44，7个，列出5、6个就可。</p>
+</li>
+<li><p>集成电路版图设计一般分为哪两类，你上机用的哪一类。P45</p>
+</li>
+</ol>
+<blockquote>
+<p>全定制和半定制，半定制。</p>
+</blockquote>
+<p>106.集成电路自动布局布线输入/输出文件有哪些？P47,3-8</p>
+<p>107.何为时钟抖动、延迟、偏差。P52</p>
+<p>108．何为时钟树，图示举例时钟偏差，P53，3-13</p>
+<p>109.在时钟树综合中，图示H树时钟分配网络，P54，3-15</p>
+<p>110.何为形式验证，P56</p>
+<blockquote>
+<p>指在数学上完备地证明或验证电路的实现方案是否确实实现了电路设计所描述的功能。</p>
+</blockquote>
+<ol>
+<li><p>图示形式验证在数字IC设计流程中的位置，P57,3-18</p>
+</li>
+<li><p>DRC时设计规则很多，列出你知道的十几条，P63</p>
+</li>
+<li><p>给出LVS验证流程，P65，3-28</p>
+</li>
+<li><p>教材中四副彩图，各是什么、说明什么</p>
+</li>
+</ol>
+<blockquote>
+<p>GG</p>
+</blockquote>
+<ol>
+<li><p>你知道的集成电路设计工具大概有哪些，大概作用</p>
+</li>
+<li><p>要写一个发明专利，大概包括哪些内容。绿颜色部分暂不考</p>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<a id="more"></a>
+<h1 id="集成电路设计课程思考题_2016-5-2">集成电路设计课程思考题 2016-5-2</h1><h2 id="第1讲思考题_绿颜色部分暂不考，但应该知道的内容，很重要">第1讲思考题                 绿颜色部分暂]]>
+    </summary>
+    
+      <category term="学习" scheme="http://1013rain.me/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[LaTex基础教程（新人向）]]></title>
     <link href="http://1013rain.me/2017/03/28/Latex/"/>
     <id>http://1013rain.me/2017/03/28/Latex/</id>
     <published>2017-03-28T15:00:27.000Z</published>
-    <updated>2017-03-28T15:17:12.000Z</updated>
+    <updated>2017-07-19T03:21:18.000Z</updated>
     <content type="html"><![CDATA[<p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。</p>
 <p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>
-<ul>
-<li><em>我已经写到参考文献一块了，快写完了</em></li>
-<li>2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧<a id="more"></a>
-</li>
-</ul>
+<a id="more"></a>
 <h1 id="你首先需要准备的">你首先需要准备的</h1><h2 id="软件">软件</h2><p>如果<del>你是Windows系统</del>你不是水果本，那么你需要<strong>下载</strong>下面的这个软件：</p>
 <ul>
 <li>CTex 2.9.2.164版本，<a href="http://kuai.xunlei.com/d/EGJNLIGKXSGQ" target="_blank" rel="external">迅雷快传下载</a> 或者 <a href="http://pan.baidu.com/s/11DhKi" target="_blank" rel="external">百度网盘下载</a></li>
@@ -75,13 +441,10 @@
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;figure&#125;</span><span class="string">[htbp]</span></span></span><br><span class="line"><span class="tag">\<span class="name">centering</span></span><span class="tag">\<span class="name">includegraphics</span><span class="string">[width=5in]</span><span class="string">&#123;Q5_1.png&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">caption</span><span class="string">&#123;The change of the number of 4 kinds of nodes.&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">label</span><span class="string">&#123;fig:Q5_1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;figure&#125;</span></span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">From Figure <span class="tag">\<span class="name">ref</span><span class="string">&#123;fig:Q5_1&#125;</span></span>, We can see...</span><br></pre></td></tr></table></figure>
 <p>看见了吗？我这里重命名了Label为<code>Q5_1</code>（Label可以随便起，比如我比较喜欢第五问第一个图就写Q5_1），于是我在某处要引用这个Figure的时候，我使用<code>\ref{fig:label}</code>,也就是<code>\ref{fig:Q5_1}</code>，在PDF里则会这个地方则会变成这个图的编号，且这个编号是个超链接，指向被引用的那个图。</p>
 <p>引用表的时候也一样，使用<code>\ref{tab:Label}</code>来完成。</p>
-<h2 id="参考文献">参考文献</h2>]]></content>
+]]></content>
     <summary type="html">
     <![CDATA[<p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。</p>
-<p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>
-<ul>
-<li><em>我已经写到参考文献一块了，快写完了</em></li>
-<li>2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧]]>
+<p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>]]>
     
     </summary>
     

@@ -40,27 +40,18 @@
 
 
 <meta name="description" content="参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。
-此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。
-
-我已经写到参考文献一块了，快写完了
-2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧">
+此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTex基础教程（新人向）">
 <meta property="og:url" content="http://1013rain.me/2017/03/28/Latex/index.html">
 <meta property="og:site_name" content="367days' blog">
 <meta property="og:description" content="参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。
-此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。
-
-我已经写到参考文献一块了，快写完了
-2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧">
-<meta property="og:updated_time" content="2017-03-28T15:17:12.000Z">
+此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。">
+<meta property="og:updated_time" content="2017-07-19T03:21:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTex基础教程（新人向）">
 <meta name="twitter:description" content="参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。
-此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。
-
-我已经写到参考文献一块了，快写完了
-2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧">
+此教程为纯新人向/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -214,11 +205,7 @@
       
         <span itemprop="articleBody"><p>参加数模的美赛，LaTex基本上来说是必备的，而对于写作的来说直接对着教程学习LaTex可能有些难度（于是我在参加美赛的时候，作为一个编程狗最后一天全程排版）。故想写一个LaTex教程（仅限美赛）来解救猿/媛们。</p>
 <p>此教程为<strong>纯新人向</strong>/面向写作。其实是因为自己只是个菜鸡，所以只能写出新人向的。</p>
-<ul>
-<li><em>我已经写到参考文献一块了，快写完了</em></li>
-<li>2017年3月28日更新：相隔一年，一周年写完这个教程，也算布点缺漏吧<a id="more"></a>
-</li>
-</ul>
+<a id="more"></a>
 <h1 id="你首先需要准备的">你首先需要准备的</h1><h2 id="软件">软件</h2><p>如果<del>你是Windows系统</del>你不是水果本，那么你需要<strong>下载</strong>下面的这个软件：</p>
 <ul>
 <li>CTex 2.9.2.164版本，<a href="http://kuai.xunlei.com/d/EGJNLIGKXSGQ" target="_blank" rel="external">迅雷快传下载</a> 或者 <a href="http://pan.baidu.com/s/11DhKi" target="_blank" rel="external">百度网盘下载</a></li>
@@ -266,7 +253,7 @@
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;figure&#125;</span><span class="string">[htbp]</span></span></span><br><span class="line"><span class="tag">\<span class="name">centering</span></span><span class="tag">\<span class="name">includegraphics</span><span class="string">[width=5in]</span><span class="string">&#123;Q5_1.png&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">caption</span><span class="string">&#123;The change of the number of 4 kinds of nodes.&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">label</span><span class="string">&#123;fig:Q5_1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;figure&#125;</span></span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">From Figure <span class="tag">\<span class="name">ref</span><span class="string">&#123;fig:Q5_1&#125;</span></span>, We can see...</span><br></pre></td></tr></table></figure>
 <p>看见了吗？我这里重命名了Label为<code>Q5_1</code>（Label可以随便起，比如我比较喜欢第五问第一个图就写Q5_1），于是我在某处要引用这个Figure的时候，我使用<code>\ref{fig:label}</code>,也就是<code>\ref{fig:Q5_1}</code>，在PDF里则会这个地方则会变成这个图的编号，且这个编号是个超链接，指向被引用的那个图。</p>
 <p>引用表的时候也一样，使用<code>\ref{tab:Label}</code>来完成。</p>
-<h2 id="参考文献">参考文献</h2></span>
+</span>
       
     </div>
 
@@ -282,6 +269,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/16/ASIC_Learning/" rel="prev">集成电路设计课程思考题</a>
             
           </div>
 
@@ -353,7 +342,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -367,7 +356,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -405,7 +394,7 @@
             <p class="site-author-name">links</p>
             
               <span class="links-of-author-item">
-              <a href="http://yooooh.net/" target="_blank">Mr.Thunder</a>
+              <a href="http://blog.yooooh.net/" target="_blank">Mr.Thunder</a>
               </span>
             
               <span class="links-of-author-item">
@@ -423,7 +412,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#你首先需要准备的"><span class="nav-number">1.</span> <span class="nav-text">你首先需要准备的</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件"><span class="nav-number">1.1.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你需要一个模板"><span class="nav-number">1.2.</span> <span class="nav-text">你需要一个模板</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文部分"><span class="nav-number">2.</span> <span class="nav-text">正文部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数学公式"><span class="nav-number">2.1.</span> <span class="nav-text">数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插图"><span class="nav-number">2.2.</span> <span class="nav-text">插图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插表"><span class="nav-number">2.3.</span> <span class="nav-text">插表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">2.4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">2.5.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#你首先需要准备的"><span class="nav-number">1.</span> <span class="nav-text">你首先需要准备的</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件"><span class="nav-number">1.1.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你需要一个模板"><span class="nav-number">1.2.</span> <span class="nav-text">你需要一个模板</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文部分"><span class="nav-number">2.</span> <span class="nav-text">正文部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数学公式"><span class="nav-number">2.1.</span> <span class="nav-text">数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插图"><span class="nav-number">2.2.</span> <span class="nav-text">插图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插表"><span class="nav-number">2.3.</span> <span class="nav-text">插表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">2.4.</span> <span class="nav-text">引用</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
